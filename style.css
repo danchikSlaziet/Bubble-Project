@@ -133,6 +133,77 @@ a,a:hover{
   z-index: 10;
 }
 
+.side-map {
+  position: fixed;
+  z-index: 10;
+  width: 125px;
+  left: 76px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.side-map__images-circle {
+  position: absolute;
+}
+.side-map__images-circle_1 {
+  top: 0;
+  left: 0;
+  transform: translateX(-50%);
+}
+.side-map__images-circle_2 {
+  top: 73px;
+  left: 0;
+  transform: translateX(-50%);
+}
+.side-map__images-circle_3 {
+  top: 157px;
+  left: 0;
+  transform: translateX(-50%);
+}
+.side-map__images-circle_4 {
+  top: 251px;
+  left: 0;
+  transform: translateX(-50%);
+}
+.side-map__links {
+  transition: opacity .24s ease, transform .24s ease;
+  opacity: 0; 
+  pointer-events: none;
+}
+.side-map:hover .side-map__links {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.side-map__link {
+  position: absolute;
+  text-decoration: none;
+  color: #FFF;
+  font-family: "Jost";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28.9px;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+.side-map__link:hover {
+  cursor: pointer;
+}
+.side-map__link_1 {
+  top: -11px;
+  left: 25px;
+}
+.side-map__link_2 {
+  left: 25px;
+  top: 64px;
+}
+.side-map__link_3 {
+  left: 25px;
+  top: 147px;
+}
+.side-map__link_4 {
+  left: 25px;
+  top: 240px;
+}
 /* ======================== COMMON =================== */
 
 .center-title {

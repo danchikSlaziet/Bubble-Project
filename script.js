@@ -7,6 +7,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 1 => 2 экран
 
+  new ScrollMagic.Scene({
+    triggerElement: '#section2',
+    triggerHook: 0.5,
+    duration: '100%'
+  })
+  .on('enter', () => {
+    console.log("section 2");
+    document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+      if (index === 0) {
+        elem.src = './images/side-map-circle-white.svg';
+      }
+    })
+  })
+  .on('leave', (event) => {
+    if (event.scrollDirection === 'FORWARD') {
+
+    }
+    else {
+      document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+        if (index === 0) {
+          elem.src = './images/side-map-circle.svg';
+        }
+      })
+    }
+  })
+  .addTo(controller);
 
   const blurCircleTween = gsap.timeline()
     .to('#blurCircle', { duration: 0.5, opacity: '.2', left: "-193px", bottom: "-258px", ease: 'power1.out' });
@@ -232,6 +258,16 @@ document.addEventListener('DOMContentLoaded', function() {
     triggerHook: 1,
     duration: '100%'
   })
+  .on('leave', (event) => {
+    if (event.scrollDirection === 'FORWARD') {
+      document.querySelector('.common-arrow-down').src = './images/arrow-main-down-white.svg';
+      document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+        if (index === 1) {
+          elem.src = './images/side-map-circle-white.svg';
+        }
+      })
+    }
+  })
   .setTween(section7Text)
   .addTo(controller);
 
@@ -247,7 +283,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // 7 => 8 экран
+    new ScrollMagic.Scene({
+      triggerElement: '#section8',
+      triggerHook: 0.5,
+      duration: '100%'
+    })
+    .on('enter', () => {
+      document.querySelector('.common-arrow-down').src = './images/arrow-main-down-white.svg';
+      document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+        if (index === 1) {
+          elem.src = './images/side-map-circle-white.svg';
+        }
+      })
+    })
+    .on('leave', (event) => {
+      if (event.scrollDirection === 'FORWARD') {
 
+      }
+      else {
+        document.querySelector('.common-arrow-down').src = './images/arrow-main-down.svg';
+        document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+          if (index === 0) {
+            elem.src = './images/side-map-circle-white.svg';
+          }
+          else {
+            elem.src = './images/side-map-circle.svg';
+          }
+        })
+      }
+    })
+    .addTo(controller);
 
   const section7TextLowOpacity = gsap.timeline()
   .to('#section7Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
