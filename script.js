@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
   .addTo(controller);
 
   const blurCircleTween2 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, bottom: "-258px", left: `${window.innerWidth - blurBlockWidth}px`, ease: 'power1.out' });
+    .to('#blurCircle', { duration: 0.5, filter: 'blur(55px)', bottom: "-258px", left: `${window.innerWidth - blurBlockWidth}px`, ease: 'power1.out' });
   new ScrollMagic.Scene({
     triggerElement: '#section3',
     triggerHook: 1,
@@ -80,6 +80,33 @@ document.addEventListener('DOMContentLoaded', function() {
   })
   .setTween(blurCircleTween2)
   .addTo(controller);
+
+  const blurCircleTweenHelp2 = gsap.timeline()
+    .to('#blurCircleHelp', { duration: 0.5,opacity: '.2' , filter: 'blur(55px)', bottom: "-258px", left: `${window.innerWidth - blurBlockWidth}px`, ease: 'power1.out' });
+  new ScrollMagic.Scene({
+    triggerElement: '#section3',
+    triggerHook: 1,
+    duration: '100%'
+  })
+  .setTween(blurCircleTweenHelp2)
+  .addTo(controller);
+
+new ScrollMagic.Scene({
+  triggerElement: '#section3',
+  triggerHook: 1,
+  duration: '100%'
+})
+.setTween(blurCircleTween2)
+.addTo(controller);
+
+
+new ScrollMagic.Scene({
+  triggerElement: '#section3',
+  triggerHook: 1,
+  duration: '100%'
+})
+.setTween(blurCircleTween2)
+.addTo(controller);
 
   const section2TextLowOpacity = gsap.timeline()
   .to('#section2Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
@@ -132,13 +159,32 @@ document.addEventListener('DOMContentLoaded', function() {
   .addTo(controller);
 
   const blurCircleTween3 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, filter: 'blur(35px)' ,bottom: "-258px", left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out' });
+    .to('#blurCircle', { duration: 0.5 , filter: 'blur(35px)' ,bottom: "-258px", left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out' });
   new ScrollMagic.Scene({
     triggerElement: '#section4',
     triggerHook: 1,
     duration: '100%'
   })
   .setTween(blurCircleTween3)
+  .addTo(controller);
+
+new ScrollMagic.Scene({
+  triggerElement: '#section4',
+  triggerHook: 1,
+  duration: '100%'
+})
+.setTween(blurCircleTween3)
+.addTo(controller);
+
+
+const blurCircleTweenHelp3 = gsap.timeline()
+    .to('#blurCircleHelp', { duration: 0.5 , filter: 'blur(35px)' ,bottom: "-258px", left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out' });
+  new ScrollMagic.Scene({
+    triggerElement: '#section4',
+    triggerHook: 1,
+    duration: '100%'
+  })
+  .setTween(blurCircleTweenHelp3)
   .addTo(controller);
 
   const blurCirclePage4 = gsap.timeline()
@@ -188,6 +234,16 @@ document.addEventListener('DOMContentLoaded', function() {
   .setTween(blurCircleTween4)
   .addTo(controller);
 
+  const blurCircleTweenHelp4 = gsap.timeline()
+    .to('#blurCircleHelp', { duration: 0.5, filter: 'blur(100px)' ,bottom: `${-blurBlockHeight}`, ease: 'power1.out' });
+  new ScrollMagic.Scene({
+    triggerElement: '#section5',
+    triggerHook: 1,
+    duration: '100%'
+  })
+  .setTween(blurCircleTweenHelp4)
+  .addTo(controller);
+
   const blurCirclePage5 = gsap.timeline()
     .to('#blurCirclePage4', { duration: 0.5, filter: 'blur(30px)' ,top: `${-blurBlockHeight}`,  ease: 'power1.out' });
   new ScrollMagic.Scene({
@@ -233,6 +289,16 @@ document.addEventListener('DOMContentLoaded', function() {
   })
     .setTween(blurCircleTween5)
     .addTo(controller);
+
+    const blurCircleTweenHelp5 = gsap.timeline()
+    .to('#blurCircleHelp', { duration: 0.5, bottom: `${-blurBlockHeight / 2}`, left: '0px', ease: 'power1.out' });
+  new ScrollMagic.Scene({
+    triggerElement: '#section6',
+    triggerHook: 1,
+    duration: '100%'
+  })
+  .setTween(blurCircleTweenHelp5)
+  .addTo(controller);
 
 
   // 6 => 7 экран
@@ -280,7 +346,16 @@ document.addEventListener('DOMContentLoaded', function() {
   })
     .setTween(blurCircleTween6)
     .addTo(controller);
-
+    
+    const blurCircleTweenHelp6 = gsap.timeline()
+    .to('#blurCircleHelp', { duration: 0.5, bottom: `${window.innerHeight - 2*blurBlockHeight/2}`, left: `${window.innerWidth - 2*blurBlockWidth/3}px`, ease: 'power1.out' });
+  new ScrollMagic.Scene({
+    triggerElement: '#section7',
+    triggerHook: 1,
+    duration: '100%'
+  })
+  .setTween(blurCircleTweenHelp6)
+  .addTo(controller);
 
     // 7 => 8 экран
     new ScrollMagic.Scene({
@@ -429,6 +504,16 @@ new ScrollMagic.Scene({
     .setTween(blurCircleTween7)
     .addTo(controller);
 
+  const blurCircleTweenHelp7 = gsap.timeline()
+    .to('#blurCircleHelp', { duration: 0.5, filter: 'blur(20px)', background: 'background: linear-gradient(261.69deg, #F9F1EA 43.79%, #FFFFFF 100%)' , bottom: `${window.innerHeight - blurBlockHeight/4}`, left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out' });
+  new ScrollMagic.Scene({
+    triggerElement: '#section9',
+    triggerHook: 1,
+    duration: '100%'
+  })
+    .setTween(blurCircleTweenHelp7)
+    .addTo(controller);
+
   //  9 => 10 экран
   const blurCircleTween8 = gsap.timeline()
     .to('#blurCircle', { duration: 0.5, filter: 'blur(40px)', background: 'background: linear-gradient(261.69deg, rgba(255, 255, 255, 0.55) 43.79%, rgba(255, 255, 255, 0) 99.99%, #FFFFFF 100%)', bottom: `0px`, left: `${-blurBlockWidth/2}px`, ease: 'power1.out' });
@@ -438,6 +523,16 @@ new ScrollMagic.Scene({
     duration: '100%'
   })
     .setTween(blurCircleTween8)
+    .addTo(controller);
+
+    const blurCircleTweenHelp8 = gsap.timeline()
+    .to('#blurCircleHelp', { duration: 0.5, bottom: `0px`, left: `${-blurBlockWidth/2}px`, ease: 'power1.out' });
+  new ScrollMagic.Scene({
+    triggerElement: '#section10',
+    triggerHook: 1,
+    duration: '100%'
+  })
+    .setTween(blurCircleTweenHelp8)
     .addTo(controller);
     // RELIABILITY
     const section9TextLeft = gsap.timeline()
@@ -527,6 +622,18 @@ new ScrollMagic.Scene({
     .setTween(blurCircleTween9)
     .addTo(controller);
 
+    const blurCircleTweenHelp9 = gsap.timeline()
+    .to('#blurCircleHelp', { duration: 0.5, bottom: `${window.innerHeight/2 - blurBlockHeight/2}`, left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out'});
+  new ScrollMagic.Scene({
+    triggerElement: '#section11',
+    triggerHook: 1,
+    duration: '100%'
+  })
+    .setTween(blurCircleTweenHelp9)
+    .addTo(controller);
+
+    
+
   const blurCircleTween10 = gsap.timeline()
     .to('#blurCircle', { duration: 0.5, filter: 'blur(100px)', ease: 'power1.out' });
   new ScrollMagic.Scene({
@@ -535,6 +642,16 @@ new ScrollMagic.Scene({
     duration: '100%'
   })
     .setTween(blurCircleTween10)
+    .addTo(controller);
+
+    const blurCircleTweenHelp10 = gsap.timeline()
+    .to('#blurCircleHelp', { duration: 0.5, filter: 'blur(100px)',  ease: 'power1.out'});
+  new ScrollMagic.Scene({
+    triggerElement: '#section12',
+    triggerHook: 1,
+    duration: '100%'
+  })
+    .setTween(blurCircleTweenHelp10)
     .addTo(controller);
 
     const blurCircleTween11 = gsap.timeline()
@@ -547,6 +664,16 @@ new ScrollMagic.Scene({
     .setTween(blurCircleTween11)
     .addTo(controller);
 
+    const blurCircleTweenHelp11 = gsap.timeline()
+    .to('#blurCircleHelp', { duration: 0.5, left: `${window.innerWidth - blurBlockWidth}px`, filter: 'blur(40px)', ease: 'power1.out' });
+  new ScrollMagic.Scene({
+    triggerElement: '#section13',
+    triggerHook: 1,
+    duration: '100%'
+  })
+    .setTween(blurCircleTweenHelp11)
+    .addTo(controller);
+
     const blurCircleTween12 = gsap.timeline()
     .to('#blurCircle', { duration: 0.5, filter: 'blur(100px)', ease: 'power1.out' });
   new ScrollMagic.Scene({
@@ -555,6 +682,16 @@ new ScrollMagic.Scene({
     duration: '100%'
   })
     .setTween(blurCircleTween12)
+    .addTo(controller);
+
+    const blurCircleTweenHelp12 = gsap.timeline()
+    .to('#blurCircleHelp', { duration: 0.5, filter: 'blur(100px)', ease: 'power1.out' });
+  new ScrollMagic.Scene({
+    triggerElement: '#section14',
+    triggerHook: 1,
+    duration: '100%'
+  })
+    .setTween(blurCircleTweenHelp12)
     .addTo(controller);
 
     const blurCircleTween13 = gsap.timeline()
@@ -567,6 +704,16 @@ new ScrollMagic.Scene({
     .setTween(blurCircleTween13)
     .addTo(controller);
 
+    const blurCircleTweenHelp13 = gsap.timeline()
+    .to('#blurCircleHelp', {duration: 0.5, left: `${-blurBlockWidth/4}`, bottom: `${-blurBlockHeight/4}` , filter: 'blur(40px)', ease: 'power1.out'});
+  new ScrollMagic.Scene({
+    triggerElement: '#section15',
+    triggerHook: 1,
+    duration: '100%'
+  })
+    .setTween(blurCircleTweenHelp13)
+    .addTo(controller);
+
   const blurCircleTween14 = gsap.timeline()
     .to('#blurCircle', { duration: 0.5, left: `${window.innerWidth / 2 - blurBlockWidth / 2}`, bottom: `${window.innerHeight / 2 - blurBlockHeight / 2}`, filter: 'blur(100px)', ease: 'power1.out' });
   new ScrollMagic.Scene({
@@ -575,6 +722,16 @@ new ScrollMagic.Scene({
     duration: '100%'
   })
     .setTween(blurCircleTween14)
+    .addTo(controller);
+
+    const blurCircleTweenHelp14 = gsap.timeline()
+    .to('#blurCircleHelp', {duration: 0.5,opacity: '0', left: `${window.innerWidth / 2 - blurBlockWidth / 2}`, bottom: `${window.innerHeight / 2 - blurBlockHeight / 2}`, filter: 'blur(100px)', ease: 'power1.out'});
+  new ScrollMagic.Scene({
+    triggerElement: '#section16',
+    triggerHook: 1,
+    duration: '100%'
+  })
+    .setTween(blurCircleTweenHelp14)
     .addTo(controller);
   // TRANSPARENCY
   const section9TextTrans = gsap.timeline()
