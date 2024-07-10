@@ -4,7 +4,18 @@ document.addEventListener('DOMContentLoaded', function() {
   const blurBlockHeight = document.querySelector('.blur-circle').getBoundingClientRect().height;
   console.log(blurBlockHeight);
 
-
+  const menuButton = document.querySelector(".side-map__button");
+  const sideMap = document.querySelector(".side-map");
+  menuButton.addEventListener("click", function() {
+    if (sideMap.className.includes("active")) {
+      sideMap.classList.remove("side-map_active");
+      menuButton.style.transform = 'rotate(180deg)';
+    }
+    else {
+      sideMap.classList.add("side-map_active");
+      menuButton.style.transform = 'rotate(0)';
+    }
+  })
   // 1 => 2 экран
 
   new ScrollMagic.Scene({
@@ -918,6 +929,7 @@ new ScrollMagic.Scene({
       document.querySelector('.connect-button').style = 'border: 1px solid rgba(48, 48, 48, 1)';
       document.querySelector('.connect-button__text').style = 'color: rgba(48, 48, 48, 1)';
       document.querySelector('.common-arrow-down').src = './images/arrow-main-down-black.svg';
+      menuButton.src = './images/burger-bar-open-black.svg';
       document.querySelectorAll('.side-map__link').forEach(link => {
         link.style = 'color: rgba(48, 48, 48, 1)';
       });
@@ -944,6 +956,7 @@ new ScrollMagic.Scene({
         document.querySelector('.connect-button').style = 'border: 1px solid rgba(255, 255, 255, 1)';
         document.querySelector('.connect-button__text').style = '#FFF';
         document.querySelector('.common-arrow-down').src = './images/arrow-main-down-white.svg';
+        menuButton.src = './images/burger-bar-open.svg';
         document.querySelectorAll('.side-map__link').forEach(link => {
           link.style = 'color: #FFF';
         });
