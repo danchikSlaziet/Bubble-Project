@@ -101,6 +101,24 @@ a,a:hover{
   opacity: 0;
   animation: blurCircleAnimation 5s ease-in-out infinite;
 }
+@media screen and (max-width: 1280px) {
+  .blur-circle {
+    width: 650px;
+    height: 650px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .blur-circle {
+    width: 550px;
+    height: 550px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .blur-circle {
+    width: 450px;
+    height: 450px;
+  }
+}
 .blur-circle-help {
   width: 1000px;
   height: 1000px;
@@ -114,6 +132,24 @@ a,a:hover{
   backdrop-filter: blur(100px);
   opacity: 0;
   animation: blurCircleAnimation 4s ease-in-out infinite;
+}
+@media screen and (max-width: 1280px) {
+  .blur-circle-help {
+    width: 650px;
+    height: 650px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .blur-circle-help {
+    width: 550px;
+    height: 550px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .blur-circle-help {
+    width: 450px;
+    height: 450px;
+  }
 }
 @keyframes blurCircleAnimation {
   0% {
@@ -153,6 +189,24 @@ a,a:hover{
   opacity: 0.2;
   left: 50%;
   transform: translateX(-50%);
+}
+@media screen and (max-width: 1280px) {
+  .blur-circle-page-4 {
+    width: 650px;
+    height: 650px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .blur-circle-page-4 {
+    width: 550px;
+    height: 550px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .blur-circle-page-4 {
+    width: 450px;
+    height: 450px;
+  }
 }
 .connect-button {
   position: fixed;
@@ -207,14 +261,14 @@ a,a:hover{
   z-index: 10;
   transition: opacity .24s linear;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
   .common-arrow-down {
-    bottom: 40px;
+    bottom: 15px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-height: 965px) {
   .common-arrow-down {
-    bottom: 20px;
+      bottom: 15px;
   }
 }
 .side-map {
@@ -559,6 +613,24 @@ a,a:hover{
   pointer-events: none;
   opacity: 0;
 }
+@media screen and (max-width: 963px) {
+  .page-3__text-block {
+    right: 80px;
+    /* bottom: 80px; */
+  }
+}
+@media screen and (max-width: 580px) {
+  .page-3__text-block {
+    right: 30px;
+    bottom: 80px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .page-3__text-block {
+    right: 15px;
+    bottom: 80px;
+  }
+}
 .page-3__top-text {
   color: transparent;    
 	-webkit-background-clip: text;
@@ -569,6 +641,26 @@ a,a:hover{
   line-height: 69.36px;
   letter-spacing: -0.02em;
   text-align: left;
+}
+@media screen and (max-width: 1280px) {
+  .page-3__top-text {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .page-3__top-text {
+      font-size: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .page-3__top-text {
+      font-size: 27px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-3__top-text {
+      font-size: 24px;
+  }
 }
 .page-3__count {
   position: absolute;
@@ -584,6 +676,26 @@ a,a:hover{
 	-webkit-background-clip: text;
 	background-clip: text;
   background-image: linear-gradient(180deg, #A5A5A5 0%, rgba(255, 255, 255, 0) 100%);
+}
+@media screen and (max-width: 1280px) {
+  .page-3__count {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .page-3__count {
+      font-size: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .page-3__count {
+      font-size: 19px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-3__count {
+      font-size: 17px;
+  }
 }
 /* Firefox */
 @-moz-document url-prefix() {
@@ -603,6 +715,22 @@ a,a:hover{
   letter-spacing: -0.02em;
   text-align: left;
 }
+@media screen and (max-width: 1280px) {
+  .page-3__bottom-text {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .page-3__bottom-text {
+      font-size: 16px;
+      max-width: 320px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-3__bottom-text {
+      font-size: 15px;
+  }
+}
 
 /* ================== PAGE-4 =============== */
 .page-4 {
@@ -617,6 +745,11 @@ a,a:hover{
   pointer-events: none;
   bottom: 216px;
   opacity: 0;
+}
+@media screen and (max-width: 370px) {
+  .page-4__text-block {
+    width: 100%;
+  }
 }
 .page-4__count {
   position: absolute;
@@ -642,6 +775,26 @@ a,a:hover{
     background-clip: initial;
   }
 }
+@media screen and (max-width: 1280px) {
+  .page-4__count {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .page-4__count {
+      font-size: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .page-4__count {
+      font-size: 19px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-4__count {
+      font-size: 17px;
+  }
+}
 .page-4__top-text {
   color: transparent;    
 	-webkit-background-clip: text;
@@ -653,6 +806,31 @@ a,a:hover{
   letter-spacing: -0.02em;
   text-align: left;
 }
+@media screen and (max-width: 1280px) {
+  .page-4__top-text {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .page-4__top-text {
+      font-size: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .page-4__top-text {
+      font-size: 27px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-4__top-text {
+      font-size: 24px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .page-4__top-text{
+    text-align: center;
+  }
+}
 .page-4__bottom-text {
   max-width: 408px;
   color: #FFF;
@@ -661,6 +839,28 @@ a,a:hover{
   line-height: 28.9px;
   letter-spacing: -0.02em;
   text-align: left;
+}
+@media screen and (max-width: 1280px) {
+  .page-4__bottom-text {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .page-4__bottom-text {
+      font-size: 16px;
+      max-width: 320px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-4__bottom-text {
+      font-size: 15px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .page-4__bottom-text{
+    text-align: center;
+    max-width: none;
+  }
 }
 
 /* =============== PAGE-5 ===================== */
@@ -677,6 +877,11 @@ a,a:hover{
   pointer-events: none;
   opacity: 0;
 }
+@media screen and (max-width: 768px) {
+  .page-5__text-block {
+      width: 100%;
+  }
+}
 .page-5__count {
   position: absolute;
   top: 0;
@@ -691,6 +896,26 @@ a,a:hover{
 	-webkit-background-clip: text;
 	background-clip: text;
   background-image: linear-gradient(180deg, #A5A5A5 0%, rgba(255, 255, 255, 0) 100%);
+}
+@media screen and (max-width: 1280px) {
+  .page-5__count {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .page-5__count {
+      font-size: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .page-5__count {
+      font-size: 19px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-5__count {
+      font-size: 17px;
+  }
 }
 /* Firefox */
 @-moz-document url-prefix() {
@@ -712,6 +937,27 @@ a,a:hover{
   letter-spacing: -0.02em;
   text-align: left;
 }
+@media screen and (max-width: 1280px) {
+  .page-5__top-text {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .page-5__top-text {
+      font-size: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .page-5__top-text {
+      font-size: 27px;
+      text-align: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-5__top-text {
+      font-size: 24px;
+  }
+}
 .page-5__bottom-text {
   max-width: 408px;
   color: #FFF;
@@ -721,7 +967,32 @@ a,a:hover{
   letter-spacing: -0.02em;
   text-align: center;
 }
-
+@media screen and (max-width: 1280px) {
+  .page-5__bottom-text {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .page-5__bottom-text {
+      font-size: 16px;
+      max-width: 320px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .page-5__bottom-text {
+      margin: 0 auto;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-5__bottom-text {
+      font-size: 15px;
+  }
+}
+@media screen and (max-width: 374px) {
+  .page-5__bottom-text {
+      max-width: 270px;
+  }
+}
 /* ========= PAGE-6 ============= */
 .page-6 {
   height: 100vh;
@@ -734,6 +1005,18 @@ a,a:hover{
   bottom: 158px;
   pointer-events: none;
   opacity: 0;
+}
+@media screen and (max-width: 580px) {
+  .page-6__text-block {
+    left: 80px;
+    bottom: 80px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .page-6__text-block {
+    left: 45px;
+    bottom: 80px;
+  }
 }
 .page-6__count {
   position: absolute;
@@ -749,6 +1032,26 @@ a,a:hover{
 	-webkit-background-clip: text;
 	background-clip: text;
   background-image: linear-gradient(180deg, #A5A5A5 0%, rgba(255, 255, 255, 0) 100%);
+}
+@media screen and (max-width: 1280px) {
+  .page-6__count {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .page-6__count {
+      font-size: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .page-6__count {
+      font-size: 19px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-6__count {
+      font-size: 17px;
+  }
 }
 /* Firefox */
 @-moz-document url-prefix() {
@@ -770,6 +1073,26 @@ a,a:hover{
   letter-spacing: -0.02em;
   text-align: left;
 }
+@media screen and (max-width: 1280px) {
+  .page-6__top-text {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .page-6__top-text {
+      font-size: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .page-6__top-text {
+      font-size: 27px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-6__top-text {
+      font-size: 24px;
+  }
+}
 .page-6__bottom-text {
   max-width: 408px;
   color: #FFF;
@@ -779,7 +1102,28 @@ a,a:hover{
   letter-spacing: -0.02em;
   text-align: left;
 }
-
+@media screen and (max-width: 1280px) {
+  .page-6__bottom-text {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .page-6__bottom-text {
+      font-size: 16px;
+      max-width: 320px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .page-6__bottom-text {
+      margin: 0 auto;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-6__bottom-text {
+      font-size: 15px;
+      max-width: 270px;
+  }
+}
 /* ============ PAGE-7 ============== */
 .page-7 {
   height: 100vh;
@@ -792,6 +1136,24 @@ a,a:hover{
   pointer-events: none;
   bottom: 240px;
   opacity: 0;
+}
+@media screen and (max-width: 963px) {
+  .page-7__text-block {
+    right: 80px;
+    /* bottom: 80px; */
+  }
+}
+@media screen and (max-width: 580px) {
+  .page-7__text-block {
+    right: 30px;
+    bottom: 80px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .page-7__text-block {
+    right: 15px;
+    bottom: 80px;
+  }
 }
 .page-7__count {
   position: absolute;
@@ -807,6 +1169,27 @@ a,a:hover{
 	-webkit-background-clip: text;
 	background-clip: text;
   background-image: linear-gradient(180deg, #A5A5A5 0%, rgba(255, 255, 255, 0) 100%);
+}
+@media screen and (max-width: 1280px) {
+  .page-7__count {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .page-7__count {
+      font-size: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .page-7__count {
+      font-size: 19px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-7__count {
+      font-size: 17px;
+      right: -20px;
+  }
 }
 /* Firefox */
 @-moz-document url-prefix() {
@@ -829,6 +1212,28 @@ a,a:hover{
   letter-spacing: -0.02em;
   text-align: left;
 }
+@media screen and (max-width: 1280px) {
+  .page-7__top-text {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .page-7__top-text {
+      font-size: 30px;
+      line-height: 35px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .page-7__top-text {
+      font-size: 27px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-7__top-text {
+      font-size: 24px;
+  }
+}
 .page-7__bottom-text {
   max-width: 408px;
   color: #FFF;
@@ -837,6 +1242,22 @@ a,a:hover{
   line-height: 28.9px;
   letter-spacing: -0.02em;
   text-align: left;
+}
+@media screen and (max-width: 1280px) {
+  .page-7__bottom-text {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .page-7__bottom-text {
+      font-size: 16px;
+      max-width: 320px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-7__bottom-text {
+      font-size: 15px;
+  }
 }
 
 /* ============== PAGE-8 =============== */
@@ -859,6 +1280,28 @@ a,a:hover{
   line-height: 48px;
   letter-spacing: -0.02em;
   text-align: left;
+}
+@media screen and (max-width: 1280px) {
+  .page-8__title {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .page-8__title {
+      font-size: 30px;
+      line-height: 35px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .page-8__title {
+      font-size: 27px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-8__title {
+      font-size: 24px;
+  }
 }
 .other-gradient-color {
   color: transparent;    
@@ -892,6 +1335,18 @@ a,a:hover{
   line-height: 69.36px;
   text-align: left;
 }
+@media screen and (max-height: 768px) {
+  .first-clue__title {
+    font-size: 35px;
+    line-height: 45px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .first-clue__title {
+    font-size: 35px;
+    line-height: 45px;
+  }
+}
 .first-clue__subtitle {
   color: #FFF;
   font-size: 20px;
@@ -899,15 +1354,49 @@ a,a:hover{
   line-height: 24px;
   text-align: left;
 }
+@media screen and (max-height: 768px) {
+  .first-clue__subtitle {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .first-clue__subtitle {
+    font-size: 18px;
+  }
+}
 .first-clue__big-round {
   position: absolute;
   top: -86%;
   left: -197%;
 }
+@media screen and (max-height: 768px) {
+  .first-clue__big-round {
+    top: -102%;
+    width: 1000px;
+    left: -206%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .first-clue__big-round {
+    top: -102%;
+    width: 1000px;
+    left: -206%;
+  }
+}
 .first-clue__big-round-check {
   position: absolute;
   top: -73px;
   left: -13px;
+}
+@media screen and (max-height: 768px) {
+  .first-clue__big-round-check {
+    width: 40px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .first-clue__big-round-check {
+    width: 40px;
+  }
 }
 
 /* ======== PAGE 10-13 ========== */
@@ -951,6 +1440,17 @@ a,a:hover{
   transform: translateY( -50%);
   opacity: 0;
 }
+@media screen and (max-width: 982px) {
+  .second-clue {
+    left: 500px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .second-clue {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 .second-clue__text-block {
   display: flex;
   flex-direction: column;
@@ -964,6 +1464,18 @@ a,a:hover{
   line-height: 69.36px;
   text-align: left;
 }
+@media screen and (max-height: 768px) {
+  .second-clue__title {
+    font-size: 35px;
+    line-height: 45px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .second-clue__title {
+    font-size: 35px;
+    line-height: 45px;
+  }
+}
 .second-clue__subtitle {
   color: #FFF;
   font-size: 20px;
@@ -971,15 +1483,49 @@ a,a:hover{
   line-height: 24px;
   text-align: left;
 }
+@media screen and (max-height: 768px) {
+  .second-clue__subtitle {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .second-clue__subtitle {
+    font-size: 18px;
+  }
+}
 .second-clue__big-round {
   position: absolute;
   top: -977%;
   left: -273%;
 }
+@media screen and (max-height: 768px) {
+  .second-clue__big-round {
+    top: -899%;
+    width: 1000px;
+    left: -284%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .second-clue__big-round {
+    top: -899%;
+    width: 1000px;
+    left: -284%;
+  }
+}
 .second-clue__big-round-check {
   position: absolute;
   top: -73px;
   left: -13px;
+}
+@media screen and (max-height: 768px) {
+  .second-clue__big-round-check {
+    width: 40px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .second-clue__big-round-check {
+    width: 40px;
+  }
 }
 /* ================ */
 .third-clue {
@@ -988,6 +1534,22 @@ a,a:hover{
   right: 176px;
   transform: translateY( -50%);
   opacity: 0;
+}
+@media screen and (max-width: 1355px) {
+  .third-clue {
+    right: 120px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .third-clue {
+    right: 45px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .third-clue {
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
 }
 .third-clue__text-block {
   display: flex;
@@ -1002,6 +1564,18 @@ a,a:hover{
   line-height: 69.36px;
   text-align: left;
 }
+@media screen and (max-height: 768px) {
+  .third-clue__title {
+    font-size: 35px;
+    line-height: 45px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .third-clue__title {
+    font-size: 35px;
+    line-height: 45px;
+  }
+}
 .third-clue__subtitle {
   color: #FFF;
   font-size: 20px;
@@ -1009,17 +1583,50 @@ a,a:hover{
   line-height: 24px;
   text-align: left;
 }
+@media screen and (max-height: 768px) {
+  .third-clue__subtitle {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .third-clue__subtitle {
+    font-size: 18px;
+  }
+}
 .third-clue__big-round {
   position: absolute;
   top: -977%;
   left: -192%;
+}
+@media screen and (max-height: 768px) {
+  .third-clue__big-round {
+    top: -899%;
+    width: 1000px;
+    left: -201%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .third-clue__big-round {
+    top: -899%;
+    width: 1000px;
+    left: -201%;
+  }
 }
 .third-clue__big-round-check {
   position: absolute;
   top: -73px;
   left: -13px;
 }
-
+@media screen and (max-height: 768px) {
+  .third-clue__big-round-check {
+    width: 40px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .third-clue__big-round-check {
+    width: 40px;
+  }
+}
 /* =================== */
 
 .fourth-clue {
@@ -1028,6 +1635,24 @@ a,a:hover{
   left: 400px;
   opacity: 0;
 }
+@media screen and (max-height: 965px) {
+  .fourth-clue {
+    bottom: 50px;
+  }
+}
+@media screen and (max-width: 1200px){
+  .fourth-clue {
+    bottom: 50px;
+  }
+}
+@media screen and (max-width: 850px){
+  .fourth-clue {
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+}
+
 .fourth-clue__text-block {
   display: flex;
   flex-direction: column;
@@ -1041,12 +1666,35 @@ a,a:hover{
   line-height: 69.36px;
   text-align: left;
 }
+@media screen and (max-height: 768px) {
+  .fourth-clue__title {
+    font-size: 35px;
+    line-height: 45px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .fourth-clue__title {
+    font-size: 35px;
+    line-height: 45px;
+  }
+}
 .fourth-clue__subtitle {
   color: #FFF;
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
   text-align: left;
+  text-wrap: nowrap;
+}
+@media screen and (max-height: 768px) {
+  .fourth-clue__subtitle {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .fourth-clue__subtitle {
+    font-size: 18px;
+  }
 }
 .fourth-clue__big-round {
   position: absolute;
@@ -1058,13 +1706,51 @@ a,a:hover{
   top: -73px;
   left: -13px;
 }
-
+@media screen and (max-height: 768px) {
+  .fourth-clue__big-round {
+    top: -80%;
+    width: 1000px;
+    left: -321%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .fourth-clue__big-round {
+    top: -80%;
+    width: 1000px;
+    left: -321%;
+  }
+}
+@media screen and (max-height: 768px) {
+  .fourth-clue__big-round-check {
+    width: 40px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .fourth-clue__big-round-check {
+    width: 40px;
+  }
+}
 /* ========================== */
 .fifth-clue {
   position: fixed;
   top: 221px;
   right: 400px;
   opacity: 0;
+}
+@media screen and (max-height: 965px) {
+  .fifth-clue {
+    top: 150px;
+  }
+}
+@media screen and (max-height: 846px) {
+  .fifth-clue {
+    top: 110px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .fifth-clue {
+    top: 110px;
+  }
 }
 .fifth-clue__text-block {
   display: flex;
@@ -1079,22 +1765,69 @@ a,a:hover{
   line-height: 69.36px;
   text-align: left;
 }
+@media screen and (max-height: 768px) {
+  .fifth-clue__title {
+    font-size: 35px;
+    line-height: 45px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .fifth-clue__title {
+    font-size: 35px;
+    line-height: 45px;
+  }
+}
 .fifth-clue__subtitle {
   color: #FFF;
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
   text-align: left;
+  text-wrap: nowrap;
+}
+@media screen and (max-height: 768px) {
+  .fifth-clue__subtitle {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .fifth-clue__subtitle {
+    font-size: 18px;
+  }
 }
 .fifth-clue__big-round {
   position: absolute;
   top: -1158%;
   left: -246%;
 }
+@media screen and (max-height: 768px) {
+  .fifth-clue__big-round {
+    top: -1109%;
+    width: 1000px;
+    left: -243%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .fifth-clue__big-round {
+    top: -1109%;
+    width: 1000px;
+    left: -243%;
+  }
+}
 .fifth-clue__big-round-check {
   position: absolute;
   top: -73px;
   left: -13px;
+}
+@media screen and (max-height: 768px) {
+  .fifth-clue__big-round-check {
+    width: 32px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .fifth-clue__big-round-check {
+    width: 32px;
+  }
 }
 
 /* ============= PAGE-18 ================ */
