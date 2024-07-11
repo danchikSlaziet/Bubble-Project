@@ -312,6 +312,8 @@ a,a:hover{
   height: 330px;
   top: -34px;
   backdrop-filter: blur(0px);
+  /* Для поддержки в Safari */
+  -webkit-backdrop-filter: blur(0px);
   transition: backdrop-filter .5s linear;
 }
 .side-map__images-circle {
@@ -345,6 +347,8 @@ a,a:hover{
 }
 .side-map:hover .side-map__help-blur{
   backdrop-filter: blur(10px);
+  /* Для поддержки в Safari */
+  -webkit-backdrop-filter: blur(10px);
 }
 .side-map:hover .side-map__links {
   opacity: 1;
