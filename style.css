@@ -363,6 +363,7 @@ a,a:hover{
 @media screen and (max-width: 1024px) {
   .side-map:hover .side-map__help-blur {
     backdrop-filter: none;
+    -webkit-backdrop-filter: blur(0px);
   }
 }
 @media screen and (max-width: 1024px) {
