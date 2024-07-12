@@ -976,6 +976,16 @@ new ScrollMagic.Scene({
     })
     .setTween(section9TextSup)
     .addTo(controller);
+    const section9TextSupLowOpacity = gsap.timeline()
+      .to('#section9TextSup', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+
+    new ScrollMagic.Scene({
+      triggerElement: '#section17',
+      triggerHook: 1,
+      duration: '100%'
+    })
+      .setTween(section9TextSupLowOpacity)
+      .addTo(controller);
       // Код, который будет выполняться, если ширина экрана больше 850px
     }
 
