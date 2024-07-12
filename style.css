@@ -278,7 +278,11 @@ a,a:hover{
   left: 76px;
   top: 50%;
   transform: translateY(-50%);
-  pointer-events: none;
+}
+@media screen and (max-width: 1024px) {
+  .side-map {
+    pointer-events: none;
+  }
 }
 @media screen and (max-width: 580px) {
   .side-map {
