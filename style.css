@@ -98,6 +98,7 @@ a,a:hover{
   background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
   filter: blur(100px);
   backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
   opacity: 0;
   animation: blurCircleAnimation 5s ease-in-out infinite;
 }
@@ -130,6 +131,7 @@ a,a:hover{
   background: linear-gradient(180deg, #ADD8E6 0%, rgba(173, 216, 230, 0.5) 50%, rgba(173, 216, 230, 0) 100%);
   filter: blur(100px);
   backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
   opacity: 0;
   animation: blurCircleAnimation 4s ease-in-out infinite;
 }
@@ -186,6 +188,7 @@ a,a:hover{
   background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
   filter: blur(100px);
   backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
   opacity: 0.2;
   left: 50%;
   transform: translateX(-50%);
@@ -325,6 +328,7 @@ a,a:hover{
 .side-map__images-circle {
   position: absolute;
   backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
 }
 .side-map__images-circle_1 {
   top: 0;
@@ -377,6 +381,7 @@ a,a:hover{
 }
 .side-map_active .side-map__help-blur{
   backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
 }
 .side-map_active .side-map__links {
   opacity: 1 !important;
