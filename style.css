@@ -26,7 +26,10 @@ body {
   color: #FFF;
   /* background:  rgba(106, 34, 172, 1); */
   background: linear-gradient(to right, rgba(106, 34, 172, 1), rgba(106, 34, 172, 1));
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
 }
+
 * {
   scrollbar-width: none;
 }
