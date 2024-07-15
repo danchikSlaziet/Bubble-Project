@@ -424,61 +424,20 @@ const blurCircleTweenHelp3 = gsap.timeline()
   .addTo(controller);
 
 const body = document.querySelector('body');
+const backgroundChange = gsap.timeline()
+  .to('body', { 
+    duration: 1,
+    background: 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 100%)', 
+    ease: 'linear'
+  });
 
-// Создаем сцену для изменения фона
 new ScrollMagic.Scene({
   triggerElement: '#section8',
   triggerHook: 1,
   duration: '100%'
 })
-  .on('progress', (event) => {
-    const progress = event.progress;
-    if (progress < 0.1) {
-      body.style.background = 'linear-gradient(268.14deg, #4B0082 0%, #663399 100%)';
-    } else if (progress < 0.2) {
-      body.style.background = 'linear-gradient(268.14deg, #4B0082 0%, #663399 50%, #8B008B 100%)';
-    } else if (progress < 0.3) {
-      body.style.background = 'linear-gradient(268.14deg, #663399 0%, #8B008B 50%, #B400E1 100%)';
-    } else if (progress < 0.4) {
-      body.style.background = 'linear-gradient(268.14deg, #8B008B 0%, #B400E1 50%, #6400E3 100%)';
-    } else if (progress < 0.5) {
-      body.style.background = 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 82.81%)';
-    } else if (progress < 0.6) {
-      body.style.background = 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 91.41%)';
-    } else if (progress < 0.7) {
-      body.style.background = 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 95.7%)';
-    } else if (progress < 0.8) {
-      body.style.background = 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 98.35%)';
-    } else if (progress < 0.9) {
-      body.style.background = 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 99.17%)';
-    } else {
-      body.style.background = 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 100%)';
-    }
-  })
-  .on('leave', (event) => {
-    if (event.scrollDirection === 'REVERSE') {
-      if (event.progress < 0.9) {
-        body.style.background = 'rgba(106, 34, 172, 1)';
-      } else if (event.progress < 0.8) {
-        body.style.background = 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 98.35%)';
-      } else if (event.progress < 0.7) {
-        body.style.background = 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 95.7%)';
-      } else if (event.progress < 0.6) {
-        body.style.background = 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 91.41%)';
-      } else if (event.progress < 0.5) {
-        body.style.background = 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 82.81%)';
-      } else if (event.progress < 0.4) {
-        body.style.background = 'linear-gradient(268.14deg, #8B008B 0%, #B400E1 50%, #6400E3 100%)';
-      } else if (event.progress < 0.3) {
-        body.style.background = 'linear-gradient(268.14deg, #663399 0%, #8B008B 50%, #B400E1 100%)';
-      } else if (event.progress < 0.2) {
-        body.style.background = 'linear-gradient(268.14deg, #4B0082 0%, #663399 50%, #8B008B 100%)';
-      } else {
-        body.style.background = 'linear-gradient(268.14deg, #4B0082 0%, #663399 100%)';
-      }
-    }
-  })
-  .addTo(controller);
+.setTween(backgroundChange)
+.addTo(controller);
 
   //  8 => 9 экран
 
