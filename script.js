@@ -1,1362 +1,1362 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const controller = new ScrollMagic.Controller();
-  const blurBlockWidth = document.querySelector('.blur-circle').getBoundingClientRect().width;
-  const blurBlockHeight = document.querySelector('.blur-circle').getBoundingClientRect().height;
-  console.log(blurBlockHeight);
+// document.addEventListener('DOMContentLoaded', function() {
+//   const controller = new ScrollMagic.Controller();
+//   const blurBlockWidth = document.querySelector('.blur-circle').getBoundingClientRect().width;
+//   const blurBlockHeight = document.querySelector('.blur-circle').getBoundingClientRect().height;
+//   console.log(blurBlockHeight);
 
-  const menuButton = document.querySelector(".side-map__button");
-  const sideMap = document.querySelector(".side-map");
-  menuButton.addEventListener("click", function() {
-    if (sideMap.className.includes("active")) {
-      sideMap.classList.remove("side-map_active");
-      menuButton.style.transform = 'rotate(180deg)';
-    }
-    else {
-      sideMap.classList.add("side-map_active");
-      menuButton.style.transform = 'rotate(0)';
-    }
-  })
-  // 1 => 2 экран
+//   const menuButton = document.querySelector(".side-map__button");
+//   const sideMap = document.querySelector(".side-map");
+//   menuButton.addEventListener("click", function() {
+//     if (sideMap.className.includes("active")) {
+//       sideMap.classList.remove("side-map_active");
+//       menuButton.style.transform = 'rotate(180deg)';
+//     }
+//     else {
+//       sideMap.classList.add("side-map_active");
+//       menuButton.style.transform = 'rotate(0)';
+//     }
+//   })
+//   // 1 => 2 экран
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section2',
-    triggerHook: 0.5,
-    duration: '100%'
-  })
-  .on('enter', () => {
-    console.log("section 2");
-    document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
-      if (index === 0) {
-        elem.src = './images/side-map-circle-white.svg';
-      }
-    })
-  })
-  .on('leave', (event) => {
-    if (event.scrollDirection === 'FORWARD') {
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section2',
+//     triggerHook: 0.5,
+//     duration: 750
+//   })
+//   .on('enter', () => {
+//     console.log("section 2");
+//     document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+//       if (index === 0) {
+//         elem.src = './images/side-map-circle-white.svg';
+//       }
+//     })
+//   })
+//   .on('leave', (event) => {
+//     if (event.scrollDirection === 'FORWARD') {
 
-    }
-    else {
-      document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
-        if (index === 0) {
-          elem.src = './images/side-map-circle.svg';
-        }
-      })
-    }
-  })
-  .addTo(controller);
+//     }
+//     else {
+//       document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+//         if (index === 0) {
+//           elem.src = './images/side-map-circle.svg';
+//         }
+//       })
+//     }
+//   })
+//   .addTo(controller);
 
-  const blurCircleTween = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, opacity: '.2', left: "-193px", bottom: "-258px", ease: 'power1.out' });
+//   const blurCircleTween = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, opacity: '.2', left: "-193px", bottom: "-258px", ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section2',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(blurCircleTween)
-  .addTo(controller);
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section2',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(blurCircleTween)
+//   .addTo(controller);
 
-  const section1Text = gsap.timeline()
-    .to('#section1Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+//   const section1Text = gsap.timeline()
+//     .to('#section1Text', { duration: 750, opacity: '0', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section2',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section1Text)
-  .addTo(controller);
-
-
-  // 2 => 3 экран
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section2',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section1Text)
+//   .addTo(controller);
 
 
-  const section2Text = gsap.timeline()
-  .to('#section2Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
-
-  new ScrollMagic.Scene({
-    triggerElement: '#section2',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section2Text)
-  .addTo(controller);
-
-  const blurCircleTween2 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, filter: 'blur(55px)', bottom: "-258px", left: `${window.innerWidth - blurBlockWidth}px`, ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section3',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(blurCircleTween2)
-  .addTo(controller);
-
-  const blurCircleTweenHelp2 = gsap.timeline()
-    .to('#blurCircleHelp', { duration: 0.5,opacity: '.2' , filter: 'blur(55px)', bottom: "-258px", left: `${window.innerWidth - blurBlockWidth}px`, ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section3',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(blurCircleTweenHelp2)
-  .addTo(controller);
-
-new ScrollMagic.Scene({
-  triggerElement: '#section3',
-  triggerHook: 1,
-  duration: '100%'
-})
-.setTween(blurCircleTween2)
-.addTo(controller);
+//   // 2 => 3 экран
 
 
-new ScrollMagic.Scene({
-  triggerElement: '#section3',
-  triggerHook: 1,
-  duration: '100%'
-})
-.setTween(blurCircleTween2)
-.addTo(controller);
+//   const section2Text = gsap.timeline()
+//   .to('#section2Text', { duration: 750, opacity: '1', ease: 'power1.out' });
 
-  const section2TextLowOpacity = gsap.timeline()
-  .to('#section2Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section2',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section2Text)
+//   .addTo(controller);
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section3',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section2TextLowOpacity)
-  .addTo(controller);
+//   const blurCircleTween2 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, filter: 'blur(55px)', bottom: "-258px", left: `${window.innerWidth - blurBlockWidth}px`, ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section3',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(blurCircleTween2)
+//   .addTo(controller);
 
-  const section3Text = gsap.timeline()
-  .from('#section3Text', { duration: 0.5, opacity: '0', ease: 'power1.out' })
-  .to('#section3Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
+//   const blurCircleTweenHelp2 = gsap.timeline()
+//     .to('#blurCircleHelp', { duration: 750,opacity: '.2' , filter: 'blur(55px)', bottom: "-258px", left: `${window.innerWidth - blurBlockWidth}px`, ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section3',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(blurCircleTweenHelp2)
+//   .addTo(controller);
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section3',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section3Text)
-  .addTo(controller);
-
-
-  // 3 => 4 экран
-
-
-  const section3TextLowOpacity = gsap.timeline()
-  .to('#section3Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
-
-  new ScrollMagic.Scene({
-    triggerElement: '#section4',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section3TextLowOpacity)
-  .addTo(controller);
-
-  const section4Text = gsap.timeline()
-  .from('#section4Text', { duration: 0.5, opacity: '0', ease: 'power1.out' })
-  .to('#section4Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
-
-  new ScrollMagic.Scene({
-    triggerElement: '#section4',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section4Text)
-  .addTo(controller);
-
-  const blurCircleTween3 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5 , filter: 'blur(35px)' ,bottom: "-258px", left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section4',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(blurCircleTween3)
-  .addTo(controller);
-
-new ScrollMagic.Scene({
-  triggerElement: '#section4',
-  triggerHook: 1,
-  duration: '100%'
-})
-.setTween(blurCircleTween3)
-.addTo(controller);
+// new ScrollMagic.Scene({
+//   triggerElement: '#section3',
+//   triggerHook: 1,
+//   duration: 750
+// })
+// .setTween(blurCircleTween2)
+// .addTo(controller);
 
 
-const blurCircleTweenHelp3 = gsap.timeline()
-    .to('#blurCircleHelp', { duration: 0.5 , filter: 'blur(35px)' ,bottom: "-258px", left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section4',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(blurCircleTweenHelp3)
-  .addTo(controller);
+// new ScrollMagic.Scene({
+//   triggerElement: '#section3',
+//   triggerHook: 1,
+//   duration: 750
+// })
+// .setTween(blurCircleTween2)
+// .addTo(controller);
 
-  const blurCirclePage4 = gsap.timeline()
-    .from('#blurCirclePage4', { duration: 0.5, filter: 'blur(100px)' ,top: `${window.innerHeight}`, ease: 'power1.out' })
-    .to('#blurCirclePage4', { duration: 0.5, filter: 'blur(20px)' ,top: `${-blurBlockHeight/2}`,  ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section4',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(blurCirclePage4)
-  .addTo(controller);
+//   const section2TextLowOpacity = gsap.timeline()
+//   .to('#section2Text', { duration: 750, opacity: '0', ease: 'power1.out' });
 
-  // 4 => 5 экран
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section3',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section2TextLowOpacity)
+//   .addTo(controller);
 
+//   const section3Text = gsap.timeline()
+//   .from('#section3Text', { duration: 750, opacity: '0', ease: 'power1.out' })
+//   .to('#section3Text', { duration: 750, opacity: '1', ease: 'power1.out' });
 
-  const section4TextLowOpacity = gsap.timeline()
-  .to('#section4Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
-
-  new ScrollMagic.Scene({
-    triggerElement: '#section5',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section4TextLowOpacity)
-  .addTo(controller);
-
-  const section5Text = gsap.timeline()
-  .from('#section5Text', { duration: 0.5, opacity: '0', ease: 'power1.out' })
-  .to('#section5Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
-
-  new ScrollMagic.Scene({
-    triggerElement: '#section5',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section5Text)
-  .addTo(controller);
-
-  const blurCircleTween4 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, filter: 'blur(100px)' ,bottom: `${-blurBlockHeight}`, ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section5',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(blurCircleTween4)
-  .addTo(controller);
-
-  const blurCircleTweenHelp4 = gsap.timeline()
-    .to('#blurCircleHelp', { duration: 0.5, filter: 'blur(100px)' ,bottom: `${-blurBlockHeight}`, ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section5',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(blurCircleTweenHelp4)
-  .addTo(controller);
-
-  const blurCirclePage5 = gsap.timeline()
-    .to('#blurCirclePage4', { duration: 0.5, filter: 'blur(30px)' ,top: `${-blurBlockHeight}`,  ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section5',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(blurCirclePage5)
-  .addTo(controller);
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section3',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section3Text)
+//   .addTo(controller);
 
 
-  // 5 => 6 экран
-
-  const section5TextLowOpacity = gsap.timeline()
-  .to('#section5Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
-
-  new ScrollMagic.Scene({
-    triggerElement: '#section6',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section5TextLowOpacity)
-  .addTo(controller);
-
-  const section6Text = gsap.timeline()
-  .from('#section6Text', { duration: 0.5, opacity: '0', ease: 'power1.out' })
-  .to('#section6Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
-
-  new ScrollMagic.Scene({
-    triggerElement: '#section6',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section6Text)
-  .addTo(controller);
-
-  const blurCircleTween5 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, bottom: `${-blurBlockHeight / 2}`, left: '0px', ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section6',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTween5)
-    .addTo(controller);
-
-    const blurCircleTweenHelp5 = gsap.timeline()
-    .to('#blurCircleHelp', { duration: 0.5, bottom: `${-blurBlockHeight / 2}`, left: '0px', ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section6',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(blurCircleTweenHelp5)
-  .addTo(controller);
+//   // 3 => 4 экран
 
 
-  // 6 => 7 экран
+//   const section3TextLowOpacity = gsap.timeline()
+//   .to('#section3Text', { duration: 750, opacity: '0', ease: 'power1.out' });
+
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section4',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section3TextLowOpacity)
+//   .addTo(controller);
+
+//   const section4Text = gsap.timeline()
+//   .from('#section4Text', { duration: 750, opacity: '0', ease: 'power1.out' })
+//   .to('#section4Text', { duration: 750, opacity: '1', ease: 'power1.out' });
+
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section4',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section4Text)
+//   .addTo(controller);
+
+//   const blurCircleTween3 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750 , filter: 'blur(35px)' ,bottom: "-258px", left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section4',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(blurCircleTween3)
+//   .addTo(controller);
+
+// new ScrollMagic.Scene({
+//   triggerElement: '#section4',
+//   triggerHook: 1,
+//   duration: 750
+// })
+// .setTween(blurCircleTween3)
+// .addTo(controller);
 
 
-  const section6TextLowOpacity = gsap.timeline()
-  .to('#section6Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+// const blurCircleTweenHelp3 = gsap.timeline()
+//     .to('#blurCircleHelp', { duration: 750 , filter: 'blur(35px)' ,bottom: "-258px", left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section4',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(blurCircleTweenHelp3)
+//   .addTo(controller);
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section7',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section6TextLowOpacity)
-  .addTo(controller);
+//   const blurCirclePage4 = gsap.timeline()
+//     .from('#blurCirclePage4', { duration: 750, filter: 'blur(100px)' ,top: `${window.innerHeight}`, ease: 'power1.out' })
+//     .to('#blurCirclePage4', { duration: 750, filter: 'blur(20px)' ,top: `${-blurBlockHeight/2}`,  ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section4',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(blurCirclePage4)
+//   .addTo(controller);
 
-  const section7Text = gsap.timeline()
-  .from('#section7Text', { duration: 0.5, opacity: '0', ease: 'power1.out' })
-  .to('#section7Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
+//   // 4 => 5 экран
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section7',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .on('leave', (event) => {
-    if (event.scrollDirection === 'FORWARD') {
-      document.querySelector('.common-arrow-down').src = './images/arrow-main-down-white.svg';
-      document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
-        if (index === 1) {
-          elem.src = './images/side-map-circle-white.svg';
-        }
-      })
-    }
-  })
-  .setTween(section7Text)
-  .addTo(controller);
 
-  const blurCircleTween6 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, bottom: `${window.innerHeight - 2*blurBlockHeight/2}`, left: `${window.innerWidth - 2*blurBlockWidth/3}px`, ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section7',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTween6)
-    .addTo(controller);
+//   const section4TextLowOpacity = gsap.timeline()
+//   .to('#section4Text', { duration: 750, opacity: '0', ease: 'power1.out' });
+
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section5',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section4TextLowOpacity)
+//   .addTo(controller);
+
+//   const section5Text = gsap.timeline()
+//   .from('#section5Text', { duration: 750, opacity: '0', ease: 'power1.out' })
+//   .to('#section5Text', { duration: 750, opacity: '1', ease: 'power1.out' });
+
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section5',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section5Text)
+//   .addTo(controller);
+
+//   const blurCircleTween4 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, filter: 'blur(100px)' ,bottom: `${-blurBlockHeight}`, ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section5',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(blurCircleTween4)
+//   .addTo(controller);
+
+//   const blurCircleTweenHelp4 = gsap.timeline()
+//     .to('#blurCircleHelp', { duration: 750, filter: 'blur(100px)' ,bottom: `${-blurBlockHeight}`, ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section5',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(blurCircleTweenHelp4)
+//   .addTo(controller);
+
+//   const blurCirclePage5 = gsap.timeline()
+//     .to('#blurCirclePage4', { duration: 750, filter: 'blur(30px)' ,top: `${-blurBlockHeight}`,  ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section5',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(blurCirclePage5)
+//   .addTo(controller);
+
+
+//   // 5 => 6 экран
+
+//   const section5TextLowOpacity = gsap.timeline()
+//   .to('#section5Text', { duration: 750, opacity: '0', ease: 'power1.out' });
+
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section6',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section5TextLowOpacity)
+//   .addTo(controller);
+
+//   const section6Text = gsap.timeline()
+//   .from('#section6Text', { duration: 750, opacity: '0', ease: 'power1.out' })
+//   .to('#section6Text', { duration: 750, opacity: '1', ease: 'power1.out' });
+
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section6',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section6Text)
+//   .addTo(controller);
+
+//   const blurCircleTween5 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, bottom: `${-blurBlockHeight / 2}`, left: '0px', ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section6',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTween5)
+//     .addTo(controller);
+
+//     const blurCircleTweenHelp5 = gsap.timeline()
+//     .to('#blurCircleHelp', { duration: 750, bottom: `${-blurBlockHeight / 2}`, left: '0px', ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section6',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(blurCircleTweenHelp5)
+//   .addTo(controller);
+
+
+//   // 6 => 7 экран
+
+
+//   const section6TextLowOpacity = gsap.timeline()
+//   .to('#section6Text', { duration: 750, opacity: '0', ease: 'power1.out' });
+
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section7',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section6TextLowOpacity)
+//   .addTo(controller);
+
+//   const section7Text = gsap.timeline()
+//   .from('#section7Text', { duration: 750, opacity: '0', ease: 'power1.out' })
+//   .to('#section7Text', { duration: 750, opacity: '1', ease: 'power1.out' });
+
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section7',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .on('leave', (event) => {
+//     if (event.scrollDirection === 'FORWARD') {
+//       document.querySelector('.common-arrow-down').src = './images/arrow-main-down-white.svg';
+//       document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+//         if (index === 1) {
+//           elem.src = './images/side-map-circle-white.svg';
+//         }
+//       })
+//     }
+//   })
+//   .setTween(section7Text)
+//   .addTo(controller);
+
+//   const blurCircleTween6 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, bottom: `${window.innerHeight - 2*blurBlockHeight/2}`, left: `${window.innerWidth - 2*blurBlockWidth/3}px`, ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section7',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTween6)
+//     .addTo(controller);
     
-    const blurCircleTweenHelp6 = gsap.timeline()
-    .to('#blurCircleHelp', { duration: 0.5, bottom: `${window.innerHeight - 2*blurBlockHeight/2}`, left: `${window.innerWidth - 2*blurBlockWidth/3}px`, ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section7',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(blurCircleTweenHelp6)
-  .addTo(controller);
+//     const blurCircleTweenHelp6 = gsap.timeline()
+//     .to('#blurCircleHelp', { duration: 750, bottom: `${window.innerHeight - 2*blurBlockHeight/2}`, left: `${window.innerWidth - 2*blurBlockWidth/3}px`, ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section7',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(blurCircleTweenHelp6)
+//   .addTo(controller);
 
-    // 7 => 8 экран
-    new ScrollMagic.Scene({
-      triggerElement: '#section8',
-      triggerHook: 0.5,
-      duration: '100%'
-    })
-    .on('enter', () => {
-      document.querySelector('.common-arrow-down').src = './images/arrow-main-down-white.svg';
-      document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
-        if (index === 1) {
-          elem.src = './images/side-map-circle-white.svg';
-        }
-      })
-    })
-    .on('leave', (event) => {
-      if (event.scrollDirection === 'FORWARD') {
+//     // 7 => 8 экран
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section8',
+//       triggerHook: 0.5,
+//       duration: 750
+//     })
+//     .on('enter', () => {
+//       document.querySelector('.common-arrow-down').src = './images/arrow-main-down-white.svg';
+//       document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+//         if (index === 1) {
+//           elem.src = './images/side-map-circle-white.svg';
+//         }
+//       })
+//     })
+//     .on('leave', (event) => {
+//       if (event.scrollDirection === 'FORWARD') {
 
-      }
-      else {
-        document.querySelector('.common-arrow-down').src = './images/arrow-main-down.svg';
-        document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
-          if (index === 0) {
-            elem.src = './images/side-map-circle-white.svg';
-          }
-          else {
-            elem.src = './images/side-map-circle.svg';
-          }
-        });
-      }
-    })
-    .addTo(controller);
+//       }
+//       else {
+//         document.querySelector('.common-arrow-down').src = './images/arrow-main-down.svg';
+//         document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+//           if (index === 0) {
+//             elem.src = './images/side-map-circle-white.svg';
+//           }
+//           else {
+//             elem.src = './images/side-map-circle.svg';
+//           }
+//         });
+//       }
+//     })
+//     .addTo(controller);
 
-  const section7TextLowOpacity = gsap.timeline()
-  .to('#section7Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+//   const section7TextLowOpacity = gsap.timeline()
+//   .to('#section7Text', { duration: 750, opacity: '0', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section8',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section7TextLowOpacity)
-  .addTo(controller);
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section8',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section7TextLowOpacity)
+//   .addTo(controller);
 
-  const section8Text = gsap.timeline()
-  .from('#section8Text', { duration: 0.5, opacity: '0', ease: 'power1.out' })
-  .to('#section8Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
+//   const section8Text = gsap.timeline()
+//   .from('#section8Text', { duration: 750, opacity: '0', ease: 'power1.out' })
+//   .to('#section8Text', { duration: 750, opacity: '1', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section8',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section8Text)
-  .addTo(controller);
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section8',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section8Text)
+//   .addTo(controller);
 
-const body = document.querySelector('body');
-const backgroundChange = gsap.timeline()
-  .to('body', { 
-    duration: 1,
-    background: 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 100%)', 
-    ease: 'linear'
-  });
+// const body = document.querySelector('body');
+// const backgroundChange = gsap.timeline()
+//   .to('body', { 
+//     duration: 1,
+//     background: 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 100%)', 
+//     ease: 'linear'
+//   });
 
-new ScrollMagic.Scene({
-  triggerElement: '#section8',
-  triggerHook: 1,
-  duration: '100%'
-})
-.setTween(backgroundChange)
-.addTo(controller);
+// new ScrollMagic.Scene({
+//   triggerElement: '#section8',
+//   triggerHook: 1,
+//   duration: 750
+// })
+// .setTween(backgroundChange)
+// .addTo(controller);
 
-  //  8 => 9 экран
+//   //  8 => 9 экран
 
-  const section9TextLowOpacity = gsap.timeline()
-  .to('#section8Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+//   const section9TextLowOpacity = gsap.timeline()
+//   .to('#section8Text', { duration: 750, opacity: '0', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section9',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section9TextLowOpacity)
-  .addTo(controller);
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section9',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section9TextLowOpacity)
+//   .addTo(controller);
 
-  const section9Text = gsap.timeline()
-  .from('#section9TextReal', { duration: 0.5, opacity: '0', ease: 'power1.out' })
-  .to('#section9TextReal', { duration: 0.5, opacity: '1', ease: 'power1.out' });
+//   const section9Text = gsap.timeline()
+//   .from('#section9TextReal', { duration: 750, opacity: '0', ease: 'power1.out' })
+//   .to('#section9TextReal', { duration: 750, opacity: '1', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section9',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section9Text)
-  .addTo(controller);
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section9',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section9Text)
+//   .addTo(controller);
 
-  const blurCircleTween7 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, filter: 'blur(40px)', background: 'background: linear-gradient(261.69deg, #F9F1EA 43.79%, #FFFFFF 100%)' , bottom: `${window.innerHeight - blurBlockHeight/4}`, left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section9',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTween7)
-    .addTo(controller);
+//   const blurCircleTween7 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, filter: 'blur(40px)', background: 'background: linear-gradient(261.69deg, #F9F1EA 43.79%, #FFFFFF 100%)' , bottom: `${window.innerHeight - blurBlockHeight/4}`, left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section9',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTween7)
+//     .addTo(controller);
 
-  const blurCircleTweenHelp7 = gsap.timeline()
-    .to('#blurCircleHelp', { duration: 0.5, filter: 'blur(20px)', background: 'background: linear-gradient(261.69deg, #F9F1EA 43.79%, #FFFFFF 100%)' , bottom: `${window.innerHeight - blurBlockHeight/4}`, left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section9',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTweenHelp7)
-    .addTo(controller);
+//   const blurCircleTweenHelp7 = gsap.timeline()
+//     .to('#blurCircleHelp', { duration: 750, filter: 'blur(20px)', background: 'background: linear-gradient(261.69deg, #F9F1EA 43.79%, #FFFFFF 100%)' , bottom: `${window.innerHeight - blurBlockHeight/4}`, left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section9',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTweenHelp7)
+//     .addTo(controller);
 
-  //  9 => 10 экран
-  const blurCircleTween8 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, filter: 'blur(40px)', background: 'background: linear-gradient(261.69deg, rgba(255, 255, 255, 0.55) 43.79%, rgba(255, 255, 255, 0) 99.99%, #FFFFFF 100%)', bottom: `0px`, left: `${-blurBlockWidth/2}px`, ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section10',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTween8)
-    .addTo(controller);
+//   //  9 => 10 экран
+//   const blurCircleTween8 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, filter: 'blur(40px)', background: 'background: linear-gradient(261.69deg, rgba(255, 255, 255, 0.55) 43.79%, rgba(255, 255, 255, 0) 99.99%, #FFFFFF 100%)', bottom: `0px`, left: `${-blurBlockWidth/2}px`, ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section10',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTween8)
+//     .addTo(controller);
 
-    const blurCircleTweenHelp8 = gsap.timeline()
-    .to('#blurCircleHelp', { duration: 0.5, bottom: `0px`, left: `${-blurBlockWidth/2}px`, ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section10',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTweenHelp8)
-    .addTo(controller);
-    // RELIABILITY
-  const mediaQueryTextReal = window.matchMedia("(max-width: 1200px)");
-  if (mediaQueryTextReal.matches) {
-    // Код, который будет выполняться, если ширина экрана меньше или равна 1200px
-    const mediaQueryRealOther = window.matchMedia("(max-width: 850px)");
-    if (mediaQueryRealOther.matches) {
-      const section9TextLeft = gsap.timeline()
-      .to('#section9TextReal', { duration: 0.5, left: '50%', top: '50%', transform: 'translate(-50%, -50%)', ease: 'power1.out' });
+//     const blurCircleTweenHelp8 = gsap.timeline()
+//     .to('#blurCircleHelp', { duration: 750, bottom: `0px`, left: `${-blurBlockWidth/2}px`, ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section10',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTweenHelp8)
+//     .addTo(controller);
+//     // RELIABILITY
+//   const mediaQueryTextReal = window.matchMedia("(max-width: 1200px)");
+//   if (mediaQueryTextReal.matches) {
+//     // Код, который будет выполняться, если ширина экрана меньше или равна 1200px
+//     const mediaQueryRealOther = window.matchMedia("(max-width: 850px)");
+//     if (mediaQueryRealOther.matches) {
+//       const section9TextLeft = gsap.timeline()
+//       .to('#section9TextReal', { duration: 750, left: '50%', top: '50%', transform: 'translate(-50%, -50%)', ease: 'power1.out' });
 
-    new ScrollMagic.Scene({
-      triggerElement: '#section10',
-      triggerHook: 1,
-      duration: '100%'
-    })
-      .setTween(section9TextLeft)
-      .addTo(controller);
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section10',
+//       triggerHook: 1,
+//       duration: 750
+//     })
+//       .setTween(section9TextLeft)
+//       .addTo(controller);
 
-      const section9TextLeftLowOpacity = gsap.timeline()
-      .to('#section9TextReal', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+//       const section9TextLeftLowOpacity = gsap.timeline()
+//       .to('#section9TextReal', { duration: 750, opacity: '0', ease: 'power1.out' });
 
-    new ScrollMagic.Scene({
-      triggerElement: '#section10',
-      triggerHook: 1,
-      duration: '100%'
-    })
-      .setTween(section9TextLeftLowOpacity)
-      .addTo(controller);
-      // Код, который будет выполняться, если ширина экрана меньше или равна 850px
-    } else {
-      const section9TextLeft = gsap.timeline()
-      .to('#section9TextReal', { duration: 0.5, left: '214px', ease: 'back.in' });
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section10',
+//       triggerHook: 1,
+//       duration: 750
+//     })
+//       .setTween(section9TextLeftLowOpacity)
+//       .addTo(controller);
+//       // Код, который будет выполняться, если ширина экрана меньше или равна 850px
+//     } else {
+//       const section9TextLeft = gsap.timeline()
+//       .to('#section9TextReal', { duration: 750, left: '214px', ease: 'back.in' });
 
-    new ScrollMagic.Scene({
-      triggerElement: '#section10',
-      triggerHook: 1,
-      duration: '100%'
-    })
-      .setTween(section9TextLeft)
-      .addTo(controller);
-      // Код, который будет выполняться, если ширина экрана больше 850px
-    }
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section10',
+//       triggerHook: 1,
+//       duration: 750
+//     })
+//       .setTween(section9TextLeft)
+//       .addTo(controller);
+//       // Код, который будет выполняться, если ширина экрана больше 850px
+//     }
 
-  } else {
-    // Код, который будет выполняться, если ширина экрана больше 1200px
-    const section9TextLeft = gsap.timeline()
-      .to('#section9TextReal', { duration: 0.5, left: '314px', ease: 'back.in' });
+//   } else {
+//     // Код, который будет выполняться, если ширина экрана больше 1200px
+//     const section9TextLeft = gsap.timeline()
+//       .to('#section9TextReal', { duration: 750, left: '314px', ease: 'back.in' });
 
-    new ScrollMagic.Scene({
-      triggerElement: '#section10',
-      triggerHook: 1,
-      duration: '100%'
-    })
-      .setTween(section9TextLeft)
-      .addTo(controller);
-  }
-    
-
-    const section9RoundReal = gsap.timeline()
-    .to('#section9RoundReal', { duration: 0.5, opacity: '0', ease: 'power1.out' });
-  
-    new ScrollMagic.Scene({
-      triggerElement: '#section10',
-      triggerHook: 1,
-      duration: '100%'
-    })
-    .setTween(section9RoundReal)
-    .addTo(controller);
-
-    const section9CheckReal = gsap.timeline()
-    .to('#section9CheckReal', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
-  
-    new ScrollMagic.Scene({
-      triggerElement: '#section10',
-      triggerHook: 1,
-      duration: '100%'
-    })
-    .setTween(section9CheckReal)
-    .addTo(controller);
-  // EXPRETISE
-  const mediaQueryRealOther = window.matchMedia("(max-width: 850px)");
-    if (mediaQueryRealOther.matches) {
-      const section9TextExp = gsap.timeline()
-      .to('#section9TextExp', { duration: 0.5, opacity: '1', ease: 'power1.out' });
-    
-      new ScrollMagic.Scene({
-        triggerElement: '#section11',
-        triggerHook: 1,
-        duration: '100%'
-      })
-      .setTween(section9TextExp)
-      .addTo(controller);
-
-      const section9TextLeftLowOpacity = gsap.timeline()
-      .to('#section9TextExp', { duration: 0.5, opacity: '0', ease: 'power1.out' });
-
-    new ScrollMagic.Scene({
-      triggerElement: '#section12',
-      triggerHook: 1,
-      duration: '100%'
-    })
-      .setTween(section9TextLeftLowOpacity)
-      .addTo(controller);
-      // Код, который будет выполняться, если ширина экрана меньше или равна 850px
-    } else {
-      const section9TextExp1 = gsap.timeline()
-      .to('#section9TextExp', { duration: 0.5, opacity: '1', ease: 'power1.out' });
-    
-      new ScrollMagic.Scene({
-        triggerElement: '#section11',
-        triggerHook: 1,
-        duration: '100%'
-      })
-      .setTween(section9TextExp1)
-      .addTo(controller);
-      // Код, который будет выполняться, если ширина экрана больше 850px
-    }
-
-
-  const section9RoundExp = gsap.timeline()
-  .to('#section9RoundExp', { duration: 0.5, opacity: '0', ease: 'power1.out' });
-
-  new ScrollMagic.Scene({
-    triggerElement: '#section12',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section9RoundExp)
-  .addTo(controller);
-
-  const section9CheckExp = gsap.timeline()
-    .to('#section9CheckExp', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
-  
-    new ScrollMagic.Scene({
-      triggerElement: '#section12',
-      triggerHook: 1,
-      duration: '100%'
-    })
-    .setTween(section9CheckExp)
-    .addTo(controller);
-
-  const section9TextExpLeft = gsap.timeline()
-  .to('#section9TextExp', { duration: 0.5, left: '50%', transform: 'translate(-50%, -50%)', ease: 'back.in' });
-
-  new ScrollMagic.Scene({
-    triggerElement: '#section12',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section9TextExpLeft)
-  .addTo(controller);
-
-  const blurCircleTween9 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, filter: 'blur(40px)', background: 'background: linear-gradient(261.69deg, rgba(255, 255, 255, 0.55) 43.79%, rgba(255, 255, 255, 0) 99.99%, #FFFFFF 100%)', bottom: `${window.innerHeight/2 - blurBlockHeight/2}`, left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section11',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTween9)
-    .addTo(controller);
-
-    const blurCircleTweenHelp9 = gsap.timeline()
-    .to('#blurCircleHelp', { duration: 0.5, bottom: `${window.innerHeight/2 - blurBlockHeight/2}`, left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out'});
-  new ScrollMagic.Scene({
-    triggerElement: '#section11',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTweenHelp9)
-    .addTo(controller);
-
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section10',
+//       triggerHook: 1,
+//       duration: 750
+//     })
+//       .setTween(section9TextLeft)
+//       .addTo(controller);
+//   }
     
 
-  const blurCircleTween10 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, filter: 'blur(100px)', ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section12',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTween10)
-    .addTo(controller);
+//     const section9RoundReal = gsap.timeline()
+//     .to('#section9RoundReal', { duration: 750, opacity: '0', ease: 'power1.out' });
+  
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section10',
+//       triggerHook: 1,
+//       duration: 750
+//     })
+//     .setTween(section9RoundReal)
+//     .addTo(controller);
 
-    const blurCircleTweenHelp10 = gsap.timeline()
-    .to('#blurCircleHelp', { duration: 0.5, filter: 'blur(100px)',  ease: 'power1.out'});
-  new ScrollMagic.Scene({
-    triggerElement: '#section12',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTweenHelp10)
-    .addTo(controller);
-
-    const blurCircleTween11 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, left: `${window.innerWidth - blurBlockWidth}px`, filter: 'blur(40px)', ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section13',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTween11)
-    .addTo(controller);
-
-    const blurCircleTweenHelp11 = gsap.timeline()
-    .to('#blurCircleHelp', { duration: 0.5, left: `${window.innerWidth - blurBlockWidth}px`, filter: 'blur(40px)', ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section13',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTweenHelp11)
-    .addTo(controller);
-
-    const blurCircleTween12 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, filter: 'blur(100px)', ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section14',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTween12)
-    .addTo(controller);
-
-    const blurCircleTweenHelp12 = gsap.timeline()
-    .to('#blurCircleHelp', { duration: 0.5, filter: 'blur(100px)', ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section14',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTweenHelp12)
-    .addTo(controller);
-
-    const blurCircleTween13 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, left: `${-blurBlockWidth/4}`, bottom: `${-blurBlockHeight/4}` , filter: 'blur(40px)', ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section15',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTween13)
-    .addTo(controller);
-
-    const blurCircleTweenHelp13 = gsap.timeline()
-    .to('#blurCircleHelp', {duration: 0.5, left: `${-blurBlockWidth/4}`, bottom: `${-blurBlockHeight/4}` , filter: 'blur(40px)', ease: 'power1.out'});
-  new ScrollMagic.Scene({
-    triggerElement: '#section15',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTweenHelp13)
-    .addTo(controller);
-
-  const blurCircleTween14 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, left: `${window.innerWidth / 2 - blurBlockWidth / 2}`, bottom: `${window.innerHeight / 2 - blurBlockHeight / 2}`, filter: 'blur(100px)', ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section16',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTween14)
-    .addTo(controller);
-
-    const blurCircleTweenHelp14 = gsap.timeline()
-    .to('#blurCircleHelp', {duration: 0.5,opacity: '0', left: `${window.innerWidth / 2 - blurBlockWidth / 2}`, bottom: `${window.innerHeight / 2 - blurBlockHeight / 2}`, filter: 'blur(100px)', ease: 'power1.out'});
-  new ScrollMagic.Scene({
-    triggerElement: '#section16',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTweenHelp14)
-    .addTo(controller);
-  // TRANSPARENCY
-  const mediaQueryTransOther = window.matchMedia("(max-width: 850px)");
-    if (mediaQueryTransOther.matches) {
-      const section9TextTrans = gsap.timeline()
-      .to('#section9TextTrans', { duration: 0.5, opacity: '1', right: '50%', top: '50%', transform: 'translate(50%, -50%)' , ease: 'power1.out' });
+//     const section9CheckReal = gsap.timeline()
+//     .to('#section9CheckReal', { duration: 750, top: '-55px', left: '0px', ease: 'power1.out' });
+  
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section10',
+//       triggerHook: 1,
+//       duration: 750
+//     })
+//     .setTween(section9CheckReal)
+//     .addTo(controller);
+//   // EXPRETISE
+//   const mediaQueryRealOther = window.matchMedia("(max-width: 850px)");
+//     if (mediaQueryRealOther.matches) {
+//       const section9TextExp = gsap.timeline()
+//       .to('#section9TextExp', { duration: 750, opacity: '1', ease: 'power1.out' });
     
-      new ScrollMagic.Scene({
-        triggerElement: '#section13',
-        triggerHook: 1,
-        duration: '100%'
-      })
-      .setTween(section9TextTrans)
-      .addTo(controller);
+//       new ScrollMagic.Scene({
+//         triggerElement: '#section11',
+//         triggerHook: 1,
+//         duration: 750
+//       })
+//       .setTween(section9TextExp)
+//       .addTo(controller);
 
-      const section9TextTransLowOpacity = gsap.timeline()
-      .to('#section9TextTrans', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+//       const section9TextLeftLowOpacity = gsap.timeline()
+//       .to('#section9TextExp', { duration: 750, opacity: '0', ease: 'power1.out' });
 
-    new ScrollMagic.Scene({
-      triggerElement: '#section14',
-      triggerHook: 1,
-      duration: '100%'
-    })
-      .setTween(section9TextTransLowOpacity)
-      .addTo(controller);
-      // Код, который будет выполняться, если ширина экрана меньше или равна 850px
-    } else {
-      const section9TextTrans = gsap.timeline()
-        .to('#section9TextTrans', { duration: 0.5, opacity: '1', ease: 'power1.out' });
-
-      new ScrollMagic.Scene({
-        triggerElement: '#section13',
-        triggerHook: 1,
-        duration: '100%'
-      })
-        .setTween(section9TextTrans)
-        .addTo(controller);
-      // Код, который будет выполняться, если ширина экрана больше 850px
-    }
-
-
-  const section9RoundTrans = gsap.timeline()
-  .to('#section9RoundTrans', { duration: 0.5, opacity: '0', ease: 'power1.out' });
-
-  new ScrollMagic.Scene({
-    triggerElement: '#section14',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section9RoundTrans)
-  .addTo(controller);
-
-  const section9CheckTrans = gsap.timeline()
-    .to('#section9CheckTrans', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
-  
-    new ScrollMagic.Scene({
-      triggerElement: '#section14',
-      triggerHook: 1,
-      duration: '100%'
-    })
-    .setTween(section9CheckTrans)
-    .addTo(controller);
-
-  // Variability
-  const mediaQueryVarOther = window.matchMedia("(max-width: 850px)");
-    if (mediaQueryVarOther.matches) {
-      const section9TextVar = gsap.timeline()
-      .to('#section9TextVar', { duration: 0.5, opacity: '1' , ease: 'power1.out' });
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section12',
+//       triggerHook: 1,
+//       duration: 750
+//     })
+//       .setTween(section9TextLeftLowOpacity)
+//       .addTo(controller);
+//       // Код, который будет выполняться, если ширина экрана меньше или равна 850px
+//     } else {
+//       const section9TextExp1 = gsap.timeline()
+//       .to('#section9TextExp', { duration: 750, opacity: '1', ease: 'power1.out' });
     
-      new ScrollMagic.Scene({
-        triggerElement: '#section15',
-        triggerHook: 1,
-        duration: '100%'
-      })
-      .setTween(section9TextVar)
-      .addTo(controller);
+//       new ScrollMagic.Scene({
+//         triggerElement: '#section11',
+//         triggerHook: 1,
+//         duration: 750
+//       })
+//       .setTween(section9TextExp1)
+//       .addTo(controller);
+//       // Код, который будет выполняться, если ширина экрана больше 850px
+//     }
 
-      const section9TextVarLowOpacity = gsap.timeline()
-      .to('#section9TextVar', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
-    new ScrollMagic.Scene({
-      triggerElement: '#section16',
-      triggerHook: 1,
-      duration: '100%'
-    })
-      .setTween(section9TextVarLowOpacity)
-      .addTo(controller);
-      // Код, который будет выполняться, если ширина экрана меньше или равна 850px
-    } else {
-      const section9TextVar = gsap.timeline()
-      .to('#section9TextVar', { duration: 0.5, opacity: '1', ease: 'power1.out' });
+//   const section9RoundExp = gsap.timeline()
+//   .to('#section9RoundExp', { duration: 750, opacity: '0', ease: 'power1.out' });
+
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section12',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section9RoundExp)
+//   .addTo(controller);
+
+//   const section9CheckExp = gsap.timeline()
+//     .to('#section9CheckExp', { duration: 750, top: '-55px', left: '0px', ease: 'power1.out' });
+  
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section12',
+//       triggerHook: 1,
+//       duration: 750
+//     })
+//     .setTween(section9CheckExp)
+//     .addTo(controller);
+
+//   const section9TextExpLeft = gsap.timeline()
+//   .to('#section9TextExp', { duration: 750, left: '50%', transform: 'translate(-50%, -50%)', ease: 'back.in' });
+
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section12',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section9TextExpLeft)
+//   .addTo(controller);
+
+//   const blurCircleTween9 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, filter: 'blur(40px)', background: 'background: linear-gradient(261.69deg, rgba(255, 255, 255, 0.55) 43.79%, rgba(255, 255, 255, 0) 99.99%, #FFFFFF 100%)', bottom: `${window.innerHeight/2 - blurBlockHeight/2}`, left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section11',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTween9)
+//     .addTo(controller);
+
+//     const blurCircleTweenHelp9 = gsap.timeline()
+//     .to('#blurCircleHelp', { duration: 750, bottom: `${window.innerHeight/2 - blurBlockHeight/2}`, left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out'});
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section11',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTweenHelp9)
+//     .addTo(controller);
+
     
-      new ScrollMagic.Scene({
-        triggerElement: '#section15',
-        triggerHook: 1,
-        duration: '100%'
-      })
-      .setTween(section9TextVar)
-      .addTo(controller);
-      // Код, который будет выполняться, если ширина экрана больше 850px
-    }
 
-  const section9RoundVar = gsap.timeline()
-  .to('#section9RoundVar', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+//   const blurCircleTween10 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, filter: 'blur(100px)', ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section12',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTween10)
+//     .addTo(controller);
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section16',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section9RoundVar)
-  .addTo(controller);
+//     const blurCircleTweenHelp10 = gsap.timeline()
+//     .to('#blurCircleHelp', { duration: 750, filter: 'blur(100px)',  ease: 'power1.out'});
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section12',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTweenHelp10)
+//     .addTo(controller);
 
-  const section9CheckVar = gsap.timeline()
-    .to('#section9CheckVar', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
-  
-    new ScrollMagic.Scene({
-      triggerElement: '#section16',
-      triggerHook: 1,
-      duration: '100%'
-    })
-    .setTween(section9CheckVar)
-    .addTo(controller);
+//     const blurCircleTween11 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, left: `${window.innerWidth - blurBlockWidth}px`, filter: 'blur(40px)', ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section13',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTween11)
+//     .addTo(controller);
 
-    // Support
-    const mediaQuerySupOther = window.matchMedia("(max-width: 850px)");
-    if (mediaQuerySupOther.matches) {
-      const section9TextSup = gsap.timeline()
-      .to('#section9TextSup', { duration: 0.5, opacity: '1', right: '50%', top: '50%' , transform: 'translate(50%, -50%)' , ease: 'power1.out' });
+//     const blurCircleTweenHelp11 = gsap.timeline()
+//     .to('#blurCircleHelp', { duration: 750, left: `${window.innerWidth - blurBlockWidth}px`, filter: 'blur(40px)', ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section13',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTweenHelp11)
+//     .addTo(controller);
+
+//     const blurCircleTween12 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, filter: 'blur(100px)', ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section14',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTween12)
+//     .addTo(controller);
+
+//     const blurCircleTweenHelp12 = gsap.timeline()
+//     .to('#blurCircleHelp', { duration: 750, filter: 'blur(100px)', ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section14',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTweenHelp12)
+//     .addTo(controller);
+
+//     const blurCircleTween13 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, left: `${-blurBlockWidth/4}`, bottom: `${-blurBlockHeight/4}` , filter: 'blur(40px)', ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section15',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTween13)
+//     .addTo(controller);
+
+//     const blurCircleTweenHelp13 = gsap.timeline()
+//     .to('#blurCircleHelp', {duration: 750, left: `${-blurBlockWidth/4}`, bottom: `${-blurBlockHeight/4}` , filter: 'blur(40px)', ease: 'power1.out'});
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section15',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTweenHelp13)
+//     .addTo(controller);
+
+//   const blurCircleTween14 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, left: `${window.innerWidth / 2 - blurBlockWidth / 2}`, bottom: `${window.innerHeight / 2 - blurBlockHeight / 2}`, filter: 'blur(100px)', ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section16',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTween14)
+//     .addTo(controller);
+
+//     const blurCircleTweenHelp14 = gsap.timeline()
+//     .to('#blurCircleHelp', {duration: 750,opacity: '0', left: `${window.innerWidth / 2 - blurBlockWidth / 2}`, bottom: `${window.innerHeight / 2 - blurBlockHeight / 2}`, filter: 'blur(100px)', ease: 'power1.out'});
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section16',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTweenHelp14)
+//     .addTo(controller);
+//   // TRANSPARENCY
+//   const mediaQueryTransOther = window.matchMedia("(max-width: 850px)");
+//     if (mediaQueryTransOther.matches) {
+//       const section9TextTrans = gsap.timeline()
+//       .to('#section9TextTrans', { duration: 750, opacity: '1', right: '50%', top: '50%', transform: 'translate(50%, -50%)' , ease: 'power1.out' });
     
-      new ScrollMagic.Scene({
-        triggerElement: '#section16',
-        triggerHook: 1,
-        duration: '100%'
-      })
-      .setTween(section9TextSup)
-      .addTo(controller);
+//       new ScrollMagic.Scene({
+//         triggerElement: '#section13',
+//         triggerHook: 1,
+//         duration: 750
+//       })
+//       .setTween(section9TextTrans)
+//       .addTo(controller);
 
-      const section9TextSupLowOpacity = gsap.timeline()
-      .to('#section9TextSup', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+//       const section9TextTransLowOpacity = gsap.timeline()
+//       .to('#section9TextTrans', { duration: 750, opacity: '0', ease: 'power1.out' });
 
-    new ScrollMagic.Scene({
-      triggerElement: '#section17',
-      triggerHook: 1,
-      duration: '100%'
-    })
-      .setTween(section9TextSupLowOpacity)
-      .addTo(controller);
-      // Код, который будет выполняться, если ширина экрана меньше или равна 850px
-    } else {
-    const section9TextSup = gsap.timeline()
-    .to('#section9TextSup', { duration: 0.5, opacity: '1', ease: 'power1.out' });
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section14',
+//       triggerHook: 1,
+//       duration: 750
+//     })
+//       .setTween(section9TextTransLowOpacity)
+//       .addTo(controller);
+//       // Код, который будет выполняться, если ширина экрана меньше или равна 850px
+//     } else {
+//       const section9TextTrans = gsap.timeline()
+//         .to('#section9TextTrans', { duration: 750, opacity: '1', ease: 'power1.out' });
+
+//       new ScrollMagic.Scene({
+//         triggerElement: '#section13',
+//         triggerHook: 1,
+//         duration: 750
+//       })
+//         .setTween(section9TextTrans)
+//         .addTo(controller);
+//       // Код, который будет выполняться, если ширина экрана больше 850px
+//     }
+
+
+//   const section9RoundTrans = gsap.timeline()
+//   .to('#section9RoundTrans', { duration: 750, opacity: '0', ease: 'power1.out' });
+
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section14',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section9RoundTrans)
+//   .addTo(controller);
+
+//   const section9CheckTrans = gsap.timeline()
+//     .to('#section9CheckTrans', { duration: 750, top: '-55px', left: '0px', ease: 'power1.out' });
   
-    new ScrollMagic.Scene({
-      triggerElement: '#section16',
-      triggerHook: 1,
-      duration: '100%'
-    })
-    .setTween(section9TextSup)
-    .addTo(controller);
-    const section9TextSupLowOpacity = gsap.timeline()
-      .to('#section9TextSup', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section14',
+//       triggerHook: 1,
+//       duration: 750
+//     })
+//     .setTween(section9CheckTrans)
+//     .addTo(controller);
 
-    new ScrollMagic.Scene({
-      triggerElement: '#section17',
-      triggerHook: 1,
-      duration: '100%'
-    })
-      .setTween(section9TextSupLowOpacity)
-      .addTo(controller);
-      // Код, который будет выполняться, если ширина экрана больше 850px
-    }
+//   // Variability
+//   const mediaQueryVarOther = window.matchMedia("(max-width: 850px)");
+//     if (mediaQueryVarOther.matches) {
+//       const section9TextVar = gsap.timeline()
+//       .to('#section9TextVar', { duration: 750, opacity: '1' , ease: 'power1.out' });
+    
+//       new ScrollMagic.Scene({
+//         triggerElement: '#section15',
+//         triggerHook: 1,
+//         duration: 750
+//       })
+//       .setTween(section9TextVar)
+//       .addTo(controller);
 
+//       const section9TextVarLowOpacity = gsap.timeline()
+//       .to('#section9TextVar', { duration: 750, opacity: '0', ease: 'power1.out' });
 
-  // Hide all texts in white bg
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section16',
+//       triggerHook: 1,
+//       duration: 750
+//     })
+//       .setTween(section9TextVarLowOpacity)
+//       .addTo(controller);
+//       // Код, который будет выполняться, если ширина экрана меньше или равна 850px
+//     } else {
+//       const section9TextVar = gsap.timeline()
+//       .to('#section9TextVar', { duration: 750, opacity: '1', ease: 'power1.out' });
+    
+//       new ScrollMagic.Scene({
+//         triggerElement: '#section15',
+//         triggerHook: 1,
+//         duration: 750
+//       })
+//       .setTween(section9TextVar)
+//       .addTo(controller);
+//       // Код, который будет выполняться, если ширина экрана больше 850px
+//     }
 
-  const section9TextHide = gsap.timeline()
-    .to('#section9TextReal', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+//   const section9RoundVar = gsap.timeline()
+//   .to('#section9RoundVar', { duration: 750, opacity: '0', ease: 'power1.out' });
+
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section16',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section9RoundVar)
+//   .addTo(controller);
+
+//   const section9CheckVar = gsap.timeline()
+//     .to('#section9CheckVar', { duration: 750, top: '-55px', left: '0px', ease: 'power1.out' });
   
-    new ScrollMagic.Scene({
-      triggerElement: '#section17',
-      triggerHook: 1,
-      duration: '100%'
-    })
-    .setTween(section9TextHide)
-    .addTo(controller);
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section16',
+//       triggerHook: 1,
+//       duration: 750
+//     })
+//     .setTween(section9CheckVar)
+//     .addTo(controller);
 
-    const section9TextExpHide = gsap.timeline()
-  .to('#section9TextExp', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+//     // Support
+//     const mediaQuerySupOther = window.matchMedia("(max-width: 850px)");
+//     if (mediaQuerySupOther.matches) {
+//       const section9TextSup = gsap.timeline()
+//       .to('#section9TextSup', { duration: 750, opacity: '1', right: '50%', top: '50%' , transform: 'translate(50%, -50%)' , ease: 'power1.out' });
+    
+//       new ScrollMagic.Scene({
+//         triggerElement: '#section16',
+//         triggerHook: 1,
+//         duration: 750
+//       })
+//       .setTween(section9TextSup)
+//       .addTo(controller);
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section17',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section9TextExpHide)
-  .addTo(controller);
+//       const section9TextSupLowOpacity = gsap.timeline()
+//       .to('#section9TextSup', { duration: 750, opacity: '0', ease: 'power1.out' });
 
-    const section9TextTransHide = gsap.timeline()
-  .to('#section9TextTrans', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section17',
+//       triggerHook: 1,
+//       duration: 750
+//     })
+//       .setTween(section9TextSupLowOpacity)
+//       .addTo(controller);
+//       // Код, который будет выполняться, если ширина экрана меньше или равна 850px
+//     } else {
+//     const section9TextSup = gsap.timeline()
+//     .to('#section9TextSup', { duration: 750, opacity: '1', ease: 'power1.out' });
+  
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section16',
+//       triggerHook: 1,
+//       duration: 750
+//     })
+//     .setTween(section9TextSup)
+//     .addTo(controller);
+//     const section9TextSupLowOpacity = gsap.timeline()
+//       .to('#section9TextSup', { duration: 750, opacity: '0', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section17',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section9TextTransHide)
-  .addTo(controller);
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section17',
+//       triggerHook: 1,
+//       duration: 750
+//     })
+//       .setTween(section9TextSupLowOpacity)
+//       .addTo(controller);
+//       // Код, который будет выполняться, если ширина экрана больше 850px
+//     }
 
-    const section9TextVarHide = gsap.timeline()
-  .to('#section9TextVar', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section17',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section9TextVarHide)
-  .addTo(controller);
+//   // Hide all texts in white bg
+
+//   const section9TextHide = gsap.timeline()
+//     .to('#section9TextReal', { duration: 750, opacity: '0', ease: 'power1.out' });
+  
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section17',
+//       triggerHook: 1,
+//       duration: 750
+//     })
+//     .setTween(section9TextHide)
+//     .addTo(controller);
+
+//     const section9TextExpHide = gsap.timeline()
+//   .to('#section9TextExp', { duration: 750, opacity: '0', ease: 'power1.out' });
+
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section17',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section9TextExpHide)
+//   .addTo(controller);
+
+//     const section9TextTransHide = gsap.timeline()
+//   .to('#section9TextTrans', { duration: 750, opacity: '0', ease: 'power1.out' });
+
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section17',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section9TextTransHide)
+//   .addTo(controller);
+
+//     const section9TextVarHide = gsap.timeline()
+//   .to('#section9TextVar', { duration: 750, opacity: '0', ease: 'power1.out' });
+
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section17',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section9TextVarHide)
+//   .addTo(controller);
 
 
   
 
-  // 13 (пустой, уже без надписей) => 14
+//   // 13 (пустой, уже без надписей) => 14
 
-  const bodyWhite = gsap.timeline()
-  .to('body', { duration: 0.5, background: 'rgba(246, 235, 255, 1)', ease: 'power1.out' });
+//   const bodyWhite = gsap.timeline()
+//   .to('body', { duration: 750, background: 'rgba(246, 235, 255, 1)', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section18',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(bodyWhite)
-  .addTo(controller);
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section18',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(bodyWhite)
+//   .addTo(controller);
 
-  const section18Text = gsap.timeline()
-    .to('#section18Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
+//   const section18Text = gsap.timeline()
+//     .to('#section18Text', { duration: 750, opacity: '1', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section18',
-    triggerHook: 1,
-    duration: '100%'
-  })
-  .setTween(section18Text)
-  .addTo(controller);
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section18',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//   .setTween(section18Text)
+//   .addTo(controller);
 
-  const blurCircleTween15 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, background: 'linear-gradient(261.69deg, #B400E1 43.79%, #6400E3 100%)' , left: `${window.innerWidth - blurBlockWidth}`, bottom: `${window.innerHeight / 2 - blurBlockHeight / 2}`, filter: 'blur(100px)', ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section18',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTween15)
-    .addTo(controller);
+//   const blurCircleTween15 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, background: 'linear-gradient(261.69deg, #B400E1 43.79%, #6400E3 100%)' , left: `${window.innerWidth - blurBlockWidth}`, bottom: `${window.innerHeight / 2 - blurBlockHeight / 2}`, filter: 'blur(100px)', ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section18',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTween15)
+//     .addTo(controller);
 
-    // покраска вспомогательныъ элементов в чёрный
-    new ScrollMagic.Scene({
-      triggerElement: '#section18',
-      triggerHook: 0.5,
-      duration: '100%'
-    })
-    .on('enter', () => {
-      document.querySelector('.burger-bar__icon').src = './images/burger-bar-open-black.svg';
-      document.querySelector(".burger-bar__logo").src = "./images/burger-bar-logo-black.svg";
-      document.querySelector('.connect-button__arrow').src = './images/connect-button-black.svg';
-      document.querySelector('.connect-button').style = 'border: 1px solid rgba(48, 48, 48, 1)';
-      document.querySelector('.connect-button__text').style = 'color: rgba(48, 48, 48, 1)';
-      document.querySelector('.common-arrow-down').src = './images/arrow-main-down-black.svg';
-      menuButton.src = './images/burger-bar-open-black.svg';
-      document.querySelectorAll('.side-map__link').forEach(link => {
-        link.style = 'color: rgba(48, 48, 48, 1)';
-      });
-      document.querySelectorAll('.side-map__images-circle').forEach((circle, index) => {
-        if (index === 2) {
-          circle.src = './images/side-map-circle-black.svg';
-        }
-        if (index === 1) {
-          circle.src = './images/side-map-circle-black.svg';
-        }
-        if (index === 0) {
-          circle.src = './images/side-map-circle-black.svg';
-        }
-      })
-    })
-    .on('leave', (event) => {
-      if (event.scrollDirection === 'FORWARD') {
+//     // покраска вспомогательныъ элементов в чёрный
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section18',
+//       triggerHook: 0.5,
+//       duration: 750
+//     })
+//     .on('enter', () => {
+//       document.querySelector('.burger-bar__icon').src = './images/burger-bar-open-black.svg';
+//       document.querySelector(".burger-bar__logo").src = "./images/burger-bar-logo-black.svg";
+//       document.querySelector('.connect-button__arrow').src = './images/connect-button-black.svg';
+//       document.querySelector('.connect-button').style = 'border: 1px solid rgba(48, 48, 48, 1)';
+//       document.querySelector('.connect-button__text').style = 'color: rgba(48, 48, 48, 1)';
+//       document.querySelector('.common-arrow-down').src = './images/arrow-main-down-black.svg';
+//       menuButton.src = './images/burger-bar-open-black.svg';
+//       document.querySelectorAll('.side-map__link').forEach(link => {
+//         link.style = 'color: rgba(48, 48, 48, 1)';
+//       });
+//       document.querySelectorAll('.side-map__images-circle').forEach((circle, index) => {
+//         if (index === 2) {
+//           circle.src = './images/side-map-circle-black.svg';
+//         }
+//         if (index === 1) {
+//           circle.src = './images/side-map-circle-black.svg';
+//         }
+//         if (index === 0) {
+//           circle.src = './images/side-map-circle-black.svg';
+//         }
+//       })
+//     })
+//     .on('leave', (event) => {
+//       if (event.scrollDirection === 'FORWARD') {
   
-      }
-      else {
-        document.querySelector('.burger-bar__icon').src = './images/burger-bar-open.svg';
-        document.querySelector(".burger-bar__logo").src = "./images/burger-bar-logo.svg";
-        document.querySelector('.connect-button__arrow').src = './images/connect-button.svg';
-        document.querySelector('.connect-button').style = 'border: 1px solid rgba(255, 255, 255, 1)';
-        document.querySelector('.connect-button__text').style = '#FFF';
-        document.querySelector('.common-arrow-down').src = './images/arrow-main-down-white.svg';
-        menuButton.src = './images/burger-bar-open.svg';
-        document.querySelectorAll('.side-map__link').forEach(link => {
-          link.style = 'color: #FFF';
-        });
-        document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
-          if (index === 0) {
-            elem.src = './images/side-map-circle-white.svg';
-          }
-          else if (index === 1) {
-            elem.src = './images/side-map-circle-white.svg';
-          }
-          else {
-            elem.src = './images/side-map-circle.svg';
-          }
-        })
-      }
-    })
-    .addTo(controller);
+//       }
+//       else {
+//         document.querySelector('.burger-bar__icon').src = './images/burger-bar-open.svg';
+//         document.querySelector(".burger-bar__logo").src = "./images/burger-bar-logo.svg";
+//         document.querySelector('.connect-button__arrow').src = './images/connect-button.svg';
+//         document.querySelector('.connect-button').style = 'border: 1px solid rgba(255, 255, 255, 1)';
+//         document.querySelector('.connect-button__text').style = '#FFF';
+//         document.querySelector('.common-arrow-down').src = './images/arrow-main-down-white.svg';
+//         menuButton.src = './images/burger-bar-open.svg';
+//         document.querySelectorAll('.side-map__link').forEach(link => {
+//           link.style = 'color: #FFF';
+//         });
+//         document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+//           if (index === 0) {
+//             elem.src = './images/side-map-circle-white.svg';
+//           }
+//           else if (index === 1) {
+//             elem.src = './images/side-map-circle-white.svg';
+//           }
+//           else {
+//             elem.src = './images/side-map-circle.svg';
+//           }
+//         })
+//       }
+//     })
+//     .addTo(controller);
 
-    // 14 => 15
-  const section18TextLow = gsap.timeline()
-    .to('#section18Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+//     // 14 => 15
+//   const section18TextLow = gsap.timeline()
+//     .to('#section18Text', { duration: 750, opacity: '0', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section19',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(section18TextLow)
-    .addTo(controller);
-  const section19Text = gsap.timeline()
-    .to('#section19Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section19',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(section18TextLow)
+//     .addTo(controller);
+//   const section19Text = gsap.timeline()
+//     .to('#section19Text', { duration: 750, opacity: '1', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section19',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(section19Text)
-    .addTo(controller);
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section19',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(section19Text)
+//     .addTo(controller);
 
-  const blurCircleTween16 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, left: `0`, height: '500px', bottom: `${window.innerHeight - 2 * blurBlockHeight / 3}`, filter: 'blur(100px)', ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section19',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTween16)
-    .addTo(controller);
+//   const blurCircleTween16 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, left: `0`, height: '500px', bottom: `${window.innerHeight - 2 * blurBlockHeight / 3}`, filter: 'blur(100px)', ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section19',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTween16)
+//     .addTo(controller);
 
-  const blurCircleSecond16 = gsap.timeline()
-    .to('#blurCirclePage4', { duration: 0.5, background: 'linear-gradient(261.69deg, #B400E1 43.79%, #6400E3 100%)', left: `${window.innerWidth}`, top: `${window.innerHeight}`, filter: 'blur(100px)', ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section19',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleSecond16)
-    .addTo(controller);
+//   const blurCircleSecond16 = gsap.timeline()
+//     .to('#blurCirclePage4', { duration: 750, background: 'linear-gradient(261.69deg, #B400E1 43.79%, #6400E3 100%)', left: `${window.innerWidth}`, top: `${window.innerHeight}`, filter: 'blur(100px)', ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section19',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleSecond16)
+//     .addTo(controller);
 
-    // 15 => 16
-    const section19TextLow = gsap.timeline()
-    .to('#section19Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+//     // 15 => 16
+//     const section19TextLow = gsap.timeline()
+//     .to('#section19Text', { duration: 750, opacity: '0', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section20',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(section19TextLow)
-    .addTo(controller);
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section20',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(section19TextLow)
+//     .addTo(controller);
 
-    const section20Text = gsap.timeline()
-    .to('#section20Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
+//     const section20Text = gsap.timeline()
+//     .to('#section20Text', { duration: 750, opacity: '1', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section20',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(section20Text)
-    .addTo(controller);
-  const mediaQuery = window.matchMedia("(max-width: 1280px)");
-  if (mediaQuery.matches) {
-    console.log('<1280')
-    const mediaQuery2 = window.matchMedia("(max-width: 1000px)");
-    if (mediaQuery2.matches) {
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section20',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(section20Text)
+//     .addTo(controller);
+//   const mediaQuery = window.matchMedia("(max-width: 1280px)");
+//   if (mediaQuery.matches) {
+//     console.log('<1280')
+//     const mediaQuery2 = window.matchMedia("(max-width: 1000px)");
+//     if (mediaQuery2.matches) {
       
 
-      const mediaQuery3 = window.matchMedia("(max-width: 600px)");
-      if (mediaQuery3.matches) {
-        console.log('<1000')
-        // Код, который будет выполняться, если ширина экрана меньше или равна 600px
-        const blurCircleTween17 = gsap.timeline()
-          .to('#blurCircle', { duration: 0.5, filter: 'blur(20px)', height: '450px', bottom: `${-blurBlockHeight / 2}`, left: `${window.innerWidth - blurBlockWidth / 2}`, ease: 'power1.out' });
-        new ScrollMagic.Scene({
-          triggerElement: '#section20',
-          triggerHook: 1,
-          duration: '100%'
-        })
-          .setTween(blurCircleTween17)
-          .addTo(controller);
-      }
-      else {
-        console.log('<1000')
-        // Код, который будет выполняться, если ширина экрана меньше или равна 1000px
-        const blurCircleTween17 = gsap.timeline()
-          .to('#blurCircle', { duration: 0.5, filter: 'blur(20px)', height: '550px', bottom: `${-blurBlockHeight / 2}`, left: `${window.innerWidth - blurBlockWidth / 2}`, ease: 'power1.out' });
-        new ScrollMagic.Scene({
-          triggerElement: '#section20',
-          triggerHook: 1,
-          duration: '100%'
-        })
-          .setTween(blurCircleTween17)
-          .addTo(controller);
-      }
-    }
-    else {
-          // Код, который будет выполняться, если ширина экрана меньше или равна 1280px
-    const blurCircleTween17 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, filter: 'blur(20px)', height: '650px', bottom: `${-blurBlockHeight / 2}`, left: `${window.innerWidth - blurBlockWidth / 2}`, ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section20',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTween17)
-    .addTo(controller);
-    }
-  } else {
-    console.log('>1280')
-    // Код, который будет выполняться, если ширина экрана больше 1280px
-    const blurCircleTween17 = gsap.timeline()
-      .to('#blurCircle', { duration: 0.5, filter: 'blur(20px)', height: '1000px', bottom: `${-blurBlockHeight / 2}`, left: `${window.innerWidth - blurBlockWidth / 2}`, ease: 'power1.out' });
-    new ScrollMagic.Scene({
-      triggerElement: '#section20',
-      triggerHook: 1,
-      duration: '100%'
-    })
-      .setTween(blurCircleTween17)
-      .addTo(controller);
-   }
+//       const mediaQuery3 = window.matchMedia("(max-width: 600px)");
+//       if (mediaQuery3.matches) {
+//         console.log('<1000')
+//         // Код, который будет выполняться, если ширина экрана меньше или равна 600px
+//         const blurCircleTween17 = gsap.timeline()
+//           .to('#blurCircle', { duration: 750, filter: 'blur(20px)', height: '450px', bottom: `${-blurBlockHeight / 2}`, left: `${window.innerWidth - blurBlockWidth / 2}`, ease: 'power1.out' });
+//         new ScrollMagic.Scene({
+//           triggerElement: '#section20',
+//           triggerHook: 1,
+//           duration: 750
+//         })
+//           .setTween(blurCircleTween17)
+//           .addTo(controller);
+//       }
+//       else {
+//         console.log('<1000')
+//         // Код, который будет выполняться, если ширина экрана меньше или равна 1000px
+//         const blurCircleTween17 = gsap.timeline()
+//           .to('#blurCircle', { duration: 750, filter: 'blur(20px)', height: '550px', bottom: `${-blurBlockHeight / 2}`, left: `${window.innerWidth - blurBlockWidth / 2}`, ease: 'power1.out' });
+//         new ScrollMagic.Scene({
+//           triggerElement: '#section20',
+//           triggerHook: 1,
+//           duration: 750
+//         })
+//           .setTween(blurCircleTween17)
+//           .addTo(controller);
+//       }
+//     }
+//     else {
+//           // Код, который будет выполняться, если ширина экрана меньше или равна 1280px
+//     const blurCircleTween17 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, filter: 'blur(20px)', height: '650px', bottom: `${-blurBlockHeight / 2}`, left: `${window.innerWidth - blurBlockWidth / 2}`, ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section20',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTween17)
+//     .addTo(controller);
+//     }
+//   } else {
+//     console.log('>1280')
+//     // Код, который будет выполняться, если ширина экрана больше 1280px
+//     const blurCircleTween17 = gsap.timeline()
+//       .to('#blurCircle', { duration: 750, filter: 'blur(20px)', height: '1000px', bottom: `${-blurBlockHeight / 2}`, left: `${window.innerWidth - blurBlockWidth / 2}`, ease: 'power1.out' });
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section20',
+//       triggerHook: 1,
+//       duration: 750
+//     })
+//       .setTween(blurCircleTween17)
+//       .addTo(controller);
+//    }
    
-  // 16 => 17
+//   // 16 => 17
 
-  const section20TextLow = gsap.timeline()
-    .to('#section20Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+//   const section20TextLow = gsap.timeline()
+//     .to('#section20Text', { duration: 750, opacity: '0', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section21',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(section20TextLow)
-    .addTo(controller);
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section21',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(section20TextLow)
+//     .addTo(controller);
 
-  const section21Text = gsap.timeline()
-    .to('#section21Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
+//   const section21Text = gsap.timeline()
+//     .to('#section21Text', { duration: 750, opacity: '1', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section21',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(section21Text)
-    .addTo(controller);
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section21',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(section21Text)
+//     .addTo(controller);
 
-    const blurCircleTween18 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, filter: 'blur(100px)', bottom: `${window.innerHeight/2 -blurBlockHeight / 2}`, left: `${window.innerWidth/2 - blurBlockWidth/2}`, ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section21',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTween18)
-    .addTo(controller);
+//     const blurCircleTween18 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, filter: 'blur(100px)', bottom: `${window.innerHeight/2 -blurBlockHeight / 2}`, left: `${window.innerWidth/2 - blurBlockWidth/2}`, ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section21',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTween18)
+//     .addTo(controller);
 
-    // 17 => 18
+//     // 17 => 18
 
-    const section21TextLow = gsap.timeline()
-    .to('#section21Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+//     const section21TextLow = gsap.timeline()
+//     .to('#section21Text', { duration: 750, opacity: '0', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section22',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(section21TextLow)
-    .addTo(controller);
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section22',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(section21TextLow)
+//     .addTo(controller);
 
-    const section22Text = gsap.timeline()
-    .to('#section22Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
+//     const section22Text = gsap.timeline()
+//     .to('#section22Text', { duration: 750, opacity: '1', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section22',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(section22Text)
-    .addTo(controller);
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section22',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(section22Text)
+//     .addTo(controller);
 
-  const blurCircleTween19 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, filter: 'blur(20px)', bottom: `${-blurBlockHeight / 2}`, left: `${- blurBlockWidth / 2}`, ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section22',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTween19)
-    .addTo(controller);
+//   const blurCircleTween19 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, filter: 'blur(20px)', bottom: `${-blurBlockHeight / 2}`, left: `${- blurBlockWidth / 2}`, ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section22',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTween19)
+//     .addTo(controller);
 
-  // 18 => 19
+//   // 18 => 19
 
-  const blurCircleTween20 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, width: '0px', height: '0px', filter: 'blur(7px)', bottom: `${window.innerHeight / 2}`, left: `${window.innerWidth / 2}`, ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section23',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(blurCircleTween20)
-    .addTo(controller);
+//   const blurCircleTween20 = gsap.timeline()
+//     .to('#blurCircle', { duration: 750, width: '0px', height: '0px', filter: 'blur(7px)', bottom: `${window.innerHeight / 2}`, left: `${window.innerWidth / 2}`, ease: 'power1.out' });
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section23',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(blurCircleTween20)
+//     .addTo(controller);
 
-    const section22TextLow = gsap.timeline()
-    .to('#section22Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+//     const section22TextLow = gsap.timeline()
+//     .to('#section22Text', { duration: 750, opacity: '0', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section23',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(section22TextLow)
-    .addTo(controller);
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section23',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(section22TextLow)
+//     .addTo(controller);
 
-    const section23Text = gsap.timeline()
-    .to('#section23Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
+//     const section23Text = gsap.timeline()
+//     .to('#section23Text', { duration: 750, opacity: '1', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section23',
-    triggerHook: 1,
-    duration: '100%'
-  })
-    .setTween(section23Text)
-    .addTo(controller);
+//   new ScrollMagic.Scene({
+//     triggerElement: '#section23',
+//     triggerHook: 1,
+//     duration: 750
+//   })
+//     .setTween(section23Text)
+//     .addTo(controller);
 
 
-    new ScrollMagic.Scene({
-      triggerElement: '#section23',
-      triggerHook: 0.5,
-      duration: '100%'
-    })
-    .on('enter', () => {
-      document.querySelector('.common-arrow-down').style = 'opacity: 0';
-      document.querySelector('.page-23-arrow-down').style = 'opacity: 1';
-      document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
-        elem.src = './images/side-map-circle-black.svg';
-      })
-    })
-    .on('leave', (event) => {
-      if (event.scrollDirection === 'FORWARD') {
+//     new ScrollMagic.Scene({
+//       triggerElement: '#section23',
+//       triggerHook: 0.5,
+//       duration: 750
+//     })
+//     .on('enter', () => {
+//       document.querySelector('.common-arrow-down').style = 'opacity: 0';
+//       document.querySelector('.page-23-arrow-down').style = 'opacity: 1';
+//       document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+//         elem.src = './images/side-map-circle-black.svg';
+//       })
+//     })
+//     .on('leave', (event) => {
+//       if (event.scrollDirection === 'FORWARD') {
   
-      }
-      else {
-        document.querySelector('.common-arrow-down').style = 'opacity: 1';
-        document.querySelector('.page-23-arrow-down').style = 'opacity: 0';
-        document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
-          if (index === 3) {
-            elem.src = './images/side-map-circle.svg';
-          }
-        })
-      }
-    })
-    .addTo(controller);
+//       }
+//       else {
+//         document.querySelector('.common-arrow-down').style = 'opacity: 1';
+//         document.querySelector('.page-23-arrow-down').style = 'opacity: 0';
+//         document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+//           if (index === 3) {
+//             elem.src = './images/side-map-circle.svg';
+//           }
+//         })
+//       }
+//     })
+//     .addTo(controller);
 
-    document.querySelector('.page-23__input_name').addEventListener('input', (evt) => {
-      document.querySelector('.page-23__input_contact').addEventListener('input', (e) => {
-        if (e.target.value.trim() && evt.target.value.trim()) {
-          document.querySelector('.page-23__send-btn').classList.add('page-23__send-btn_active');
-          document.querySelector(".page-23__send-btn-arrow").src = './images/connect-button-white.svg';
-        }
-        else {
-          document.querySelector('.page-23__send-btn').classList.remove('page-23__send-btn_active');
-          document.querySelector(".page-23__send-btn-arrow").src = './images/connect-button-black.svg';
-        }
-      })
-    })
-});
+//     document.querySelector('.page-23__input_name').addEventListener('input', (evt) => {
+//       document.querySelector('.page-23__input_contact').addEventListener('input', (e) => {
+//         if (e.target.value.trim() && evt.target.value.trim()) {
+//           document.querySelector('.page-23__send-btn').classList.add('page-23__send-btn_active');
+//           document.querySelector(".page-23__send-btn-arrow").src = './images/connect-button-white.svg';
+//         }
+//         else {
+//           document.querySelector('.page-23__send-btn').classList.remove('page-23__send-btn_active');
+//           document.querySelector(".page-23__send-btn-arrow").src = './images/connect-button-black.svg';
+//         }
+//       })
+//     })
+// });
