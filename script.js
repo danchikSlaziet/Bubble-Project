@@ -1,5 +1,22 @@
+// Получаем все страницы
+const pages = document.querySelectorAll('.page');
+
+// Функция для установки высоты страниц
+function setPageHeight() {
+  const viewportHeight = window.innerHeight;
+  pages.forEach(page => {
+    page.style.height = `${viewportHeight}px`;
+  });
+}
+
+// Вызываем функцию при загрузке страницы
+window.addEventListener('load', setPageHeight);
+
 document.addEventListener('DOMContentLoaded', function() {
   const controller = new ScrollMagic.Controller();
+
+
+
   const blurBlockWidth = document.querySelector('.blur-circle').getBoundingClientRect().width;
   const blurBlockHeight = document.querySelector('.blur-circle').getBoundingClientRect().height;
   console.log(blurBlockHeight);
@@ -424,12 +441,37 @@ const blurCircleTweenHelp3 = gsap.timeline()
   .addTo(controller);
 
 const body = document.querySelector('body');
+// const backgroundChange = gsap.timeline()
+//   .to('body', { 
+//     duration: 1,
+//     background: 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 100%)', 
+//     ease: 'linear'
+//   });
+
+// new ScrollMagic.Scene({
+//   triggerElement: '#section8',
+//   triggerHook: 1,
+//   duration: 750
+// })
+// .setTween(backgroundChange)
+// .addTo(controller);
+
+
+// Функция для линейной интерполяции между двумя значениями
+function lerp(start, end, t) {
+  return start + (end - start) * t;
+}
+
+// Вычисление промежуточных значений RGB
+const r = lerp(180, 100, 0.5);
+const g = lerp(0, 0, 0.5);
+const b = lerp(225, 227, 0.5);
+
+// Итоговое RGBA-значение
+const rgbaGradient = `rgba(${r.toFixed(0)}, ${g.toFixed(0)}, ${b.toFixed(0)}, 1)`;
+
 const backgroundChange = gsap.timeline()
-  .to('body', { 
-    duration: 1,
-    background: 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 100%)', 
-    ease: 'linear'
-  });
+  .to('body', { duration: 750, background: rgbaGradient, ease: 'linear' });
 
 new ScrollMagic.Scene({
   triggerElement: '#section8',
@@ -438,6 +480,8 @@ new ScrollMagic.Scene({
 })
 .setTween(backgroundChange)
 .addTo(controller);
+
+
 
   //  8 => 9 экран
 
@@ -451,6 +495,7 @@ new ScrollMagic.Scene({
   })
   .setTween(section9TextLowOpacity)
   .addTo(controller);
+
 
   const section9Text = gsap.timeline()
   .from('#section9TextReal', { duration: 750, opacity: '0', ease: 'power1.out' })
@@ -1011,6 +1056,21 @@ new ScrollMagic.Scene({
   .setTween(bodyWhite)
   .addTo(controller);
 
+//   const backgroundChangeHTMLWhite = gsap.timeline()
+//   .to('html', { 
+//     duration: 1,
+//     background: 'rgba(246, 235, 255, 1)', 
+//     ease: 'power1.out'
+//   });
+
+// new ScrollMagic.Scene({
+//   triggerElement: '#section18',
+//   triggerHook: 1,
+//   duration: 750
+// })
+// .setTween(backgroundChangeHTMLWhite)
+// .addTo(controller);
+
   const section18Text = gsap.timeline()
     .to('#section18Text', { duration: 750, opacity: '1', ease: 'power1.out' });
 
@@ -1358,5 +1418,8 @@ new ScrollMagic.Scene({
           document.querySelector(".page-23__send-btn-arrow").src = './images/connect-button-black.svg';
         }
       })
-    })
+    });
+
+
+    
 });
