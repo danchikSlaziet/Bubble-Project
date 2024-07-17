@@ -596,6 +596,11 @@ a,a:hover{
       font-size: 19px;
   }
 }
+@media screen and (max-width: 580px) {
+  .page-2__count {
+      transform: translate(0, -100%);
+  }
+}
 @media screen and (max-width: 480px) {
   .page-2__count {
       font-size: 17px;
@@ -731,6 +736,13 @@ a,a:hover{
       font-size: 19px;
   }
 }
+@media screen and (max-width: 580px) {
+  .page-3__count {
+    right: auto;
+    left: 0;
+      transform: translate(0, -100%);
+  }
+}
 @media screen and (max-width: 480px) {
   .page-3__count {
       font-size: 17px;
@@ -831,6 +843,12 @@ a,a:hover{
 @media screen and (max-width: 768px) {
   .page-4__count {
       font-size: 19px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .page-4__count {
+    left: 0;
+    transform: translate(0, -100%);
   }
 }
 @media screen and (max-width: 480px) {
@@ -962,6 +980,12 @@ a,a:hover{
 @media screen and (max-width: 768px) {
   .page-5__count {
       font-size: 19px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .page-5__count {
+    left: 0;
+    transform: translate(0, -100%);
   }
 }
 @media screen and (max-width: 480px) {
@@ -1109,6 +1133,12 @@ a,a:hover{
       font-size: 19px;
   }
 }
+@media screen and (max-width: 580px) {
+  .page-6__count {
+    left: 0;
+    transform: translate(0, -100%);
+  }
+}
 @media screen and (max-width: 480px) {
   .page-6__count {
       font-size: 17px;
@@ -1251,8 +1281,12 @@ a,a:hover{
 @media screen and (max-width: 580px) {
   .page-7__count {
       line-height: 30px;
+      left: 0;
+      transform: translate(0, -100%);
+      right: auto;
   }
 }
+
 @media screen and (max-width: 480px) {
   .page-7__count {
       font-size: 17px;
@@ -2726,6 +2760,9 @@ a,a:hover{
   opacity: 0;
   transform: translateX(-50%) rotate(180deg);
   transition: opacity .24 ease;
+}
+.page-23-arrow-down:hover {
+  cursor: pointer;
 }
 @media screen and (max-height: 830px) {
   .page-23-arrow-down {
