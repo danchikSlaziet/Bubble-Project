@@ -34,10 +34,10 @@ body {
   scroll-behavior: smooth;
 }
 
-/* * {
+* {
   scrollbar-width: none;
 }
-body::-webkit-scrollbar {width: 0px;} */
+body::-webkit-scrollbar {width: 0px;}
 
 p {
   pointer-events: none;
@@ -124,6 +124,7 @@ a,a:hover{
   .blur-circle {
     width: 450px;
     height: 450px;
+    animation: none;
   }
 }
 .blur-circle-help {
@@ -156,6 +157,7 @@ a,a:hover{
   .blur-circle-help {
     width: 450px;
     height: 450px;
+    animation: none;
   }
 }
 @keyframes blurCircleAnimation {

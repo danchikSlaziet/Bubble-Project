@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
   new ScrollMagic.Scene({
     triggerElement: '#section2',
     triggerHook: 1,
-    duration: 500
+    duration: 750
   })
   .setTween(section1Text)
   .addTo(controller);
