@@ -1,21 +1,5 @@
-// Получаем все страницы
-const pages = document.querySelectorAll('.page');
-
-// Функция для установки высоты страниц
-function setPageHeight() {
-  const viewportHeight = window.innerHeight;
-  pages.forEach(page => {
-    page.style.height = `${viewportHeight}px`;
-  });
-}
-
-// Вызываем функцию при загрузке страницы
-window.addEventListener('load', setPageHeight);
-
 document.addEventListener('DOMContentLoaded', function() {
   const controller = new ScrollMagic.Controller();
-
-
 
   const blurBlockWidth = document.querySelector('.blur-circle').getBoundingClientRect().width;
   const blurBlockHeight = document.querySelector('.blur-circle').getBoundingClientRect().height;
@@ -33,8 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
       menuButton.style.transform = 'rotate(0)';
     }
   })
-  // 1 => 2 экран
 
+  // 1 => 2 экран
+  
+  const sideMapIMages = document.querySelectorAll('.side-map__images-circle');
   new ScrollMagic.Scene({
     triggerElement: '#section2',
     triggerHook: 0.5,
@@ -42,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
   })
   .on('enter', () => {
     console.log("section 2");
-    document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+    sideMapIMages.forEach((elem, index) => {
       if (index === 0) {
         elem.src = './images/side-map-circle-white.svg';
       }
@@ -53,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
     else {
-      document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+      sideMapIMages.forEach((elem, index) => {
         if (index === 0) {
           elem.src = './images/side-map-circle.svg';
         }
@@ -83,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
   })
   .setTween(section1Text)
   .addTo(controller);
-
 
   // 2 => 3 экран
 
@@ -355,7 +340,7 @@ const blurCircleTweenHelp3 = gsap.timeline()
   .on('leave', (event) => {
     if (event.scrollDirection === 'FORWARD') {
       document.querySelector('.common-arrow-down').src = './images/arrow-main-down-white.svg';
-      document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+      sideMapIMages.forEach((elem, index) => {
         if (index === 1) {
           elem.src = './images/side-map-circle-white.svg';
         }
@@ -393,7 +378,7 @@ const blurCircleTweenHelp3 = gsap.timeline()
     })
     .on('enter', () => {
       document.querySelector('.common-arrow-down').src = './images/arrow-main-down-white.svg';
-      document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+      sideMapIMages.forEach((elem, index) => {
         if (index === 1) {
           elem.src = './images/side-map-circle-white.svg';
         }
@@ -405,7 +390,7 @@ const blurCircleTweenHelp3 = gsap.timeline()
       }
       else {
         document.querySelector('.common-arrow-down').src = './images/arrow-main-down.svg';
-        document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+        sideMapIMages.forEach((elem, index) => {
           if (index === 0) {
             elem.src = './images/side-map-circle-white.svg';
           }
@@ -1109,7 +1094,7 @@ new ScrollMagic.Scene({
       document.querySelectorAll('.side-map__link').forEach(link => {
         link.style = 'color: rgba(48, 48, 48, 1)';
       });
-      document.querySelectorAll('.side-map__images-circle').forEach((circle, index) => {
+      sideMapIMages.forEach((circle, index) => {
         if (index === 2) {
           circle.src = './images/side-map-circle-black.svg';
         }
@@ -1136,7 +1121,7 @@ new ScrollMagic.Scene({
         document.querySelectorAll('.side-map__link').forEach(link => {
           link.style = 'color: #FFF';
         });
-        document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+        sideMapIMages.forEach((elem, index) => {
           if (index === 0) {
             elem.src = './images/side-map-circle-white.svg';
           }
@@ -1387,7 +1372,7 @@ new ScrollMagic.Scene({
     .on('enter', () => {
       document.querySelector('.common-arrow-down').style = 'opacity: 0';
       document.querySelector('.page-23-arrow-down').style = 'opacity: 1';
-      document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+      sideMapIMages.forEach((elem, index) => {
         elem.src = './images/side-map-circle-black.svg';
       })
     })
@@ -1398,7 +1383,7 @@ new ScrollMagic.Scene({
       else {
         document.querySelector('.common-arrow-down').style = 'opacity: 1';
         document.querySelector('.page-23-arrow-down').style = 'opacity: 0';
-        document.querySelectorAll('.side-map__images-circle').forEach((elem, index) => {
+        sideMapIMages.forEach((elem, index) => {
           if (index === 3) {
             elem.src = './images/side-map-circle.svg';
           }
@@ -1427,5 +1412,111 @@ new ScrollMagic.Scene({
         top: 0,
         behavior: 'auto' // или 'smooth' для плавного скролла
       });
-    }) 
+    });
+
+    // АВТОДОВОДЧИКИ СКРОЛЛА
+
+
+    // const scrollToSection2 = () => {
+    //     window.scrollTo({
+    //       top: document.getElementById('section2').offsetTop,
+    //       behavior: 'smooth',
+    //       duration: 500,
+    //     });
+    // };
+    
+    // const scrollToSection2Back = () => {
+    //     window.scrollTo({
+    //       top: 0,
+    //       behavior: 'smooth',
+    //       duration: 500,
+    //     });
+    // };
+    // // Триггер для плавной прокрутки к секции #section2 при скролле вниз
+    // new ScrollMagic.Scene({
+    //   triggerElement: '#section2',
+    //   triggerHook: 0.98, // Триггер при 95% видимости секции
+    // })
+    // .on('enter', (evt) => {
+    //   if (evt.scrollDirection  === 'FORWARD') {
+    //     scrollToSection2();
+    //   }
+    // })
+    // .on('leave', (evt) => {
+    //   if (evt.scrollDirection == 'FORWARD') {
+
+    //   }
+    //   else {
+    //     console.log('leave section 2')
+    //     // scrollToSection2Back();
+    //   }
+    // })
+    // .addTo(controller);
+
+    // new ScrollMagic.Scene({
+    //   triggerElement: '#section2',
+    //   triggerHook: 0.02, // Триггер при 95% видимости секции
+    // })
+    // .on('leave', (evt) => {
+    //   if (evt.scrollDirection == 'FORWARD') {
+
+    //   }
+    //   else {
+    //     console.log('leave section 2')
+    //     scrollToSection2Back();
+    //   }
+    // })
+    // .addTo(controller); 
+
+
+    // const scrollToSection3 = () => {
+    //     window.scrollTo({
+    //       top: document.getElementById('section3').offsetTop,
+    //       behavior: 'smooth',
+    //       duration: 500,
+    //     });
+    // };
+    
+    // const scrollToSection3Back = () => {
+    //     window.scrollTo({
+    //       top: 0,
+    //       behavior: 'smooth',
+    //       duration: 500,
+    //     });
+    // };
+    // // Триггер для плавной прокрутки к секции #section3 при скролле вниз
+    // new ScrollMagic.Scene({
+    //   triggerElement: '#section3',
+    //   triggerHook: 0.98, // Триггер при 95% видимости секции
+    // })
+    // .on('enter', (evt) => {
+    //   if (evt.scrollDirection  === 'FORWARD') {
+    //     scrollToSection3();
+    //   }
+    // })
+    // .on('leave', (evt) => {
+    //   if (evt.scrollDirection == 'FORWARD') {
+
+    //   }
+    //   else {
+    //     console.log('leave section 3')
+    //     // scrollToSection3Back();
+    //   }
+    // })
+    // .addTo(controller);
+
+    // new ScrollMagic.Scene({
+    //   triggerElement: '#section3',
+    //   triggerHook: 0.03, // Триггер при 95% видимости секции
+    // })
+    // .on('leave', (evt) => {
+    //   if (evt.scrollDirection == 'FORWARD') {
+
+    //   }
+    //   else {
+    //     console.log('leave section 2')
+    //     scrollToSection3Back();
+    //   }
+    // })
+    // .addTo(controller);
 });

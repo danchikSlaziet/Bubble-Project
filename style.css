@@ -24,20 +24,20 @@ body {
   font-family: 'Jost';
   font-weight: 500;
   color: #FFF;
-  /* background: linear-gradient(to right, rgba(106, 34, 172, 1), rgba(106, 34, 172, 1)); */
   background: rgba(106, 34, 172, 1);
   -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch;
 
   height: 100lvh;
-  overflow-y: scroll;
+  overflow-y: auto !important;
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
-* {
+/* * {
   scrollbar-width: none;
 }
-body::-webkit-scrollbar {width: 0px;}
+body::-webkit-scrollbar {width: 0px;} */
 
 p {
   pointer-events: none;
@@ -104,12 +104,9 @@ a,a:hover{
   z-index: 0;
   background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
   filter: blur(100px);
-  backdrop-filter: blur(100px);
-  /* -webkit-backdrop-filter: blur(100px); */
+  /* backdrop-filter: blur(100px); */
   opacity: 0;
   animation: blurCircleAnimation 5s ease-in-out infinite;
-  will-change: opacity;
-  will-change: top, left, bottom, right;
 }
 @media screen and (max-width: 1280px) {
   .blur-circle {
@@ -139,12 +136,9 @@ a,a:hover{
   z-index: 0;
   background: linear-gradient(180deg, #ADD8E6 0%, rgba(173, 216, 230, 0.5) 50%, rgba(173, 216, 230, 0) 100%);
   filter: blur(100px);
-  backdrop-filter: blur(100px);
-  /* -webkit-backdrop-filter: blur(100px); */
+  /* backdrop-filter: blur(100px); */
   opacity: 0;
   animation: blurCircleAnimation 4s ease-in-out infinite;
-  will-change: opacity;
-  will-change: top, left, bottom, right;
 }
 @media screen and (max-width: 1280px) {
   .blur-circle-help {
@@ -198,13 +192,10 @@ a,a:hover{
   z-index: 0;
   background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
   filter: blur(100px);
-  backdrop-filter: blur(100px);
-  /* -webkit-backdrop-filter: blur(100px); */
+  /* backdrop-filter: blur(100px); */
   opacity: 0.2;
   left: 50%;
   transform: translateX(-50%);
-  will-change: opacity;
-  will-change: top, left, bottom, right;
 }
 @media screen and (max-width: 1280px) {
   .blur-circle-page-4 {
