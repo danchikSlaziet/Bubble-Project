@@ -1416,6 +1416,102 @@ new ScrollMagic.Scene({
 
     // АВТОДОВОДЧИКИ СКРОЛЛА
 
+// Получаем все секции на странице
+const sections = document.querySelectorAll('section');
+
+// Текущая секция
+let currentSection = 0;
+
+// Флаг для блокировки прокрутки
+let isScrolling = false;
+
+// Отключаем стандартную прокрутку
+window.addEventListener('wheel', (event) => {
+  event.preventDefault();
+}, { passive: false });
+
+window.addEventListener('touchstart', (event) => {
+  event.preventDefault();
+}, { passive: false });
+
+window.addEventListener('touchmove', (event) => {
+  event.preventDefault();
+}, { passive: false });
+
+// Функция, отвечающая за постраничный скролл
+function scrollToSection(index) {
+  // Проверяем, что index находится в пределах количества секций
+  if (index >= 0 && index < sections.length) {
+    // Скроллим к нужной секции
+    sections[index].scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+
+    // Обновляем текущую секцию
+    currentSection = index;
+
+    // Блокируем прокрутку на время анимации
+    isScrolling = true;
+    setTimeout(() => {
+      isScrolling = false;
+    }, 650);
+  }
+}
+
+// Обработчик события прокрутки колесика мыши
+let lastWheelScrollTime = 0;
+window.addEventListener('wheel', (event) => {
+  // Определяем направление прокрутки
+  if (!isScrolling) {
+    const currentTime = Date.now();
+    if (currentTime - lastWheelScrollTime > 500) {
+      if (event.deltaY > 0) {
+        // Прокрутка вниз
+        scrollToSection(currentSection + 1);
+      } else {
+        // Прокрутка вверх
+        scrollToSection(currentSection - 1);
+      }
+      lastWheelScrollTime = currentTime;
+    }
+  }
+});
+
+// Обработчик события прокрутки тачпада
+let lastTouchStartY = 0;
+window.addEventListener('touchstart', (event) => {
+  lastTouchStartY = event.touches[0].clientY;
+});
+
+window.addEventListener('touchmove', (event) => {
+  // Определяем направление и расстояние свайпа
+  if (!isScrolling) {
+    const touchY = event.touches[0].clientY;
+    const deltaY = lastTouchStartY - touchY;
+
+    // Если расстояние свайпа больше 50 пикселей
+    if (Math.abs(deltaY) > 50) {
+      // Прокрутка вверх или вниз
+      if (deltaY > 0) {
+        scrollToSection(currentSection + 1);
+      } else {
+        scrollToSection(currentSection - 1);
+      }
+
+      // Обновляем начальную точку свайпа
+      lastTouchStartY = touchY;
+    }
+  }
+}, { passive: false });
+
+
+    // const section2 = document.getElementById('section2');
+    // document.addEventListener('scroll', (e) => e.preventDefault())
+    // setTimeout(() => {
+    //   smoothScroll(section2, 1500);
+    // }, 2000)
+
 
     // const scrollToSection2 = () => {
     //     window.scrollTo({
