@@ -1405,15 +1405,6 @@ new ScrollMagic.Scene({
       })
     });
 
-
-    const pageArrowTop = document.querySelector('.page-23-arrow-down');
-    pageArrowTop.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'auto' // или 'smooth' для плавного скролла
-      });
-    });
-
 // АВТОДОВОДЧИКИ СКРОЛЛА
 
 // Получаем все секции на странице
@@ -1453,7 +1444,7 @@ function scrollToSection(index, behavior) {
     // Скроллим к нужной секции
     sections[index].scrollIntoView({
       behavior: behavior,
-      block: 'start'
+      block: 'start',
     });
 
     // Обновляем текущую секцию
@@ -1515,6 +1506,7 @@ window.addEventListener('touchmove', (event) => {
 
   // Обработчик событий кликов на якорные ссылки
 const anchorLinks = document.querySelectorAll('a[href^="#"]');
+console.log(anchorLinks)
 anchorLinks.forEach((link) => {
   link.addEventListener('click', (event) => {
     event.preventDefault();
@@ -1525,4 +1517,9 @@ anchorLinks.forEach((link) => {
     }
   });
 });
+const pageArrowTop = document.querySelector('.page-23-arrow-down');
+    pageArrowTop.addEventListener("click", (e) => {
+      e.preventDefault();
+      scrollToSection(1, 'auto');
+    });
 });
