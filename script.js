@@ -1428,15 +1428,23 @@ let isScrolling = false;
 // Отключаем стандартную прокрутку
 window.addEventListener('wheel', (event) => {
   event.preventDefault();
-}, { passive: false });
+}, { passive: false});
+
+let isTouch = false;
 
 window.addEventListener('touchstart', (event) => {
-  event.preventDefault();
-}, { passive: false });
+  isTouch = true;
+}, { passive: true, capture: true });
 
 window.addEventListener('touchmove', (event) => {
-  event.preventDefault();
+  if (isTouch) {
+    event.preventDefault();
+  }
 }, { passive: false });
+
+window.addEventListener('touchend', (event) => {
+  isTouch = false;
+}, { passive: true, capture: true });
 
 // Функция, отвечающая за постраничный скролл
 function scrollToSection(index) {
