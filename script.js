@@ -1414,7 +1414,7 @@ new ScrollMagic.Scene({
       });
     });
 
-    // АВТОДОВОДЧИКИ СКРОЛЛА
+// АВТОДОВОДЧИКИ СКРОЛЛА
 
 // Получаем все секции на странице
 const sections = document.querySelectorAll('section');
@@ -1447,12 +1447,12 @@ window.addEventListener('touchend', (event) => {
 }, { passive: true, capture: true });
 
 // Функция, отвечающая за постраничный скролл
-function scrollToSection(index) {
+function scrollToSection(index, behavior) {
   // Проверяем, что index находится в пределах количества секций
   if (index >= 0 && index < sections.length) {
     // Скроллим к нужной секции
     sections[index].scrollIntoView({
-      behavior: 'smooth',
+      behavior: behavior,
       block: 'start'
     });
 
@@ -1476,10 +1476,10 @@ window.addEventListener('wheel', (event) => {
     if (currentTime - lastWheelScrollTime > 500) {
       if (event.deltaY > 0) {
         // Прокрутка вниз
-        scrollToSection(currentSection + 1);
+        scrollToSection(currentSection + 1, 'smooth');
       } else {
         // Прокрутка вверх
-        scrollToSection(currentSection - 1);
+        scrollToSection(currentSection - 1, 'smooth');
       }
       lastWheelScrollTime = currentTime;
     }
@@ -1502,9 +1502,9 @@ window.addEventListener('touchmove', (event) => {
     if (Math.abs(deltaY) > 50) {
       // Прокрутка вверх или вниз
       if (deltaY > 0) {
-        scrollToSection(currentSection + 1);
+        scrollToSection(currentSection + 1, 'smooth');
       } else {
-        scrollToSection(currentSection - 1);
+        scrollToSection(currentSection - 1, 'smooth');
       }
 
       // Обновляем начальную точку свайпа
@@ -1513,114 +1513,16 @@ window.addEventListener('touchmove', (event) => {
   }
 }, { passive: false });
 
-
-    // const section2 = document.getElementById('section2');
-    // document.addEventListener('scroll', (e) => e.preventDefault())
-    // setTimeout(() => {
-    //   smoothScroll(section2, 1500);
-    // }, 2000)
-
-
-    // const scrollToSection2 = () => {
-    //     window.scrollTo({
-    //       top: document.getElementById('section2').offsetTop,
-    //       behavior: 'smooth',
-    //       duration: 500,
-    //     });
-    // };
-    
-    // const scrollToSection2Back = () => {
-    //     window.scrollTo({
-    //       top: 0,
-    //       behavior: 'smooth',
-    //       duration: 500,
-    //     });
-    // };
-    // // Триггер для плавной прокрутки к секции #section2 при скролле вниз
-    // new ScrollMagic.Scene({
-    //   triggerElement: '#section2',
-    //   triggerHook: 0.98, // Триггер при 95% видимости секции
-    // })
-    // .on('enter', (evt) => {
-    //   if (evt.scrollDirection  === 'FORWARD') {
-    //     scrollToSection2();
-    //   }
-    // })
-    // .on('leave', (evt) => {
-    //   if (evt.scrollDirection == 'FORWARD') {
-
-    //   }
-    //   else {
-    //     console.log('leave section 2')
-    //     // scrollToSection2Back();
-    //   }
-    // })
-    // .addTo(controller);
-
-    // new ScrollMagic.Scene({
-    //   triggerElement: '#section2',
-    //   triggerHook: 0.02, // Триггер при 95% видимости секции
-    // })
-    // .on('leave', (evt) => {
-    //   if (evt.scrollDirection == 'FORWARD') {
-
-    //   }
-    //   else {
-    //     console.log('leave section 2')
-    //     scrollToSection2Back();
-    //   }
-    // })
-    // .addTo(controller); 
-
-
-    // const scrollToSection3 = () => {
-    //     window.scrollTo({
-    //       top: document.getElementById('section3').offsetTop,
-    //       behavior: 'smooth',
-    //       duration: 500,
-    //     });
-    // };
-    
-    // const scrollToSection3Back = () => {
-    //     window.scrollTo({
-    //       top: 0,
-    //       behavior: 'smooth',
-    //       duration: 500,
-    //     });
-    // };
-    // // Триггер для плавной прокрутки к секции #section3 при скролле вниз
-    // new ScrollMagic.Scene({
-    //   triggerElement: '#section3',
-    //   triggerHook: 0.98, // Триггер при 95% видимости секции
-    // })
-    // .on('enter', (evt) => {
-    //   if (evt.scrollDirection  === 'FORWARD') {
-    //     scrollToSection3();
-    //   }
-    // })
-    // .on('leave', (evt) => {
-    //   if (evt.scrollDirection == 'FORWARD') {
-
-    //   }
-    //   else {
-    //     console.log('leave section 3')
-    //     // scrollToSection3Back();
-    //   }
-    // })
-    // .addTo(controller);
-
-    // new ScrollMagic.Scene({
-    //   triggerElement: '#section3',
-    //   triggerHook: 0.03, // Триггер при 95% видимости секции
-    // })
-    // .on('leave', (evt) => {
-    //   if (evt.scrollDirection == 'FORWARD') {
-
-    //   }
-    //   else {
-    //     console.log('leave section 2')
-    //     scrollToSection3Back();
-    //   }
-    // })
-    // .addTo(controller);
+  // Обработчик событий кликов на якорные ссылки
+const anchorLinks = document.querySelectorAll('a[href^="#"]');
+anchorLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const targetId = event.target.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+      scrollToSection(Array.from(sections).indexOf(targetSection), 'auto');
+    }
+  });
+});
 });
