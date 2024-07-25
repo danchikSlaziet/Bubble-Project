@@ -427,28 +427,20 @@ const blurCircleTweenHelp3 = gsap.timeline()
   .setTween(section8Text)
   .addTo(controller);
 
+  function lerp(start, end, t) {
+    return start + (end - start) * t;
+  }
+  
+  // Вычисление промежуточных значений RGB
+  const r = lerp(180, 100, 0.5);
+  const g = lerp(0, 0, 0.5);
+  const b = lerp(225, 227, 0.5);
+  
+  // Итоговое RGBA-значение
+  const rgbaGradient = `rgba(${r.toFixed(0)}, ${g.toFixed(0)}, ${b.toFixed(0)}, 1)`;
 
 const backgroundChange = gsap.timeline()
-  .to('body', { 
-    duration: 0.5,
-    background: 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 33.33%)', 
-    ease: 'linear'
-  })
-  .to('body', { 
-    duration: 0.5,
-    background: 'linear-gradient(268.14deg, #6400E3 33.33%, #B400E1 66.67%)', 
-    ease: 'linear'
-  })
-  .to('body', { 
-    duration: 0.5,
-    background: 'linear-gradient(268.14deg, #B400E1 66.67%, #6400E3 100%)', 
-    ease: 'linear'
-  })
-  .to('body', { 
-    duration: 0.5,
-    background: 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 100%)', 
-    ease: 'linear'
-  });
+  .to('body', { duration: 750, background: rgbaGradient, ease: 'linear' });
 
 new ScrollMagic.Scene({
   triggerElement: '#section8',
