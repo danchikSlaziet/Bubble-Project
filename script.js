@@ -10,13 +10,15 @@ document.addEventListener('DOMContentLoaded', function() {
   menuButton.addEventListener("click", function() {
     if (sideMap.className.includes("active")) {
       sideMap.classList.remove("side-map_active");
-      menuButton.style.transform = 'rotate(180deg)';
+      menuButton.style.transform = 'rotate(0deg)';
     }
     else {
       sideMap.classList.add("side-map_active");
-      menuButton.style.transform = 'rotate(0)';
+      menuButton.style.transform = 'rotate(180deg)';
     }
   })
+
+  
 
   // 1 => 2 экран
   
@@ -425,50 +427,51 @@ const blurCircleTweenHelp3 = gsap.timeline()
   .setTween(section8Text)
   .addTo(controller);
 
-const body = document.querySelector('body');
-// const backgroundChange = gsap.timeline()
-//   .to('body', { 
-//     duration: 1,
-//     background: 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 100%)', 
-//     ease: 'linear'
-//   });
-
-// new ScrollMagic.Scene({
-//   triggerElement: '#section8',
-//   triggerHook: 1,
-//   duration: 500
-// })
-// .setTween(backgroundChange)
-// .addTo(controller);
-
-
-// Функция для линейной интерполяции между двумя значениями
-function lerp(start, end, t) {
-  return start + (end - start) * t;
-}
-
-// Вычисление промежуточных значений RGB
-const r = lerp(180, 100, 0.5);
-const g = lerp(0, 0, 0.5);
-const b = lerp(225, 227, 0.5);
-
-// Итоговое RGBA-значение
-const rgbaGradient = `rgba(${r.toFixed(0)}, ${g.toFixed(0)}, ${b.toFixed(0)}, 1)`;
 
 const backgroundChange = gsap.timeline()
-  .to('body', { duration: 0.5, background: rgbaGradient, ease: 'linear' });
+  .to('body', { 
+    duration: 0.5,
+    background: 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 33.33%)', 
+    ease: 'linear'
+  })
+  .to('body', { 
+    duration: 0.5,
+    background: 'linear-gradient(268.14deg, #6400E3 33.33%, #B400E1 66.67%)', 
+    ease: 'linear'
+  })
+  .to('body', { 
+    duration: 0.5,
+    background: 'linear-gradient(268.14deg, #B400E1 66.67%, #6400E3 100%)', 
+    ease: 'linear'
+  })
+  .to('body', { 
+    duration: 0.5,
+    background: 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 100%)', 
+    ease: 'linear'
+  });
 
 new ScrollMagic.Scene({
   triggerElement: '#section8',
   triggerHook: 1,
-  duration: 500
+  duration: '100%'
 })
 .setTween(backgroundChange)
 .addTo(controller);
 
 
-
   //  8 => 9 экран
+
+  
+  const offersOpacity = gsap.timeline()
+  .to('.offers-tooltip', { duration: 0.5, opacity: '1', ease: 'power1.out' });
+
+  new ScrollMagic.Scene({
+    triggerElement: '#section9',
+    triggerHook: 1,
+    duration: 500
+  })
+  .setTween(offersOpacity)
+  .addTo(controller);
 
   const section9TextLowOpacity = gsap.timeline()
   .to('#section8Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
@@ -591,16 +594,16 @@ new ScrollMagic.Scene({
   }
     
 
-    const section9RoundReal = gsap.timeline()
-    .to('#section9RoundReal', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+    // const section9RoundReal = gsap.timeline()
+    // .to('#section9RoundReal', { duration: 0.5, opacity: '0', ease: 'power1.out' });
   
-    new ScrollMagic.Scene({
-      triggerElement: '#section10',
-      triggerHook: 1,
-      duration: 500
-    })
-    .setTween(section9RoundReal)
-    .addTo(controller);
+    // new ScrollMagic.Scene({
+    //   triggerElement: '#section10',
+    //   triggerHook: 1,
+    //   duration: 500
+    // })
+    // .setTween(section9RoundReal)
+    // .addTo(controller);
 
     const section9CheckReal = gsap.timeline()
     .to('#section9CheckReal', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
@@ -652,16 +655,16 @@ new ScrollMagic.Scene({
     }
 
 
-  const section9RoundExp = gsap.timeline()
-  .to('#section9RoundExp', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+  // const section9RoundExp = gsap.timeline()
+  // .to('#section9RoundExp', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section12',
-    triggerHook: 1,
-    duration: 500
-  })
-  .setTween(section9RoundExp)
-  .addTo(controller);
+  // new ScrollMagic.Scene({
+  //   triggerElement: '#section12',
+  //   triggerHook: 1,
+  //   duration: 500
+  // })
+  // .setTween(section9RoundExp)
+  // .addTo(controller);
 
   const section9CheckExp = gsap.timeline()
     .to('#section9CheckExp', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
@@ -846,16 +849,16 @@ new ScrollMagic.Scene({
     }
 
 
-  const section9RoundTrans = gsap.timeline()
-  .to('#section9RoundTrans', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+  // const section9RoundTrans = gsap.timeline()
+  // .to('#section9RoundTrans', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section14',
-    triggerHook: 1,
-    duration: 500
-  })
-  .setTween(section9RoundTrans)
-  .addTo(controller);
+  // new ScrollMagic.Scene({
+  //   triggerElement: '#section14',
+  //   triggerHook: 1,
+  //   duration: 500
+  // })
+  // .setTween(section9RoundTrans)
+  // .addTo(controller);
 
   const section9CheckTrans = gsap.timeline()
     .to('#section9CheckTrans', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
@@ -907,16 +910,16 @@ new ScrollMagic.Scene({
       // Код, который будет выполняться, если ширина экрана больше 850px
     }
 
-  const section9RoundVar = gsap.timeline()
-  .to('#section9RoundVar', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+  // const section9RoundVar = gsap.timeline()
+  // .to('#section9RoundVar', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
-  new ScrollMagic.Scene({
-    triggerElement: '#section16',
-    triggerHook: 1,
-    duration: 500
-  })
-  .setTween(section9RoundVar)
-  .addTo(controller);
+  // new ScrollMagic.Scene({
+  //   triggerElement: '#section16',
+  //   triggerHook: 1,
+  //   duration: 500
+  // })
+  // .setTween(section9RoundVar)
+  // .addTo(controller);
 
   const section9CheckVar = gsap.timeline()
     .to('#section9CheckVar', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
@@ -1025,13 +1028,24 @@ new ScrollMagic.Scene({
   .setTween(section9TextVarHide)
   .addTo(controller);
 
+  const offersOpacityLow = gsap.timeline()
+  .to('.offers-tooltip', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+
+  new ScrollMagic.Scene({
+    triggerElement: '#section17',
+    triggerHook: 1,
+    duration: 500
+  })
+  .setTween(offersOpacityLow)
+  .addTo(controller);
+
 
   
 
   // 13 (пустой, уже без надписей) => 14
 
   const bodyWhite = gsap.timeline()
-  .to('body', { duration: 0.5, background: 'rgba(246, 235, 255, 1)', ease: 'power1.out' });
+  .to('body', { duration: 0.5, background: 'rgba(250, 243, 255, 1)', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
     triggerElement: '#section18',
@@ -1084,7 +1098,11 @@ new ScrollMagic.Scene({
       duration: 500
     })
     .on('enter', () => {
-      document.querySelector('.burger-bar__icon').src = './images/burger-bar-open-black.svg';
+      document.querySelector('.demo-button__text').style.color = '#000';
+      document.querySelector('.demo-button__img').src = './images/demo-button-img-black.svg';
+      document.querySelector('.common-arrow-down-mouse').src = './images/common-arrow-down-mouse-black.svg';
+      document.querySelector('.common-arrow-down-mouse-wheel').src = './images/common-arrow-down-mouse-wheel-black.svg';
+      document.querySelector('.side-map__button').src = './images/burger-bar-open-black.svg';
       document.querySelector(".burger-bar__logo").src = "./images/burger-bar-logo-black.svg";
       document.querySelector('.connect-button__arrow').src = './images/connect-button-black.svg';
       document.querySelector('.connect-button').style = 'border: 1px solid rgba(48, 48, 48, 1)';
@@ -1111,7 +1129,11 @@ new ScrollMagic.Scene({
   
       }
       else {
-        document.querySelector('.burger-bar__icon').src = './images/burger-bar-open.svg';
+        document.querySelector('.demo-button__text').style.color = '#FFF';
+        document.querySelector('.demo-button__img').src = './images/demo-button-img.svg';
+        document.querySelector('.common-arrow-down-mouse').src = './images/common-arrow-down-mouse.svg';
+        document.querySelector('.common-arrow-down-mouse-wheel').src = './images/common-arrow-down-mouse-wheel.svg';
+        document.querySelector('.side-map__button').src = './images/burger-bar-open.svg';
         document.querySelector(".burger-bar__logo").src = "./images/burger-bar-logo.svg";
         document.querySelector('.connect-button__arrow').src = './images/connect-button.svg';
         document.querySelector('.connect-button').style = 'border: 1px solid rgba(255, 255, 255, 1)';
@@ -1341,6 +1363,16 @@ new ScrollMagic.Scene({
     .setTween(blurCircleTween20)
     .addTo(controller);
 
+    const footer = gsap.timeline()
+    .to('.footer', { duration: 0.5, opacity: '1', ease: 'power1.out' });
+    new ScrollMagic.Scene({
+      triggerElement: '#section23',
+      triggerHook: 1,
+      duration: 500
+    })
+      .setTween(footer)
+      .addTo(controller);
+
     const section22TextLow = gsap.timeline()
     .to('#section22Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
@@ -1371,7 +1403,9 @@ new ScrollMagic.Scene({
     })
     .on('enter', () => {
       document.querySelector('.common-arrow-down').style = 'opacity: 0';
-      document.querySelector('.page-23-arrow-down').style = 'opacity: 1';
+      document.querySelector('.common-arrow-down2').style = 'opacity: 1';
+      document.querySelector('.connect-button').style.display = 'none';
+      document.querySelector('.demo-button').style.right = '56px';
       sideMapIMages.forEach((elem, index) => {
         elem.src = './images/side-map-circle-black.svg';
       })
@@ -1381,8 +1415,10 @@ new ScrollMagic.Scene({
   
       }
       else {
+        document.querySelector('.connect-button').style.display = 'flex';
         document.querySelector('.common-arrow-down').style = 'opacity: 1';
-        document.querySelector('.page-23-arrow-down').style = 'opacity: 0';
+        document.querySelector('.common-arrow-down2').style = 'opacity: 0';
+        document.querySelector('.demo-button').style.right = '230px';
         sideMapIMages.forEach((elem, index) => {
           if (index === 3) {
             elem.src = './images/side-map-circle.svg';
@@ -1406,6 +1442,7 @@ new ScrollMagic.Scene({
     });
 
 // АВТОДОВОДЧИКИ СКРОЛЛА
+
 
 // Получаем все секции на странице
 const sections = document.querySelectorAll('section');
@@ -1517,7 +1554,7 @@ anchorLinks.forEach((link) => {
     }
   });
 });
-const pageArrowTop = document.querySelector('.page-23-arrow-down');
+const pageArrowTop = document.querySelector('.common-arrow-down2');
     pageArrowTop.addEventListener("click", (e) => {
       e.preventDefault();
       scrollToSection(1, 'auto');

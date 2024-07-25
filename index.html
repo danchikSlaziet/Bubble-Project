@@ -9,20 +9,29 @@
   <script src="./vendor/anime.min.js"></script>
 </head>
 <body>
+  <p class="offers-tooltip">
+    OFFERS
+  </p>
   <div class="blur-circle" id="blurCircle"></div>
   <div class="blur-circle-page-4" id="blurCirclePage4"></div>
   <div class="blur-circle-help" id="blurCircleHelp"></div>
   <div class="burger-bar">
-    <img class="burger-bar__icon" src="./images/burger-bar-open.svg" alt="">
+    <img class="side-map__button" src="./images/burger-bar-open.svg" alt="">
     <img class="burger-bar__logo" src="./images/burger-bar-logo.svg" alt="">
   </div>
+  <button class="demo-button" type="button">
+    <p class="demo-button__text">DEMO</p>
+    <img class="demo-button__img" src="./images/demo-button-img.svg" alt="">
+  </button>
   <button class="connect-button" type="button">
     <p class="connect-button__text">CONNECT</p>
     <img class="connect-button__arrow" src="./images/connect-button.svg" alt="">
   </button>
-  <img class="common-arrow-down" src="./images/arrow-main-down.svg" alt="">
+  <div class="common-arrow-down">
+    <img class="common-arrow-down-mouse" src="./images/common-arrow-down-mouse.svg" alt="">
+    <img class="common-arrow-down-mouse-wheel" src="./images/common-arrow-down-mouse-wheel.svg" alt="">
+  </div>
   <div class="side-map">
-    <img class="side-map__button" src="./images/burger-bar-open.svg" alt="">
     <div class="side-map__help-blur"></div>
     <div class="side-map__images">
       <img class="side-map__images-line" src="./images/side-map-line.svg" alt="">
@@ -33,7 +42,7 @@
     </div>
     <div class="side-map__links">
       <a class="side-map__link side-map__link_1" href="#section2">Advantages</a>
-      <a class="side-map__link side-map__link_2" href="#section9">Offers</a>
+      <a class="side-map__link side-map__link_2" href="#section16">Offers</a>
       <a class="side-map__link side-map__link_3" href="#section18">Solutions</a>
       <a class="side-map__link side-map__link_4" href="#section23">Contact&nbsp;us</a>
     </div>
@@ -41,18 +50,28 @@
   <section class="page-1 page" id="section1">
     <div id="section1Text" class="page-1__text-block">
       <p class="page-1__top-text center-title">
-        Your ideas are <span class="page-white-color">priceless.</span>
+        Your ideas are&nbsp;<span class="page-white-color">priceless.</span>
       </p>
       <p class="page-1__bottom-text center-title">
-        We will make them <span class="page-white-color">work.</span>
+        We will make them&nbsp;<span class="page-white-color">work.</span>
       </p>
+      <div class="page-1__buttons">
+        <button class="connect-button2" type="button">
+          <p class="connect-button2__text">CONNECT</p>
+          <img class="connect-button2__arrow" src="./images/connect-button.svg" alt="">
+        </button>
+        <button class="demo-button2" type="button">
+          <p class="demo-button2__text">DEMO</p>
+          <img class="demo-button2__img" src="./images/demo-button-img.svg" alt="">
+        </button>
+      </div>
     </div>
   </section>
   <section class="page-2 page" id="section2">
     <div id="section2Text" class="page-2__text-block">
-      <p class="page-2__count">0<span class="page-white-color">1</span></p>
+      <p class="page-2__subtitle">ADVANTAGES</p>
       <p class="page-2__top-text">
-        Modern&nbsp;<span class="page-white-color">back&nbsp;office</span>
+        Modern <span class="page-white-color">back&nbsp;office</span>
       </p>
       <p class="page-2__bottom-text">
         Payment analytics and statistics, customizable transaction reports, refunds and mass payouts.
@@ -61,9 +80,9 @@
   </section>
   <section class="page-3 page" id="section3">
     <div id="section3Text" class="page-3__text-block">
-      <p class="page-3__count">0<span class="page-white-color">2</span></p>
+      <p class="page-3__subtitle">ADVANTAGES</p>
       <p class="page-3__top-text">
-        Risk&nbsp;<span class="page-white-color">Managment</span>
+        Risk <span class="page-white-color">Managment</span>
       </p>
       <p class="page-3__bottom-text">
         Smart and trainable risk management system that detects and blocks suspicious transactions.
@@ -72,9 +91,9 @@
   </section>
   <section class="page-4 page" id="section4">
     <div id="section4Text" class="page-4__text-block">
-      <p class="page-4__count">0<span class="page-white-color">3</span></p>
+      <p class="page-4__subtitle">ADVANTAGES</p>
       <p class="page-4__top-text">
-        <span class="page-white-color">Safety</span>&nbsp;Payments
+        <span class="page-white-color">Safety</span> Payments
       </p>
       <p class="page-4__bottom-text">
         PCI DSS level 1 and SSL encryption protocol.
@@ -83,7 +102,7 @@
   </section>
   <section class="page-5 page" id="section5">
     <div id="section5Text" class="page-5__text-block">
-      <p class="page-5__count">0<span class="page-white-color">4</span></p>
+      <p class="page-5__subtitle">ADVANTAGES</p>
       <p class="page-5__top-text">
         <span class="page-white-color">Custom</span> Payment page
       </p>
@@ -94,7 +113,7 @@
   </section>
   <section class="page-6 page" id="section6">
     <div id="section6Text" class="page-6__text-block">
-      <p class="page-6__count">0<span class="page-white-color">5</span></p>
+      <p class="page-6__subtitle">ADVANTAGES</p>
       <p class="page-6__top-text">
         <span class="page-white-color">Tech</span> Hub
       </p>
@@ -105,9 +124,9 @@
   </section>
   <section class="page-7 page" id="section7">
     <div id="section7Text" class="page-7__text-block">
-      <p class="page-7__count">0<span class="page-white-color">6</span></p>
+      <p class="page-7__subtitle">ADVANTAGES</p>
       <p class="page-7__top-text">
-        <span class="page-white-color">Cascading</span><br>& Smart Routing
+        <span class="page-white-color">Cascading</span><br>&&nbsp;Smart&nbsp;Routing
       </p>
       <p class="page-7__bottom-text">
         Our unique IT developments allow you to expand the transaction limit for your users, as well as direct deposits and payments, depending on the country, currency, amount and BIN-card.
@@ -126,10 +145,10 @@
           Reliability
         </p>
         <p class="first-clue__subtitle">
-          Stable operating<br>platform.
+          Stable operating platform.
         </p>
       </div>
-      <img id="section9RoundReal" class="first-clue__big-round" src="./images/first-big-round.svg" alt="">
+      <!-- <img id="section9RoundReal" class="first-clue__big-round" src="./images/first-big-round.svg" alt=""> -->
       <img id="section9CheckReal"  class="first-clue__big-round-check" src="./images/big-round-check.svg" alt="">
     </div>
     <div id="section9TextExp" class="second-clue">
@@ -138,12 +157,12 @@
           Expertise
         </p>
         <p class="second-clue__subtitle">
-          Expert assessment<br>
-          and analysis<br>
+          Expert assessment
+          and analysis
           of new markets.
         </p>
       </div>
-      <img id="section9RoundExp" class="second-clue__big-round" src="./images/second-big-round.svg" alt="">
+      <!-- <img id="section9RoundExp" class="second-clue__big-round" src="./images/second-big-round.svg" alt=""> -->
       <img id="section9CheckExp"  class="second-clue__big-round-check" src="./images/second-big-round-check.svg" alt="">
     </div>
     <div id="section9TextTrans" class="third-clue">
@@ -152,12 +171,12 @@
           Transparency
         </p>
         <p class="third-clue__subtitle">
-          Built-in banking<br>
-          system for mutual<br>
+          Built-in banking
+          system for mutual
           settlements.
         </p>
       </div>
-      <img id="section9RoundTrans" class="third-clue__big-round" src="./images/third-big-round.svg" alt="">
+      <!-- <img id="section9RoundTrans" class="third-clue__big-round" src="./images/third-big-round.svg" alt=""> -->
       <img id="section9CheckTrans"  class="third-clue__big-round-check" src="./images/third-big-round-check.svg" alt="">
     </div>
     <div id="section9TextVar" class="fourth-clue">
@@ -166,12 +185,12 @@
           Variability
         </p>
         <p class="fourth-clue__subtitle">
-          Large selection<br>
-          of payment solutions<br> 
+          Large selection
+          of payment solutions 
           anywhere in the world.
         </p>
       </div>
-      <img id="section9RoundVar" class="fourth-clue__big-round" src="./images/fourth-big-round.svg" alt="">
+      <!-- <img id="section9RoundVar" class="fourth-clue__big-round" src="./images/fourth-big-round.svg" alt=""> -->
       <img id="section9CheckVar"  class="fourth-clue__big-round-check" src="./images/fourth-big-round-check.svg" alt="">
     </div>
     <div id="section9TextSup" class="fifth-clue">
@@ -180,11 +199,11 @@
           Support
         </p>
         <p class="fifth-clue__subtitle">
-          High level<br>
+          High level
           customer service.
         </p>
       </div>
-      <img id="section9RoundSup" class="fifth-clue__big-round" src="./images/fifth-big-round.svg" alt="">
+      <!-- <img id="section9RoundSup" class="fifth-clue__big-round" src="./images/fifth-big-round.svg" alt=""> -->
       <img id="section9CheckSup"  class="fifth-clue__big-round-check" src="./images/fifth-big-round-check.svg" alt="">
     </div>
   </section>
@@ -212,6 +231,9 @@
   </section>
   <section class="page-19 page" id="section19">
     <div id="section19Text" class="page-19__text-container">
+      <p class="page-19__tooltip">
+        SOLUTIONS
+      </p>
       <p class="page-19__title">
         <span class="span-black">Acquiring</span><br>
         &amp; APS
@@ -223,6 +245,9 @@
   </section>
   <section class="page-20 page" id="section20">
     <div id="section20Text" class="page-20__text-container">
+      <p class="page-20__tooltip">
+        SOLUTIONS
+      </p>
       <p class="page-20__title">
         Payouts
       </p>
@@ -233,6 +258,9 @@
   </section>
   <section class="page-21 page" id="section21">
     <div id="section21Text" class="page-21__text-container">
+      <p class="page-21__tooltip">
+        SOLUTIONS
+      </p>
       <p class="page-21__title">
         Fast<br>
         <span class="span-black">Integration</span>
@@ -244,6 +272,9 @@
   </section>
   <section class="page-22 page" id="section22">
     <div id="section22Text" class="page-22__text-container">
+      <p class="page-22__tooltip">
+        SOLUTIONS
+      </p>
       <p class="page-22__title">
         Timely<br>
         <span class="span-black">Settlements</span>
@@ -254,8 +285,12 @@
     </div>
   </section>
   <section class="page-23 page" id="section23">
-    <img class="page-23-arrow-down" src="./images/arrow-main-down-black.svg" alt="">
+    <div class="common-arrow-down2">
+      <img class="common-arrow-down-mouse2" src="./images/common-arrow-down-mouse-black.svg" alt="">
+      <img class="common-arrow-down-mouse-wheel2" src="./images/common-arrow-down-mouse-wheel-black.svg" alt="">
+    </div>
     <div id="section23Text" class="page-23__content">
+      <p class="page-23__contact-us">CONTACT US</p>
       <p class="page-23__title">
         Let’s make<br>
         <span class="span-black">your ideas work</span>
@@ -271,6 +306,29 @@
         <img class="page-23__send-btn-arrow" src="./images/connect-button-black.svg" alt="">
       </button>
     </div>
+    <footer class="page-23__footer footer">
+      <div class="footer__left-info">
+        <div class="footer__left-info-wrapper">
+          <p class="footer__left-info-wrapper-text">
+            To start processing
+          </p>
+          <a class="footer__left-info-wrapper-link" target="_blank" href="mailto:sales@monetix.pro">sales@monetix.pro</a>
+        </div>
+        <div class="footer__left-info-wrapper">
+          <p class="footer__left-info-wrapper-text">
+            Technical support
+          </p>
+          <a class="footer__left-info-wrapper-link" target="_blank" href="mailto:support@monetix.pro">support@monetix.pro</a>
+        </div>
+      </div>
+      <div class="footer__copyright">
+        Copyright © 2024 Monetix
+      </div>
+      <div class="footer__right-info">
+        <a href="" target="_blank">AML Policy</a>
+        <a href="" target="_blank">Privacy Policy</a>
+      </div>
+    </footer>
   </section>
   
   <script src="./vendor/gsap.min.js"></script>
