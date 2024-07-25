@@ -1521,13 +1521,13 @@ function scrollToSection(index, behavior) {
 window.addEventListener('touchstart', (event) => {
   if (!isScrolling) {
     lastTouchStartY = event.touches[0].clientY;
-    event.target.setPointerCapture(event.pointerId);
+    // event.target.setPointerCapture(event.pointerId);
   }
 });
 
 window.addEventListener('touchend', (event) => {
   if (!isScrolling) {
-    event.target.releasePointerCapture(event.pointerId);
+    // event.target.releasePointerCapture(event.pointerId);
     const touchY = event.changedTouches[0].clientY;
     const deltaY = lastTouchStartY - touchY;
 
@@ -1541,12 +1541,6 @@ window.addEventListener('touchend', (event) => {
   }
 });
 
-if (navigator.userAgent.indexOf('Firefox') !== -1) {
-
-}
-else {
-  
-}
 
 
   // Обработчик событий кликов на якорные ссылки
