@@ -1548,6 +1548,7 @@ const anchorLinks = document.querySelectorAll('a[href^="#"]');
 console.log(anchorLinks)
 anchorLinks.forEach((link) => {
   link.addEventListener('click', (event) => {
+    sideMap.classList.remove('side-map_active');
     event.preventDefault();
     const targetId = event.target.getAttribute('href');
     const targetSection = document.querySelector(targetId);
