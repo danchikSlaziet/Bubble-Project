@@ -21,7 +21,17 @@ document.addEventListener('DOMContentLoaded', function() {
   
 
   // 1 => 2 экран
-  
+  const buttonsHide = gsap.timeline()
+  .to('.page-1__buttons', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+
+  new ScrollMagic.Scene({
+    triggerElement: '#section2',
+    triggerHook: 1,
+    duration: 500
+  })
+  .setTween(buttonsHide)
+  .addTo(controller);
+
   const sideMapIMages = document.querySelectorAll('.side-map__images-circle');
   new ScrollMagic.Scene({
     triggerElement: '#section2',
@@ -533,8 +543,8 @@ new ScrollMagic.Scene({
   const mediaQueryTextReal = window.matchMedia("(max-width: 1200px)");
   if (mediaQueryTextReal.matches) {
     // Код, который будет выполняться, если ширина экрана меньше или равна 1200px
-    const mediaQueryRealOther = window.matchMedia("(max-width: 850px)");
-    if (mediaQueryRealOther.matches) {
+    // const mediaQueryRealOther = window.matchMedia("(max-width: 850px)");
+    // if (mediaQueryRealOther.matches) {
       const section9TextLeft = gsap.timeline()
       .to('#section9TextReal', { duration: 0.5, left: '50%', top: '50%', transform: 'translate(-50%, -50%)', ease: 'power1.out' });
 
@@ -557,19 +567,19 @@ new ScrollMagic.Scene({
       .setTween(section9TextLeftLowOpacity)
       .addTo(controller);
       // Код, который будет выполняться, если ширина экрана меньше или равна 850px
-    } else {
-      const section9TextLeft = gsap.timeline()
-      .to('#section9TextReal', { duration: 0.5, left: '214px', ease: 'back.in' });
+    // } else {
+    //   const section9TextLeft = gsap.timeline()
+    //   .to('#section9TextReal', { duration: 0.5, left: '214px', ease: 'back.in' });
 
-    new ScrollMagic.Scene({
-      triggerElement: '#section10',
-      triggerHook: 1,
-      duration: 500
-    })
-      .setTween(section9TextLeft)
-      .addTo(controller);
-      // Код, который будет выполняться, если ширина экрана больше 850px
-    }
+    // new ScrollMagic.Scene({
+    //   triggerElement: '#section10',
+    //   triggerHook: 1,
+    //   duration: 500
+    // })
+    //   .setTween(section9TextLeft)
+    //   .addTo(controller);
+    //   // Код, который будет выполняться, если ширина экрана больше 850px
+    // }
 
   } else {
     // Код, который будет выполняться, если ширина экрана больше 1200px
@@ -582,6 +592,17 @@ new ScrollMagic.Scene({
       duration: 500
     })
       .setTween(section9TextLeft)
+      .addTo(controller);
+
+      const section9TextTop = gsap.timeline()
+      .to('#section9TextReal', { duration: 0.5, left: '314px', top: '40%', transform: 'translate(-50%, -50%)', ease: 'power1.out' });
+
+      new ScrollMagic.Scene({
+        triggerElement: '#section12',
+        triggerHook: 1,
+        duration: 500
+      })
+      .setTween(section9TextTop)
       .addTo(controller);
   }
     
@@ -608,13 +629,13 @@ new ScrollMagic.Scene({
     .setTween(section9CheckReal)
     .addTo(controller);
   // EXPRETISE
-  const mediaQueryRealOther = window.matchMedia("(max-width: 850px)");
+  const mediaQueryRealOther = window.matchMedia("(max-width: 1200px)");
     if (mediaQueryRealOther.matches) {
       const section9TextExp = gsap.timeline()
       .to('#section9TextExp', { duration: 0.5, opacity: '1', ease: 'power1.out' });
     
       new ScrollMagic.Scene({
-        triggerElement: '#section11',
+        triggerElement: '#section10',
         triggerHook: 1,
         duration: 500
       })
@@ -625,7 +646,7 @@ new ScrollMagic.Scene({
       .to('#section9TextExp', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
     new ScrollMagic.Scene({
-      triggerElement: '#section12',
+      triggerElement: '#section11',
       triggerHook: 1,
       duration: 500
     })
@@ -637,11 +658,22 @@ new ScrollMagic.Scene({
       .to('#section9TextExp', { duration: 0.5, opacity: '1', ease: 'power1.out' });
     
       new ScrollMagic.Scene({
-        triggerElement: '#section11',
+        triggerElement: '#section10',
         triggerHook: 1,
         duration: 500
       })
       .setTween(section9TextExp1)
+      .addTo(controller);
+
+      const section9TextTop = gsap.timeline()
+      .to('#section9TextExp', { duration: 0.5, left: '50%', top: '40%', transform: 'translate(-50%, -50%)', ease: 'power1.out' });
+
+      new ScrollMagic.Scene({
+        triggerElement: '#section12',
+        triggerHook: 1,
+        duration: 500
+      })
+      .setTween(section9TextTop)
       .addTo(controller);
       // Код, который будет выполняться, если ширина экрана больше 850px
     }
@@ -662,7 +694,7 @@ new ScrollMagic.Scene({
     .to('#section9CheckExp', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
   
     new ScrollMagic.Scene({
-      triggerElement: '#section12',
+      triggerElement: '#section11',
       triggerHook: 1,
       duration: 500
     })
@@ -673,7 +705,7 @@ new ScrollMagic.Scene({
   .to('#section9TextExp', { duration: 0.5, left: '50%', transform: 'translate(-50%, -50%)', ease: 'back.in' });
 
   new ScrollMagic.Scene({
-    triggerElement: '#section12',
+    triggerElement: '#section11',
     triggerHook: 1,
     duration: 500
   })
@@ -681,7 +713,7 @@ new ScrollMagic.Scene({
   .addTo(controller);
 
   const blurCircleTween9 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, filter: 'blur(40px)', background: 'background: linear-gradient(261.69deg, rgba(255, 255, 255, 0.55) 43.79%, rgba(255, 255, 255, 0) 99.99%, #FFFFFF 100%)', bottom: `${window.innerHeight/2 - blurBlockHeight/2}`, left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out' });
+    .to('#blurCircle', { duration: 0.5, background: 'background: linear-gradient(261.69deg, rgba(255, 255, 255, 0.55) 43.79%, rgba(255, 255, 255, 0) 99.99%, #FFFFFF 100%)', bottom: `${window.innerHeight/2 - blurBlockHeight/2}`, left: `${window.innerWidth/2 - blurBlockWidth/2}px`, ease: 'power1.out' });
   new ScrollMagic.Scene({
     triggerElement: '#section11',
     triggerHook: 1,
@@ -702,30 +734,30 @@ new ScrollMagic.Scene({
 
     
 
-  const blurCircleTween10 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, filter: 'blur(100px)', ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section12',
-    triggerHook: 1,
-    duration: 500
-  })
-    .setTween(blurCircleTween10)
-    .addTo(controller);
+  // const blurCircleTween10 = gsap.timeline()
+  //   .to('#blurCircle', { duration: 0.5, filter: 'blur(100px)', ease: 'power1.out' });
+  // new ScrollMagic.Scene({
+  //   triggerElement: '#section12',
+  //   triggerHook: 1,
+  //   duration: 500
+  // })
+  //   .setTween(blurCircleTween10)
+  //   .addTo(controller);
 
-    const blurCircleTweenHelp10 = gsap.timeline()
-    .to('#blurCircleHelp', { duration: 0.5, filter: 'blur(100px)',  ease: 'power1.out'});
-  new ScrollMagic.Scene({
-    triggerElement: '#section12',
-    triggerHook: 1,
-    duration: 500
-  })
-    .setTween(blurCircleTweenHelp10)
-    .addTo(controller);
+  //   const blurCircleTweenHelp10 = gsap.timeline()
+  //   .to('#blurCircleHelp', { duration: 0.5, filter: 'blur(100px)',  ease: 'power1.out'});
+  // new ScrollMagic.Scene({
+  //   triggerElement: '#section12',
+  //   triggerHook: 1,
+  //   duration: 500
+  // })
+  //   .setTween(blurCircleTweenHelp10)
+  //   .addTo(controller);
 
     const blurCircleTween11 = gsap.timeline()
     .to('#blurCircle', { duration: 0.5, left: `${window.innerWidth - blurBlockWidth}px`, filter: 'blur(40px)', ease: 'power1.out' });
   new ScrollMagic.Scene({
-    triggerElement: '#section13',
+    triggerElement: '#section12',
     triggerHook: 1,
     duration: 500
   })
@@ -735,37 +767,37 @@ new ScrollMagic.Scene({
     const blurCircleTweenHelp11 = gsap.timeline()
     .to('#blurCircleHelp', { duration: 0.5, left: `${window.innerWidth - blurBlockWidth}px`, filter: 'blur(40px)', ease: 'power1.out' });
   new ScrollMagic.Scene({
-    triggerElement: '#section13',
+    triggerElement: '#section12',
     triggerHook: 1,
     duration: 500
   })
     .setTween(blurCircleTweenHelp11)
     .addTo(controller);
 
-    const blurCircleTween12 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, filter: 'blur(100px)', ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section14',
-    triggerHook: 1,
-    duration: 500
-  })
-    .setTween(blurCircleTween12)
-    .addTo(controller);
+  //   const blurCircleTween12 = gsap.timeline()
+  //   .to('#blurCircle', { duration: 0.5, filter: 'blur(100px)', ease: 'power1.out' });
+  // new ScrollMagic.Scene({
+  //   triggerElement: '#section13',
+  //   triggerHook: 1,
+  //   duration: 500
+  // })
+  //   .setTween(blurCircleTween12)
+  //   .addTo(controller);
 
-    const blurCircleTweenHelp12 = gsap.timeline()
-    .to('#blurCircleHelp', { duration: 0.5, filter: 'blur(100px)', ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section14',
-    triggerHook: 1,
-    duration: 500
-  })
-    .setTween(blurCircleTweenHelp12)
-    .addTo(controller);
+  //   const blurCircleTweenHelp12 = gsap.timeline()
+  //   .to('#blurCircleHelp', { duration: 0.5, filter: 'blur(100px)', ease: 'power1.out' });
+  // new ScrollMagic.Scene({
+  //   triggerElement: '#section13',
+  //   triggerHook: 1,
+  //   duration: 500
+  // })
+  //   .setTween(blurCircleTweenHelp12)
+  //   .addTo(controller);
 
     const blurCircleTween13 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, left: `${-blurBlockWidth/4}`, bottom: `${-blurBlockHeight/4}` , filter: 'blur(40px)', ease: 'power1.out' });
+    .to('#blurCircle', { duration: 0.5, left: `${-blurBlockWidth/4}`, bottom: `${-blurBlockHeight/4}` ,filter: 'blur(40px)', ease: 'power1.out' });
   new ScrollMagic.Scene({
-    triggerElement: '#section15',
+    triggerElement: '#section13',
     triggerHook: 1,
     duration: 500
   })
@@ -775,40 +807,40 @@ new ScrollMagic.Scene({
     const blurCircleTweenHelp13 = gsap.timeline()
     .to('#blurCircleHelp', {duration: 0.5, left: `${-blurBlockWidth/4}`, bottom: `${-blurBlockHeight/4}` , filter: 'blur(40px)', ease: 'power1.out'});
   new ScrollMagic.Scene({
-    triggerElement: '#section15',
+    triggerElement: '#section13',
     triggerHook: 1,
     duration: 500
   })
     .setTween(blurCircleTweenHelp13)
     .addTo(controller);
 
-  const blurCircleTween14 = gsap.timeline()
-    .to('#blurCircle', { duration: 0.5, left: `${window.innerWidth / 2 - blurBlockWidth / 2}`, bottom: `${window.innerHeight / 2 - blurBlockHeight / 2}`, filter: 'blur(100px)', ease: 'power1.out' });
-  new ScrollMagic.Scene({
-    triggerElement: '#section16',
-    triggerHook: 1,
-    duration: 500
-  })
-    .setTween(blurCircleTween14)
-    .addTo(controller);
+  // const blurCircleTween14 = gsap.timeline()
+  //   .to('#blurCircle', { duration: 0.5, left: `${window.innerWidth / 2 - blurBlockWidth / 2}`, bottom: `${window.innerHeight / 2 - blurBlockHeight / 2}`, filter: 'blur(100px)', ease: 'power1.out' });
+  // new ScrollMagic.Scene({
+  //   triggerElement: '#section14',
+  //   triggerHook: 1,
+  //   duration: 500
+  // })
+  //   .setTween(blurCircleTween14)
+  //   .addTo(controller);
 
     const blurCircleTweenHelp14 = gsap.timeline()
     .to('#blurCircleHelp', {duration: 0.5,opacity: '0', left: `${window.innerWidth / 2 - blurBlockWidth / 2}`, bottom: `${window.innerHeight / 2 - blurBlockHeight / 2}`, filter: 'blur(100px)', ease: 'power1.out'});
   new ScrollMagic.Scene({
-    triggerElement: '#section16',
+    triggerElement: '#section14',
     triggerHook: 1,
     duration: 500
   })
     .setTween(blurCircleTweenHelp14)
     .addTo(controller);
   // TRANSPARENCY
-  const mediaQueryTransOther = window.matchMedia("(max-width: 850px)");
+  const mediaQueryTransOther = window.matchMedia("(max-width: 1200px)");
     if (mediaQueryTransOther.matches) {
       const section9TextTrans = gsap.timeline()
       .to('#section9TextTrans', { duration: 0.5, opacity: '1', right: '50%', top: '50%', transform: 'translate(50%, -50%)' , ease: 'power1.out' });
     
       new ScrollMagic.Scene({
-        triggerElement: '#section13',
+        triggerElement: '#section11',
         triggerHook: 1,
         duration: 500
       })
@@ -819,7 +851,7 @@ new ScrollMagic.Scene({
       .to('#section9TextTrans', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
     new ScrollMagic.Scene({
-      triggerElement: '#section14',
+      triggerElement: '#section12',
       triggerHook: 1,
       duration: 500
     })
@@ -831,12 +863,23 @@ new ScrollMagic.Scene({
         .to('#section9TextTrans', { duration: 0.5, opacity: '1', ease: 'power1.out' });
 
       new ScrollMagic.Scene({
-        triggerElement: '#section13',
+        triggerElement: '#section11',
         triggerHook: 1,
         duration: 500
       })
         .setTween(section9TextTrans)
         .addTo(controller);
+
+        const section9TextTop = gsap.timeline()
+      .to('#section9TextTrans', { duration: 0.5, right: '0', top: '40%', transform: 'translate(-50%, -50%)', ease: 'power1.out' });
+
+      new ScrollMagic.Scene({
+        triggerElement: '#section12',
+        triggerHook: 1,
+        duration: 500
+      })
+      .setTween(section9TextTop)
+      .addTo(controller);
       // Код, который будет выполняться, если ширина экрана больше 850px
     }
 
@@ -856,7 +899,7 @@ new ScrollMagic.Scene({
     .to('#section9CheckTrans', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
   
     new ScrollMagic.Scene({
-      triggerElement: '#section14',
+      triggerElement: '#section12',
       triggerHook: 1,
       duration: 500
     })
@@ -864,13 +907,13 @@ new ScrollMagic.Scene({
     .addTo(controller);
 
   // Variability
-  const mediaQueryVarOther = window.matchMedia("(max-width: 850px)");
+  const mediaQueryVarOther = window.matchMedia("(max-width: 1200px)");
     if (mediaQueryVarOther.matches) {
       const section9TextVar = gsap.timeline()
       .to('#section9TextVar', { duration: 0.5, opacity: '1' , ease: 'power1.out' });
     
       new ScrollMagic.Scene({
-        triggerElement: '#section15',
+        triggerElement: '#section12',
         triggerHook: 1,
         duration: 500
       })
@@ -881,7 +924,7 @@ new ScrollMagic.Scene({
       .to('#section9TextVar', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
     new ScrollMagic.Scene({
-      triggerElement: '#section16',
+      triggerElement: '#section13',
       triggerHook: 1,
       duration: 500
     })
@@ -893,7 +936,7 @@ new ScrollMagic.Scene({
       .to('#section9TextVar', { duration: 0.5, opacity: '1', ease: 'power1.out' });
     
       new ScrollMagic.Scene({
-        triggerElement: '#section15',
+        triggerElement: '#section12',
         triggerHook: 1,
         duration: 500
       })
@@ -917,7 +960,7 @@ new ScrollMagic.Scene({
     .to('#section9CheckVar', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
   
     new ScrollMagic.Scene({
-      triggerElement: '#section16',
+      triggerElement: '#section13',
       triggerHook: 1,
       duration: 500
     })
@@ -925,36 +968,36 @@ new ScrollMagic.Scene({
     .addTo(controller);
 
     // Support
-    const mediaQuerySupOther = window.matchMedia("(max-width: 850px)");
+    const mediaQuerySupOther = window.matchMedia("(max-width: 1200px)");
     if (mediaQuerySupOther.matches) {
       const section9TextSup = gsap.timeline()
-      .to('#section9TextSup', { duration: 0.5, opacity: '1', right: '50%', top: '50%' , transform: 'translate(50%, -50%)' , ease: 'power1.out' });
+      .to('#section9TextSup', { duration: 0.5, opacity: '1', right: '50%', top: '50%', transform: 'translate(50%, -50%)', bottom: 'auto' , ease: 'power1.out' });
     
       new ScrollMagic.Scene({
-        triggerElement: '#section16',
+        triggerElement: '#section13',
         triggerHook: 1,
         duration: 500
       })
       .setTween(section9TextSup)
       .addTo(controller);
 
-      const section9TextSupLowOpacity = gsap.timeline()
-      .to('#section9TextSup', { duration: 0.5, opacity: '0', ease: 'power1.out' });
+    //   const section9TextSupLowOpacity = gsap.timeline()
+    //   .to('#section9TextSup', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
-    new ScrollMagic.Scene({
-      triggerElement: '#section17',
-      triggerHook: 1,
-      duration: 500
-    })
-      .setTween(section9TextSupLowOpacity)
-      .addTo(controller);
+    // new ScrollMagic.Scene({
+    //   triggerElement: '#section14',
+    //   triggerHook: 1,
+    //   duration: 500
+    // })
+    //   .setTween(section9TextSupLowOpacity)
+    //   .addTo(controller);
       // Код, который будет выполняться, если ширина экрана меньше или равна 850px
     } else {
     const section9TextSup = gsap.timeline()
     .to('#section9TextSup', { duration: 0.5, opacity: '1', ease: 'power1.out' });
   
     new ScrollMagic.Scene({
-      triggerElement: '#section16',
+      triggerElement: '#section13',
       triggerHook: 1,
       duration: 500
     })
@@ -964,7 +1007,7 @@ new ScrollMagic.Scene({
       .to('#section9TextSup', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
     new ScrollMagic.Scene({
-      triggerElement: '#section17',
+      triggerElement: '#section15',
       triggerHook: 1,
       duration: 500
     })
@@ -980,7 +1023,7 @@ new ScrollMagic.Scene({
     .to('#section9TextReal', { duration: 0.5, opacity: '0', ease: 'power1.out' });
   
     new ScrollMagic.Scene({
-      triggerElement: '#section17',
+      triggerElement: '#section14',
       triggerHook: 1,
       duration: 500
     })
@@ -991,7 +1034,7 @@ new ScrollMagic.Scene({
   .to('#section9TextExp', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
-    triggerElement: '#section17',
+    triggerElement: '#section14',
     triggerHook: 1,
     duration: 500
   })
@@ -1002,18 +1045,27 @@ new ScrollMagic.Scene({
   .to('#section9TextTrans', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
-    triggerElement: '#section17',
+    triggerElement: '#section14',
     triggerHook: 1,
     duration: 500
   })
   .setTween(section9TextTransHide)
   .addTo(controller);
+  const section9TextSupHide = gsap.timeline()
+  .to('#section9TextSup', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
+  new ScrollMagic.Scene({
+    triggerElement: '#section14',
+    triggerHook: 1,
+    duration: 500
+  })
+  .setTween(section9TextSupHide)
+  .addTo(controller);
     const section9TextVarHide = gsap.timeline()
   .to('#section9TextVar', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
-    triggerElement: '#section17',
+    triggerElement: '#section14',
     triggerHook: 1,
     duration: 500
   })
@@ -1024,7 +1076,7 @@ new ScrollMagic.Scene({
   .to('.offers-tooltip', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
-    triggerElement: '#section17',
+    triggerElement: '#section14',
     triggerHook: 1,
     duration: 500
   })
@@ -1040,7 +1092,7 @@ new ScrollMagic.Scene({
   .to('body', { duration: 0.5, background: 'rgba(250, 243, 255, 1)', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
-    triggerElement: '#section18',
+    triggerElement: '#section14',
     triggerHook: 1,
     duration: 500
   })
@@ -1066,7 +1118,7 @@ new ScrollMagic.Scene({
     .to('#section18Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
-    triggerElement: '#section18',
+    triggerElement: '#section14',
     triggerHook: 1,
     duration: 500
   })
@@ -1076,7 +1128,7 @@ new ScrollMagic.Scene({
   const blurCircleTween15 = gsap.timeline()
     .to('#blurCircle', { duration: 0.5, background: 'linear-gradient(261.69deg, #B400E1 43.79%, #6400E3 100%)' , left: `${window.innerWidth - blurBlockWidth}`, bottom: `${window.innerHeight / 2 - blurBlockHeight / 2}`, filter: 'blur(100px)', ease: 'power1.out' });
   new ScrollMagic.Scene({
-    triggerElement: '#section18',
+    triggerElement: '#section14',
     triggerHook: 1,
     duration: 500
   })
@@ -1085,7 +1137,7 @@ new ScrollMagic.Scene({
 
     // покраска вспомогательныъ элементов в чёрный
     new ScrollMagic.Scene({
-      triggerElement: '#section18',
+      triggerElement: '#section14',
       triggerHook: 0.5,
       duration: 500
     })
@@ -1155,7 +1207,7 @@ new ScrollMagic.Scene({
     .to('#section18Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
-    triggerElement: '#section19',
+    triggerElement: '#section15',
     triggerHook: 1,
     duration: 500
   })
@@ -1165,7 +1217,7 @@ new ScrollMagic.Scene({
     .to('#section19Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
-    triggerElement: '#section19',
+    triggerElement: '#section15',
     triggerHook: 1,
     duration: 500
   })
@@ -1175,7 +1227,7 @@ new ScrollMagic.Scene({
   const blurCircleTween16 = gsap.timeline()
     .to('#blurCircle', { duration: 0.5, left: `0`, height: '500px', bottom: `${window.innerHeight - 2 * blurBlockHeight / 3}`, filter: 'blur(100px)', ease: 'power1.out' });
   new ScrollMagic.Scene({
-    triggerElement: '#section19',
+    triggerElement: '#section15',
     triggerHook: 1,
     duration: 500
   })
@@ -1185,7 +1237,7 @@ new ScrollMagic.Scene({
   const blurCircleSecond16 = gsap.timeline()
     .to('#blurCirclePage4', { duration: 0.5, background: 'linear-gradient(261.69deg, #B400E1 43.79%, #6400E3 100%)', left: `${window.innerWidth}`, top: `${window.innerHeight}`, filter: 'blur(100px)', ease: 'power1.out' });
   new ScrollMagic.Scene({
-    triggerElement: '#section19',
+    triggerElement: '#section15',
     triggerHook: 1,
     duration: 500
   })
@@ -1197,7 +1249,7 @@ new ScrollMagic.Scene({
     .to('#section19Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
-    triggerElement: '#section20',
+    triggerElement: '#section16',
     triggerHook: 1,
     duration: 500
   })
@@ -1208,7 +1260,7 @@ new ScrollMagic.Scene({
     .to('#section20Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
-    triggerElement: '#section20',
+    triggerElement: '#section16',
     triggerHook: 1,
     duration: 500
   })
@@ -1228,7 +1280,7 @@ new ScrollMagic.Scene({
         const blurCircleTween17 = gsap.timeline()
           .to('#blurCircle', { duration: 0.5, filter: 'blur(20px)', height: '450px', bottom: `${-blurBlockHeight / 2}`, left: `${window.innerWidth - blurBlockWidth / 2}`, ease: 'power1.out' });
         new ScrollMagic.Scene({
-          triggerElement: '#section20',
+          triggerElement: '#section16',
           triggerHook: 1,
           duration: 500
         })
@@ -1241,7 +1293,7 @@ new ScrollMagic.Scene({
         const blurCircleTween17 = gsap.timeline()
           .to('#blurCircle', { duration: 0.5, filter: 'blur(20px)', height: '550px', bottom: `${-blurBlockHeight / 2}`, left: `${window.innerWidth - blurBlockWidth / 2}`, ease: 'power1.out' });
         new ScrollMagic.Scene({
-          triggerElement: '#section20',
+          triggerElement: '#section16',
           triggerHook: 1,
           duration: 500
         })
@@ -1254,7 +1306,7 @@ new ScrollMagic.Scene({
     const blurCircleTween17 = gsap.timeline()
     .to('#blurCircle', { duration: 0.5, filter: 'blur(20px)', height: '650px', bottom: `${-blurBlockHeight / 2}`, left: `${window.innerWidth - blurBlockWidth / 2}`, ease: 'power1.out' });
   new ScrollMagic.Scene({
-    triggerElement: '#section20',
+    triggerElement: '#section16',
     triggerHook: 1,
     duration: 500
   })
@@ -1267,7 +1319,7 @@ new ScrollMagic.Scene({
     const blurCircleTween17 = gsap.timeline()
       .to('#blurCircle', { duration: 0.5, filter: 'blur(20px)', height: '1000px', bottom: `${-blurBlockHeight / 2}`, left: `${window.innerWidth - blurBlockWidth / 2}`, ease: 'power1.out' });
     new ScrollMagic.Scene({
-      triggerElement: '#section20',
+      triggerElement: '#section16',
       triggerHook: 1,
       duration: 500
     })
@@ -1281,7 +1333,7 @@ new ScrollMagic.Scene({
     .to('#section20Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
-    triggerElement: '#section21',
+    triggerElement: '#section17',
     triggerHook: 1,
     duration: 500
   })
@@ -1292,7 +1344,7 @@ new ScrollMagic.Scene({
     .to('#section21Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
-    triggerElement: '#section21',
+    triggerElement: '#section17',
     triggerHook: 1,
     duration: 500
   })
@@ -1302,7 +1354,7 @@ new ScrollMagic.Scene({
     const blurCircleTween18 = gsap.timeline()
     .to('#blurCircle', { duration: 0.5, filter: 'blur(100px)', bottom: `${window.innerHeight/2 -blurBlockHeight / 2}`, left: `${window.innerWidth/2 - blurBlockWidth/2}`, ease: 'power1.out' });
   new ScrollMagic.Scene({
-    triggerElement: '#section21',
+    triggerElement: '#section17',
     triggerHook: 1,
     duration: 500
   })
@@ -1315,7 +1367,7 @@ new ScrollMagic.Scene({
     .to('#section21Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
-    triggerElement: '#section22',
+    triggerElement: '#section18',
     triggerHook: 1,
     duration: 500
   })
@@ -1326,7 +1378,7 @@ new ScrollMagic.Scene({
     .to('#section22Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
-    triggerElement: '#section22',
+    triggerElement: '#section18',
     triggerHook: 1,
     duration: 500
   })
@@ -1336,7 +1388,7 @@ new ScrollMagic.Scene({
   const blurCircleTween19 = gsap.timeline()
     .to('#blurCircle', { duration: 0.5, filter: 'blur(20px)', bottom: `${-blurBlockHeight / 2}`, left: `${- blurBlockWidth / 2}`, ease: 'power1.out' });
   new ScrollMagic.Scene({
-    triggerElement: '#section22',
+    triggerElement: '#section18',
     triggerHook: 1,
     duration: 500
   })
@@ -1348,7 +1400,7 @@ new ScrollMagic.Scene({
   const blurCircleTween20 = gsap.timeline()
     .to('#blurCircle', { duration: 0.5, width: '0px', height: '0px', filter: 'blur(7px)', bottom: `${window.innerHeight / 2}`, left: `${window.innerWidth / 2}`, ease: 'power1.out' });
   new ScrollMagic.Scene({
-    triggerElement: '#section23',
+    triggerElement: '#section19',
     triggerHook: 1,
     duration: 500
   })
@@ -1358,7 +1410,7 @@ new ScrollMagic.Scene({
     const footer = gsap.timeline()
     .to('.footer', { duration: 0.5, opacity: '1', ease: 'power1.out' });
     new ScrollMagic.Scene({
-      triggerElement: '#section23',
+      triggerElement: '#section19',
       triggerHook: 1,
       duration: 500
     })
@@ -1369,7 +1421,7 @@ new ScrollMagic.Scene({
     .to('#section22Text', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
-    triggerElement: '#section23',
+    triggerElement: '#section19',
     triggerHook: 1,
     duration: 500
   })
@@ -1380,7 +1432,7 @@ new ScrollMagic.Scene({
     .to('#section23Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
-    triggerElement: '#section23',
+    triggerElement: '#section19',
     triggerHook: 1,
     duration: 500
   })
@@ -1389,7 +1441,7 @@ new ScrollMagic.Scene({
 
 
     new ScrollMagic.Scene({
-      triggerElement: '#section23',
+      triggerElement: '#section19',
       triggerHook: 0.5,
       duration: 500
     })
@@ -1436,7 +1488,9 @@ new ScrollMagic.Scene({
 // АВТОДОВОДЧИКИ СКРОЛЛА
 
 // Получаем все секции на странице
-const sections = document.querySelectorAll('section');
+const sections = Array.from(document.querySelectorAll('section')).slice(0, 19);
+// const sections = document.querySelectorAll('section');
+console.log(sections);
 
 // Текущая секция
 let currentSection = 0;

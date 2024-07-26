@@ -80,11 +80,16 @@ a,a:hover{
 	background-image: linear-gradient(95.57deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 96.71%);
 
 }
+@media screen and (max-height: 540px) {
+  .offers-tooltip {
+    top: 75px;
+  }
+}
 .page-1__buttons {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -140px;
+  bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -710,6 +715,16 @@ a,a:hover{
     max-width: 330px;
   }
 }
+@media screen and (max-height: 654px) {
+  .page-1__text-block {
+   top: 250px;
+  }
+}
+@media screen and (max-height: 560px) {
+  .page-1__text-block {
+   top: 200px;
+  }
+}
 .page-1__top-text {
   transform: translate(94px, 16px);
 }
@@ -840,7 +855,7 @@ a,a:hover{
 
 
 /* Firefox */
-@-moz-document url-prefix() {
+/* @-moz-document url-prefix() {
   .page-2__subtitle {
     color: #A5A5A5;
     background-image: none;
@@ -848,7 +863,7 @@ a,a:hover{
     background-clip: initial;
     
   }
-}
+} */
 .page-2__bottom-text {
   max-width: 425px;
   color: #FFF;
@@ -975,14 +990,14 @@ a,a:hover{
 
 
 /* Firefox */
-@-moz-document url-prefix() {
+/* @-moz-document url-prefix() {
   .page-3__subtitle {
     color: #A5A5A5;
     background-image: none;
     -webkit-background-clip: initial;
     background-clip: initial;
   }
-}
+} */
 .page-3__bottom-text {
   max-width: 408px;
   color: #FFF;
@@ -1063,14 +1078,14 @@ a,a:hover{
 
 
 /* Firefox */
-@-moz-document url-prefix() {
+/* @-moz-document url-prefix() {
   .page-4__subtitle {
     color: #A5A5A5;
     background-image: none;
     -webkit-background-clip: initial;
     background-clip: initial;
   }
-}
+} */
 
 .page-4__top-text {
   color: transparent;    
@@ -1192,14 +1207,14 @@ a,a:hover{
 } */
 
 /* Firefox */
-@-moz-document url-prefix() {
+/* @-moz-document url-prefix() {
   .page-5__subtitle {
     color: #A5A5A5;
     background-image: none;
     -webkit-background-clip: initial;
     background-clip: initial;
   }
-}
+} */
 
 
 .page-5__top-text {
@@ -1327,14 +1342,14 @@ a,a:hover{
 }
 
 /* Firefox */
-@-moz-document url-prefix() {
+/* @-moz-document url-prefix() {
   .page-6__subtitle {
     color: #A5A5A5;
     background-image: none;
     -webkit-background-clip: initial;
     background-clip: initial;
   }
-}
+} */
 
 .page-6__top-text {
   color: transparent;    
@@ -1469,14 +1484,14 @@ a,a:hover{
 }
 
 /* Firefox */
-@-moz-document url-prefix() {
+/* @-moz-document url-prefix() {
   .page-7__subtitle {
     color: #A5A5A5;
     background-image: none;
     -webkit-background-clip: initial;
     background-clip: initial;
   }
-}
+} */
 
 .page-7__top-text {
   color: transparent;    
@@ -1629,12 +1644,8 @@ a,a:hover{
   will-change: opacity;
   will-change: top, left, bottom, right;
 }
-@media screen and (max-height: 965px) {
-  .first-clue {
-      top: 35%;
-  }
-}
-@media screen and (max-width: 850px) {
+
+@media screen and (max-width: 1200px) {
   .first-clue {
       top: 50%;
   }
@@ -1652,12 +1663,12 @@ a,a:hover{
   line-height: 69.36px;
   text-align: left;
 }
-@media screen and (max-height: 768px) {
+/* @media screen and (max-height: 768px) {
   .first-clue__title {
     font-size: 27px;
     line-height: 45px;
   }
-}
+} */
 @media screen and (max-width: 1200px) {
   .first-clue__title {
     font-size: 35px;
@@ -1680,32 +1691,13 @@ a,a:hover{
 }
 .first-clue__subtitle {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 34px;
   text-align: left;
   max-width: 270px;
 }
-@media screen and (max-width: 1200px) {
-  .first-clue__subtitle {
-    font-size: 18px;
-  }
-}
-@media screen and (max-width: 990px) {
-  .first-clue__subtitle {
-    max-width: 200px;
-  }
-}
-@media screen and (max-height: 768px) {
-  .first-clue__subtitle {
-    font-size: 16px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .first-clue__subtitle {
-    font-size: 16px;
-  }
-}
+
 @media screen and (max-width: 640px) {
   .first-clue__subtitle {
     font-size: 20px;
@@ -1747,16 +1739,7 @@ a,a:hover{
   top: -73px;
   left: -13px;
 }
-@media screen and (max-height: 768px) {
-  .first-clue__big-round-check {
-    width: 40px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .first-clue__big-round-check {
-    width: 40px;
-  }
-}
+
 @media screen and (max-width: 640px) {
   .first-clue__big-round-check {
     width: 64px;
@@ -1825,17 +1808,13 @@ a,a:hover{
   will-change: opacity;
   will-change: top, left, bottom, right;
 }
-@media screen and (max-width: 982px) {
+/* @media screen and (max-width: 982px) {
   .second-clue {
     left: 500px;
   }
-}
-@media screen and (max-height: 965px) {
-  .second-clue {
-      top: 35%;
-  }
-}
-@media screen and (max-width: 850px) {
+} */
+
+@media screen and (max-width: 1200px) {
   .second-clue {
     left: 50%;
     top: 50%;
@@ -1855,12 +1834,12 @@ a,a:hover{
   line-height: 69.36px;
   text-align: left;
 }
-@media screen and (max-height: 768px) {
+/* @media screen and (max-height: 768px) {
   .second-clue__title {
     font-size: 27px;
     line-height: 45px;
   }
-}
+} */
 @media screen and (max-width: 1200px) {
   .second-clue__title {
     font-size: 35px;
@@ -1883,14 +1862,14 @@ a,a:hover{
 }
 .second-clue__subtitle {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   line-height: 24px;
   text-align: left;
   max-width: 270px;
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
   .second-clue__subtitle {
     font-size: 18px;
   }
@@ -1909,7 +1888,7 @@ a,a:hover{
   .second-clue__subtitle {
     font-size: 16px;
   }
-}
+} */
 @media screen and (max-width: 640px) {
   .second-clue__subtitle {
     font-size: 20px;
@@ -1952,16 +1931,7 @@ a,a:hover{
   top: -73px;
   left: -13px;
 }
-@media screen and (max-height: 768px) {
-  .second-clue__big-round-check {
-    width: 40px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .second-clue__big-round-check {
-    width: 40px;
-  }
-}
+
 @media screen and (max-width: 640px) {
   .second-clue__big-round-check {
     width: 64px;
@@ -1980,27 +1950,14 @@ a,a:hover{
   will-change: opacity;
   will-change: top, left, bottom, right;
 }
-@media screen and (max-width: 1355px) {
-  .third-clue {
-    right: 120px;
-  }
-}
+
 @media screen and (max-width: 1200px) {
-  .third-clue {
-    right: 45px;
-  }
-}
-@media screen and (max-width: 850px) {
   .third-clue {
     right: 50%;
     transform: translate(50%, -50%);
   }
 }
-@media screen and (max-height: 965px) {
-  .third-clue {
-      top: 35%;
-  }
-}
+
 .third-clue__text-block {
   display: flex;
   flex-direction: column;
@@ -2014,12 +1971,12 @@ a,a:hover{
   line-height: 69.36px;
   text-align: left;
 }
-@media screen and (max-height: 768px) {
+/* @media screen and (max-height: 768px) {
   .third-clue__title {
     font-size: 27px;
     line-height: 45px;
   }
-}
+} */
 @media screen and (max-width: 1200px) {
   .third-clue__title {
     font-size: 35px;
@@ -2042,14 +1999,14 @@ a,a:hover{
 }
 .third-clue__subtitle {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   line-height: 24px;
   text-align: left;
   max-width: 270px;
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
   .third-clue__subtitle {
     font-size: 18px;
   }
@@ -2063,7 +2020,7 @@ a,a:hover{
   .third-clue__subtitle {
     font-size: 16px;
   }
-}
+} */
 @media screen and (max-width: 640px) {
   .third-clue__subtitle {
     font-size: 20px;
@@ -2105,16 +2062,7 @@ a,a:hover{
   top: -73px;
   left: -13px;
 }
-@media screen and (max-height: 768px) {
-  .third-clue__big-round-check {
-    width: 40px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .third-clue__big-round-check {
-    width: 40px;
-  }
-}
+
 @media screen and (max-width: 640px) {
   .third-clue__big-round-check {
     width: 64px;
@@ -2138,11 +2086,6 @@ a,a:hover{
     bottom: 50px;
   }
 }
-@media screen and (max-width: 1440px) {
-  .fourth-clue {
-    left: 200px;
-  }
-}
 /* @media screen and (max-width: 1200px){
   .fourth-clue {
     bottom: 50px;
@@ -2153,7 +2096,17 @@ a,a:hover{
       bottom: 200px;
   }
 }
-@media screen and (max-width: 850px){
+@media screen and (max-height: 864px) {
+  .fourth-clue {
+    bottom: 100px;
+  }
+}
+@media screen and (max-width: 1440px){
+  .fourth-clue {
+    left: 200px;
+  }
+}
+@media screen and (max-width: 1200px){
   .fourth-clue {
     bottom: 50%;
     left: 50%;
@@ -2174,12 +2127,12 @@ a,a:hover{
   line-height: 69.36px;
   text-align: left;
 }
-@media screen and (max-height: 768px) {
+/* @media screen and (max-height: 768px) {
   .fourth-clue__title {
     font-size: 27px;
     line-height: 45px;
   }
-}
+} */
 @media screen and (max-width: 1200px) {
   .fourth-clue__title {
     font-size: 35px;
@@ -2202,7 +2155,7 @@ a,a:hover{
 }
 .fourth-clue__subtitle {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   max-width: 270px;
   line-height: 24px;
@@ -2210,7 +2163,7 @@ a,a:hover{
   /* text-wrap: nowrap; */
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
   .fourth-clue__subtitle {
     font-size: 18px;
   }
@@ -2224,7 +2177,7 @@ a,a:hover{
   .fourth-clue__subtitle {
     font-size: 16px;
   }
-}
+} */
 @media screen and (max-width: 640px) {
   .fourth-clue__subtitle {
     font-size: 20px;
@@ -2267,16 +2220,7 @@ a,a:hover{
     left: -362%;
   }
 }
-@media screen and (max-height: 768px) {
-  .fourth-clue__big-round-check {
-    width: 40px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .fourth-clue__big-round-check {
-    width: 40px;
-  }
-}
+
 @media screen and (max-width: 640px) {
   .fourth-clue__big-round-check {
     width: 64px;
@@ -2288,36 +2232,35 @@ a,a:hover{
 /* ========================== */
 .fifth-clue {
   position: fixed;
-  top: 221px;
+  bottom: 152px;
   right: 400px;
   opacity: 0;
   will-change: opacity;
   will-change: top, left, bottom, right;
 }
 
-@media screen and (max-height: 846px) {
-  .fifth-clue {
-    top: 110px;
-  }
-}
 @media screen and (max-width: 1440px) {
   .fifth-clue {
-    right: 200px;
+      right: 200px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .fifth-clue {
+    top: 50% !important;
+    right: 50% !important;
+    left: auto;
+    bottom: auto;
+    transform: translate(50%, -50%);
   }
 }
 @media screen and (max-height: 965px) {
   .fifth-clue {
       bottom: 200px;
-      top: auto;
   }
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-height: 864px) {
   .fifth-clue {
-    top: 50%;
-    right: 50%;
-    left: auto;
-    bottom: auto;
-    transform: translate(-50%, 50%);
+    bottom: 100px;
   }
 }
 .fifth-clue__text-block {
@@ -2333,12 +2276,12 @@ a,a:hover{
   line-height: 69.36px;
   text-align: left;
 }
-@media screen and (max-height: 768px) {
+/* @media screen and (max-height: 768px) {
   .fifth-clue__title {
     font-size: 27px;
     line-height: 45px;
   }
-}
+} */
 @media screen and (max-width: 1200px) {
   .fifth-clue__title {
     font-size: 35px;
@@ -2361,7 +2304,7 @@ a,a:hover{
 }
 .fifth-clue__subtitle {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   max-width: 270px;
   line-height: 24px;
@@ -2369,7 +2312,7 @@ a,a:hover{
   text-wrap: nowrap;
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
   .fifth-clue__subtitle {
     font-size: 18px;
   }
@@ -2383,7 +2326,7 @@ a,a:hover{
   .fifth-clue__subtitle {
     font-size: 18px;
   }
-}
+} */
 @media screen and (max-width: 640px) {
   .fifth-clue__subtitle {
     font-size: 20px;
@@ -2441,16 +2384,7 @@ a,a:hover{
   top: -73px;
   left: -13px;
 }
-@media screen and (max-height: 768px) {
-  .fifth-clue__big-round-check {
-    width: 32px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .fifth-clue__big-round-check {
-    width: 32px;
-  }
-}
+
 @media screen and (max-width: 640px) {
   .fifth-clue__big-round-check {
     width: 64px;
@@ -2953,7 +2887,7 @@ a,a:hover{
     transform: translate(-50%, 0);
   }
 }
-@media screen and (max-height: 722px) {
+@media screen and (max-height: 722px) and (max-width: 640px) {
   .page-23__content {
     top: 60px;
     transform: translate(-50%, 0);
