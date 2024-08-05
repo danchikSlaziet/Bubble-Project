@@ -21,6 +21,25 @@ document.addEventListener('DOMContentLoaded', function() {
   
 
   // 1 => 2 экран
+
+  new ScrollMagic.Scene({
+    triggerElement: '#section1',
+    triggerHook: 0.5,
+    duration: 500
+  })
+  .on('enter', () => {
+    document.querySelector('.connect-button2').style = 'pointer-events: all';
+    document.querySelector('.demo-button2').style = 'pointer-events: all';
+  })
+  .on('leave', (event) => {
+    if (event.scrollDirection === 'FORWARD') {
+      document.querySelector('.connect-button2').style = 'pointer-events: none';
+      document.querySelector('.demo-button2').style = 'pointer-events: none';
+    }
+  })
+  .addTo(controller);
+
+
   const buttonsHide = gsap.timeline()
   .to('.page-1__buttons', { duration: 0.5, opacity: '0', ease: 'power1.out' });
 
@@ -604,6 +623,17 @@ new ScrollMagic.Scene({
       })
       .setTween(section9TextTop)
       .addTo(controller);
+
+      const section9CheckReal = gsap.timeline()
+    .to('#section9CheckReal', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
+  
+    new ScrollMagic.Scene({
+      triggerElement: '#section10',
+      triggerHook: 1,
+      duration: 500
+    })
+    .setTween(section9CheckReal)
+    .addTo(controller);
   }
     
 
@@ -618,16 +648,7 @@ new ScrollMagic.Scene({
     // .setTween(section9RoundReal)
     // .addTo(controller);
 
-    const section9CheckReal = gsap.timeline()
-    .to('#section9CheckReal', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
-  
-    new ScrollMagic.Scene({
-      triggerElement: '#section10',
-      triggerHook: 1,
-      duration: 500
-    })
-    .setTween(section9CheckReal)
-    .addTo(controller);
+    
   // EXPRETISE
   const mediaQueryRealOther = window.matchMedia("(max-width: 1200px)");
     if (mediaQueryRealOther.matches) {
@@ -675,6 +696,17 @@ new ScrollMagic.Scene({
       })
       .setTween(section9TextTop)
       .addTo(controller);
+
+      const section9CheckExp = gsap.timeline()
+    .to('#section9CheckExp', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
+  
+    new ScrollMagic.Scene({
+      triggerElement: '#section11',
+      triggerHook: 1,
+      duration: 500
+    })
+    .setTween(section9CheckExp)
+    .addTo(controller);
       // Код, который будет выполняться, если ширина экрана больше 850px
     }
 
@@ -690,16 +722,7 @@ new ScrollMagic.Scene({
   // .setTween(section9RoundExp)
   // .addTo(controller);
 
-  const section9CheckExp = gsap.timeline()
-    .to('#section9CheckExp', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
   
-    new ScrollMagic.Scene({
-      triggerElement: '#section11',
-      triggerHook: 1,
-      duration: 500
-    })
-    .setTween(section9CheckExp)
-    .addTo(controller);
 
   const section9TextExpLeft = gsap.timeline()
   .to('#section9TextExp', { duration: 0.5, left: '50%', transform: 'translate(-50%, -50%)', ease: 'back.in' });
@@ -880,6 +903,18 @@ new ScrollMagic.Scene({
       })
       .setTween(section9TextTop)
       .addTo(controller);
+
+      
+    const section9CheckTrans = gsap.timeline()
+    .to('#section9CheckTrans', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
+
+    new ScrollMagic.Scene({
+      triggerElement: '#section12',
+      triggerHook: 1,
+      duration: 500
+    })
+    .setTween(section9CheckTrans)
+    .addTo(controller);
       // Код, который будет выполняться, если ширина экрана больше 850px
     }
 
@@ -895,16 +930,6 @@ new ScrollMagic.Scene({
   // .setTween(section9RoundTrans)
   // .addTo(controller);
 
-  const section9CheckTrans = gsap.timeline()
-    .to('#section9CheckTrans', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
-  
-    new ScrollMagic.Scene({
-      triggerElement: '#section12',
-      triggerHook: 1,
-      duration: 500
-    })
-    .setTween(section9CheckTrans)
-    .addTo(controller);
 
   // Variability
   const mediaQueryVarOther = window.matchMedia("(max-width: 1200px)");
@@ -942,6 +967,17 @@ new ScrollMagic.Scene({
       })
       .setTween(section9TextVar)
       .addTo(controller);
+
+      const section9CheckVar = gsap.timeline()
+      .to('#section9CheckVar', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
+    
+      new ScrollMagic.Scene({
+        triggerElement: '#section13',
+        triggerHook: 1,
+        duration: 500
+      })
+      .setTween(section9CheckVar)
+      .addTo(controller);
       // Код, который будет выполняться, если ширина экрана больше 850px
     }
 
@@ -956,16 +992,7 @@ new ScrollMagic.Scene({
   // .setTween(section9RoundVar)
   // .addTo(controller);
 
-  const section9CheckVar = gsap.timeline()
-    .to('#section9CheckVar', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
-  
-    new ScrollMagic.Scene({
-      triggerElement: '#section13',
-      triggerHook: 1,
-      duration: 500
-    })
-    .setTween(section9CheckVar)
-    .addTo(controller);
+
 
     // Support
     const mediaQuerySupOther = window.matchMedia("(max-width: 1200px)");
@@ -1452,7 +1479,8 @@ new ScrollMagic.Scene({
       document.querySelector('.demo-button').style.right = '56px';
       sideMapIMages.forEach((elem, index) => {
         elem.src = './images/side-map-circle-black.svg';
-      })
+      });
+      document.querySelector('.footer').style = 'pointer-events: all; opacity: 1';
     })
     .on('leave', (event) => {
       if (event.scrollDirection === 'FORWARD') {
@@ -1463,6 +1491,7 @@ new ScrollMagic.Scene({
         document.querySelector('.common-arrow-down').style = 'opacity: 1';
         document.querySelector('.common-arrow-down2').style = 'opacity: 0';
         document.querySelector('.demo-button').style.right = '230px';
+        document.querySelector('.footer').style = 'pointer-events: none; opacity: 0';
         sideMapIMages.forEach((elem, index) => {
           if (index === 3) {
             elem.src = './images/side-map-circle.svg';
@@ -1489,7 +1518,6 @@ new ScrollMagic.Scene({
 
 // Получаем все секции на странице
 const sections = Array.from(document.querySelectorAll('section')).slice(0, 19);
-// const sections = document.querySelectorAll('section');
 console.log(sections);
 
 // Текущая секция
@@ -1539,10 +1567,10 @@ else {
       if (currentTime - lastWheelScrollTime > 500) {
         if (event.deltaY > 0) {
           // Прокрутка вниз
-          scrollToSection(currentSection + 1, 'smooth');
+          scrollToSection(currentSection + 1);
         } else {
           // Прокрутка вверх
-          scrollToSection(currentSection - 1, 'smooth');
+          scrollToSection(currentSection - 1);
         }
         lastWheelScrollTime = currentTime;
       }
@@ -1551,26 +1579,68 @@ else {
 }
 
 
-// Функция, отвечающая за постраничный скролл
-function scrollToSection(index, behavior) {
+
+// function scrollToSection(index, duration = 1200) {
+//   // Проверяем, что index находится в пределах количества секций
+//   if (index >= 0 && index < sections.length) {
+//     const start = window.scrollY || document.documentElement.scrollTop;
+//     const target = sections[index].offsetTop;
+//     const startTime = performance.now();
+
+//     // Функция для плавной прокрутки
+//     function scroll() {
+//       const elapsed = (performance.now() - startTime) / duration;
+//       const progress = Math.min(elapsed, 1); // Убедиться, что прогресс не превышает 1
+
+//       // Расчёт текущей позиции скролла
+//       window.scrollTo(0, start + (target - start) * progress);
+
+//       // Если анимация не завершена, продолжаем её
+//       if (progress < 1) {
+//         requestAnimationFrame(scroll);
+//       } else {
+//         // Обновляем текущую секцию после завершения анимации
+//         currentSection = index;
+//         isScrolling = false;
+//       }
+//     }
+
+//     // Блокируем прокрутку на время анимации
+//     isScrolling = true;
+//     requestAnimationFrame(scroll);
+//   }
+// }
+function scrollToSection(index, duration = 1400) {
   // Проверяем, что index находится в пределах количества секций
   if (index >= 0 && index < sections.length) {
-    // Скроллим к нужной секции
-    sections[index].scrollIntoView({
-      behavior: behavior,
-      block: 'start',
-    });
+    const start = window.scrollY || document.documentElement.scrollTop;
+    const target = sections[index].offsetTop;
+    const startTime = performance.now();
 
-    // Обновляем текущую секцию
-    currentSection = index;
+    // Функция для плавной прокрутки
+    function scroll() {
+      const elapsed = (performance.now() - startTime) / duration;
+      const progress = Math.min(elapsed, 1); // Убедиться, что прогресс не превышает 1
+
+      // Линейная интерполяция для плавного скролла
+      window.scrollTo(0, start + (target - start) * progress);
+
+      // Если анимация не завершена, продолжаем её
+      if (progress < 1) {
+        requestAnimationFrame(scroll);
+      } else {
+        // Обновляем текущую секцию после завершения анимации
+        currentSection = index;
+        isScrolling = false;
+      }
+    }
 
     // Блокируем прокрутку на время анимации
     isScrolling = true;
-    setTimeout(() => {
-      isScrolling = false;
-    }, 650);
+    requestAnimationFrame(scroll);
   }
 }
+
 
 window.addEventListener('touchstart', (event) => {
   if (!isScrolling) {
@@ -1587,16 +1657,34 @@ window.addEventListener('touchend', (event) => {
 
     if (Math.abs(deltaY) > 50) {
       if (deltaY > 0) {
-        scrollToSection(currentSection + 1, 'smooth');
+        scrollToSection(currentSection + 1);
       } else {
-        scrollToSection(currentSection - 1, 'smooth');
+        scrollToSection(currentSection - 1);
       }
     }
   }
 });
 
 
+// Функция, отвечающая за постраничный скролл
+function scrollToSection2(index, behavior) {
+  // Проверяем, что index находится в пределах количества секций
+  if (index >= 0 && index < sections.length) {
+    // Скроллим к нужной секции
+    sections[index].scrollIntoView({
+      behavior: behavior,
+      block: 'start',
+    });
 
+    // Обновляем текущую секцию
+    currentSection = index;
+    // Блокируем прокрутку на время анимации
+    isScrolling = true;
+    setTimeout(() => {
+      isScrolling = false;
+    }, 650);
+  }
+}
   // Обработчик событий кликов на якорные ссылки
 const anchorLinks = document.querySelectorAll('a[href^="#"]');
 console.log(anchorLinks)
@@ -1607,13 +1695,27 @@ anchorLinks.forEach((link) => {
     const targetId = event.target.getAttribute('href');
     const targetSection = document.querySelector(targetId);
     if (targetSection) {
-      scrollToSection(Array.from(sections).indexOf(targetSection), 'auto');
+      scrollToSection2(Array.from(sections).indexOf(targetSection), 'auto');
     }
+    menuButton.style.transform = 'rotate(0deg)';
   });
 });
-// const pageArrowTop = document.querySelector('.common-arrow-down2');
-//     pageArrowTop.addEventListener("click", (e) => {
-//       e.preventDefault();
-//       scrollToSection(1, 'auto');
-//     });
+const connectButton = document.querySelector('.connect-button__link');
+const connectButton2 = document.querySelector(".connect-button2__link");
+connectButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  const targetId = event.target.getAttribute('href');
+  const targetSection = document.querySelector(targetId);
+  if (targetSection) {
+    scrollToSection2(Array.from(sections).indexOf(targetSection), 'auto');
+  }
+});
+connectButton2.addEventListener('click', (event) => {
+  event.preventDefault();
+  const targetId = event.target.getAttribute('href');
+  const targetSection = document.querySelector(targetId);
+  if (targetSection) {
+    scrollToSection2(Array.from(sections).indexOf(targetSection), 'auto');
+  }
+});
 });

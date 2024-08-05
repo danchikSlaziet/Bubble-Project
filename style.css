@@ -25,13 +25,13 @@ body {
   font-weight: 500;
   color: #FFF;
   background:  rgba(106, 34, 172, 1);
-  -webkit-overflow-scrolling: touch;
-  overflow-scrolling: touch;
+  /* -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch; */
 
   height: 100lvh;
-  overflow-y: auto !important;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+  overflow-y: scroll;
+  /* scroll-snap-type: y mandatory;
+  scroll-behavior: auto; */
 }
 
 * {
@@ -273,6 +273,15 @@ a,a:hover{
   align-items: center;
   gap: 8px;
   font-family: "Jost";
+  position: relative;
+}
+.connect-button2__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
 }
 @media screen and (max-width: 540px) {
   .connect-button2 {
@@ -301,6 +310,14 @@ a,a:hover{
   align-items: center;
   gap: 8px;
   font-family: "Jost";
+}
+.connect-button__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
 }
 @media screen and (max-width: 768px) {
   .connect-button {
@@ -352,6 +369,15 @@ a,a:hover{
   align-items: center;
   gap: 8px;
   font-family: "Jost";
+  position: relative;
+}
+.demo-button__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
 }
 @media screen and (max-width: 540px) {
   .demo-button2 {
@@ -500,18 +526,25 @@ a,a:hover{
   }
 }
 .side-map__button {
-  display: none;
+  display: block;
+  position: absolute;
+  width: 40px;
   position: absolute;
   top: -3px;
-  left: -37px;
+  left: -46px;
   transform: rotate(00deg);
   z-index: 100;
   pointer-events: all;
   transition: transform .24s ease;
 }
+.side-map__button:hover {
+  cursor: pointer;
+}
 @media screen and (max-width: 1024px) {
   .side-map__button {
     display: block;
+    left: -37px;
+    width: 24px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -529,15 +562,17 @@ a,a:hover{
 }
 .side-map__help-blur {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 330px;
-  top: -34px;
+  /* width: 100%;
+  height: 330px; */
+  width: 300vw;
+  height: 300vh;
+  top: -200%;
+    left: -100%;
   backdrop-filter: blur(0px);
   /* Для поддержки в Safari */
   -webkit-backdrop-filter: blur(0px);
   transition: backdrop-filter .5s linear;
+  pointer-events: none;
 }
 @media screen and (max-width: 1024px) {
   .side-map__help-blur {
@@ -550,6 +585,7 @@ a,a:hover{
 .side-map__images-circle {
   position: absolute;
   backdrop-filter: blur(100px);
+  width: 12.5px;
   /* -webkit-backdrop-filter: blur(100px); */
 }
 .side-map__images-circle_1 {
@@ -558,12 +594,12 @@ a,a:hover{
   transform: translateX(-50%);
 }
 .side-map__images-circle_2 {
-  top: 73px;
+  top: 86px;
   left: 0;
   transform: translateX(-50%);
 }
 .side-map__images-circle_3 {
-  top: 157px;
+  top: 170px;
   left: 0;
   transform: translateX(-50%);
 }
@@ -577,9 +613,8 @@ a,a:hover{
   opacity: 0; 
   pointer-events: none;
 }
-.side-map:hover .side-map__help-blur{
+/* .side-map:hover .side-map__help-blur{
   backdrop-filter: blur(10px);
-  /* Для поддержки в Safari */
   -webkit-backdrop-filter: blur(10px);
 }
 .side-map:hover .side-map__links {
@@ -597,7 +632,7 @@ a,a:hover{
     opacity: 0;
     pointer-events: none;
   }
-}
+} */
 .side-map_active {
   pointer-events: all;
 }
@@ -629,11 +664,11 @@ a,a:hover{
 }
 .side-map__link_2 {
   left: 25px;
-  top: 64px;
+  top: 76px;
 }
 .side-map__link_3 {
   left: 25px;
-  top: 147px;
+  top: 160px;
 }
 .side-map__link_4 {
   left: 25px;
@@ -691,7 +726,7 @@ a,a:hover{
 .page-1 {
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  /*  */
   width: 100%;
   /* background-color: rgba(106, 34, 172, 1); */
   display: flex;
@@ -771,7 +806,7 @@ a,a:hover{
 .page-2 {
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  /*  */
   width: 100%;
   /* background-color: rgba(106, 34, 172, 1); */
 }
@@ -820,6 +855,7 @@ a,a:hover{
   line-height: 69.36px;
   letter-spacing: -0.02em;
   text-align: left;
+  margin: 16px 0;
 }
 @media screen and (max-width: 1280px) {
   .page-2__top-text {
@@ -899,7 +935,7 @@ a,a:hover{
 .page-3 {
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  /*  */
   width: 100%;
   /* background-color: rgba(106, 34, 172, 1); */
 }
@@ -955,6 +991,7 @@ a,a:hover{
   line-height: 69.36px;
   letter-spacing: -0.02em;
   text-align: left;
+  margin: 16px 0;
 }
 @media screen and (max-width: 1280px) {
   .page-3__top-text {
@@ -1035,7 +1072,7 @@ a,a:hover{
 .page-4 {
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  /*  */
   width: 100%;
   /* background-color: rgba(106, 34, 172, 1); */
 }
@@ -1097,6 +1134,7 @@ a,a:hover{
   line-height: 69.36px;
   letter-spacing: -0.02em;
   text-align: center;
+  margin: 16px 0;
 }
 @media screen and (max-width: 1280px) {
   .page-4__top-text {
@@ -1167,7 +1205,7 @@ a,a:hover{
 .page-5 {
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  /*  */
   width: 100%;
   /* background-color: rgba(106, 34, 172, 1); */
 }
@@ -1227,6 +1265,7 @@ a,a:hover{
   line-height: 69.36px;
   letter-spacing: -0.02em;
   text-align: left;
+  margin: 16px 0;
 }
 
 @media screen and (max-width: 1280px) {
@@ -1301,7 +1340,7 @@ a,a:hover{
 .page-6 {
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  /*  */
   width: 100%;
   /* background-color: rgba(106, 34, 172, 1); */
 }
@@ -1361,6 +1400,7 @@ a,a:hover{
   line-height: 69.36px;
   letter-spacing: -0.02em;
   text-align: left;
+  margin: 16px 0;
 }
 @media screen and (max-width: 1280px) {
   .page-6__top-text {
@@ -1432,7 +1472,7 @@ a,a:hover{
 .page-7 {
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  /*  */
   width: 100%;
   /* background-color: rgba(106, 34, 172, 1); */
 }
@@ -1503,6 +1543,7 @@ a,a:hover{
   line-height: 48px;
   letter-spacing: -0.02em;
   text-align: left;
+  margin: 16px 0;
 }
 @media screen and (max-width: 1280px) {
   .page-7__top-text {
@@ -1582,7 +1623,7 @@ a,a:hover{
 .page-8 {
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  
   width: 100%;
 }
 .page-8__text-block {
@@ -1632,7 +1673,7 @@ a,a:hover{
 .page-9 {
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  
   width: 100%;
 }
 .first-clue {
@@ -1754,49 +1795,49 @@ a,a:hover{
   width: 100%;
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  
 }
 .page-11 {
   width: 100%;
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  
 }
 .page-12 {
   width: 100%;
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  
 }
 .page-13 {
   width: 100%;
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  
 }
 .page-14 {
   width: 100%;
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  
 }
 .page-15 {
   width: 100%;
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  
 }
 .page-16 {
   width: 100%;
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  
 }
 .page-17 {
   width: 100%;
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  
 }
 /* ========================== */
 .second-clue {
@@ -2398,7 +2439,7 @@ a,a:hover{
   width: 100%;
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  
 }
 .page-18__title {
   position: fixed;
@@ -2443,7 +2484,7 @@ a,a:hover{
   width: 100%;
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  
 }
 .page-19__text-container {
   position: fixed;
@@ -2544,7 +2585,7 @@ a,a:hover{
   width: 100%;
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  
 }
 .page-20__tooltip {
   color: transparent;    
@@ -2644,7 +2685,7 @@ a,a:hover{
   width: 100%;
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  
 }
 .page-21__tooltip {
   color: transparent;    
@@ -2749,7 +2790,7 @@ a,a:hover{
   width: 100%;
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  
 }
 .page-22__tooltip {
   color: transparent;    
@@ -2855,7 +2896,7 @@ a,a:hover{
   width: 100%;
   height: 100lvh;
   height: 100%;
-  scroll-snap-align: start;
+  
 }
 .page-23__contact-us {
   color: rgba(48, 48, 48, 1);
@@ -3054,9 +3095,9 @@ input:-webkit-autofill:active {
 }
 
 .page-23__input_contact {
-  margin-bottom: 80px;
+  margin-bottom: 48px;
 }
-@media screen and (max-height: 822px) {
+@media screen and (max-height: 822px) and (max-width: 640px) {
   .page-23__input_contact {
     margin-bottom: 7px;
   }
@@ -3139,6 +3180,7 @@ input:-webkit-autofill:active {
   opacity: 0;
   display: flex;
   justify-content: space-between;
+  pointer-events: none;
 }
 @media screen and (max-width: 565px) {
   .footer {
@@ -3162,12 +3204,12 @@ input:-webkit-autofill:active {
   .footer__left-info {
     gap: 10px;
     margin-left: 0;
-    flex-direction: column;
+    /* flex-direction: column; */
   }
 }
 @media screen and (max-height: 665px) {
   .footer__left-info  {
-    gap: 0;
+    gap: 10px;
   }
 }
 .footer__left-info-wrapper {
@@ -3189,12 +3231,12 @@ input:-webkit-autofill:active {
   letter-spacing: -0.02em;
   text-align: left;
 }
-@media screen and (max-height: 665px) {
+/* @media screen and (max-height: 665px) {
   .footer__left-info-wrapper-text {
     font-size: 10px;
     line-height: 10px;
   }
-}
+} */
 .footer__left-info-wrapper-link {
   color: rgba(48, 48, 48, 1);
   font-size: 16px;
@@ -3204,15 +3246,15 @@ input:-webkit-autofill:active {
   letter-spacing: -0.02em;
   text-align: left;
 }
-@media screen and (max-height: 665px) {
+/* @media screen and (max-height: 665px) {
   .footer__left-info-wrapper-link {
     font-size: 10px;
   }
-}
+} */
 .footer__copyright {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 90%;
   transform: translate(-50%, -50%);
   margin-left: auto;
   margin-right: auto;
@@ -3232,13 +3274,13 @@ input:-webkit-autofill:active {
 @media screen and (max-width: 565px) {
   .footer__copyright {
     transform: translateX(-50%);
-    top: 160px;
+    top: 140px;
   }
 }
 @media screen and (max-height: 665px) {
   .footer__copyright {
-    font-size: 10px;
-    top: 97px;
+    /* font-size: 10px; */
+    top: 85px;
   }
 }
 .footer__right-info {
@@ -3272,6 +3314,6 @@ input:-webkit-autofill:active {
 }
 @media screen and (max-height: 665px) {
   .footer__right-info a {
-    font-size: 10px;
+    /* font-size: 10px; */
   }
 }
