@@ -2930,7 +2930,7 @@ a,a:hover{
 }
 @media screen and (max-height: 722px) and (max-width: 640px) {
   .page-23__content {
-    top: 60px;
+    top: 68px;
     transform: translate(-50%, 0);
   }
 }
@@ -3098,6 +3098,11 @@ input:-webkit-autofill:active {
   margin-bottom: 48px;
 }
 @media screen and (max-height: 822px) and (max-width: 640px) {
+  .page-23__input_contact {
+    margin-bottom: 27px;
+  }
+}
+@media screen and (max-height: 610px) and (max-width: 640px) {
   .page-23__input_contact {
     margin-bottom: 7px;
   }
