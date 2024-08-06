@@ -675,7 +675,7 @@ a,a:hover{
 }
 .side-map__link_4 {
   left: 25px;
-  top: 240px;
+  top: 242px;
 }
 /* ======================== COMMON =================== */
 
@@ -832,6 +832,7 @@ a,a:hover{
 @media screen and (max-width: 540px) {
   .page-2__subtitle {
     text-align: center;
+    line-height: 23px;
   }
 }
 .page-2__text-block {
@@ -858,7 +859,7 @@ a,a:hover{
   line-height: 69.36px;
   letter-spacing: -0.02em;
   text-align: left;
-  margin: 16px 0;
+
 }
 @media screen and (max-width: 1280px) {
   .page-2__top-text {
@@ -880,6 +881,7 @@ a,a:hover{
     line-height: 60px;
     font-size: 48px;
     white-space: nowrap;
+    margin: 16px 0;
   }
 }
 @media screen and (max-width: 540px) {
@@ -887,8 +889,8 @@ a,a:hover{
     white-space: normal;
     line-height: 48px;
     text-align: center;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    /* margin-top: 5px;
+    margin-bottom: 10px; */
   }
 }
 
@@ -906,9 +908,9 @@ a,a:hover{
 .page-2__bottom-text {
   max-width: 425px;
   color: #FFF;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
-  line-height: 28.9px;
+  line-height: 34px;
   letter-spacing: -0.02em;
   text-align: left;
 }
@@ -932,6 +934,7 @@ a,a:hover{
 @media screen and (max-width: 540px) {
   .page-2__bottom-text {
     text-align: center;
+    width: 269px;
   }
 }
 /* ================= PAGE-3 ================= */
@@ -961,6 +964,7 @@ a,a:hover{
 @media screen and (max-width: 540px) {
   .page-3__subtitle {
     text-align: left;
+    line-height: 23px;
   }
 }
 .page-3__text-block {
@@ -994,7 +998,6 @@ a,a:hover{
   line-height: 69.36px;
   letter-spacing: -0.02em;
   text-align: left;
-  margin: 16px 0;
 }
 @media screen and (max-width: 1280px) {
   .page-3__top-text {
@@ -1016,6 +1019,7 @@ a,a:hover{
     line-height: 60px;
     font-size: 48px;
     white-space: nowrap;
+    margin: 16px 0;
   }
 }
 @media screen and (max-width: 540px) {
@@ -1023,8 +1027,8 @@ a,a:hover{
     white-space: normal;
     line-height: 48px;
     text-align: left;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    /* margin-top: 5px;
+    margin-bottom: 10px; */
   }
 }
 
@@ -1041,9 +1045,9 @@ a,a:hover{
 .page-3__bottom-text {
   max-width: 408px;
   color: #FFF;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
-  line-height: 28.9px;
+  line-height: 34px;
   letter-spacing: -0.02em;
   text-align: left;
 }
@@ -1068,6 +1072,7 @@ a,a:hover{
 @media screen and (max-width: 540px) {
   .page-3__bottom-text {
     text-align: right;
+    width: 280px;
   }
 }
 
@@ -1098,6 +1103,7 @@ a,a:hover{
 @media screen and (max-width: 540px) {
   .page-4__subtitle {
     text-align: right;
+    line-height: 23px;
   }
 }
 .page-4__text-block {
@@ -1137,7 +1143,6 @@ a,a:hover{
   line-height: 69.36px;
   letter-spacing: -0.02em;
   text-align: center;
-  margin: 16px 0;
 }
 @media screen and (max-width: 1280px) {
   .page-4__top-text {
@@ -1159,6 +1164,7 @@ a,a:hover{
     line-height: 60px;
     font-size: 48px;
     white-space: nowrap;
+    margin: 16px 0;
   }
 }
 @media screen and (max-width: 540px) {
@@ -1166,17 +1172,17 @@ a,a:hover{
     white-space: normal;
     line-height: 48px;
     text-align: right;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    /* margin-top: 5px;
+    margin-bottom: 10px; */
   }
 }
 
 .page-4__bottom-text {
   max-width: 408px;
   color: #FFF;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
-  line-height: 28.9px;
+  line-height: 34px;
   letter-spacing: -0.02em;
   text-align: center;
 }
@@ -1201,6 +1207,7 @@ a,a:hover{
 @media screen and (max-width: 540px) {
   .page-4__bottom-text {
       text-align: left;
+      width: 280px;
   }
 }
 
@@ -1231,6 +1238,7 @@ a,a:hover{
 @media screen and (max-width: 640px) {
   .page-5__subtitle {
     text-align: center;
+    line-height: 23px;
   }
 }
 .page-5__text-block {
@@ -1268,7 +1276,6 @@ a,a:hover{
   line-height: 69.36px;
   letter-spacing: -0.02em;
   text-align: left;
-  margin: 16px 0;
 }
 
 @media screen and (max-width: 1280px) {
@@ -1292,6 +1299,7 @@ a,a:hover{
     font-size: 48px;
     white-space: nowrap;
     text-align: center;
+    margin: 16px 0;
   }
 }
 @media screen and (max-width: 540px) {
@@ -1299,8 +1307,8 @@ a,a:hover{
     white-space: normal;
     line-height: 57px;
     text-align: center;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    /* margin-top: 5px;
+    margin-bottom: 10px; */
   }
 }
 
@@ -1308,9 +1316,9 @@ a,a:hover{
 .page-5__bottom-text {
   max-width: 408px;
   color: #FFF;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
-  line-height: 28.9px;
+  line-height: 34px;
   letter-spacing: -0.02em;
   text-align: left;
 }
@@ -1366,6 +1374,7 @@ a,a:hover{
 @media screen and (max-width: 640px) {
   .page-6__subtitle {
     text-align: left;
+    line-height: 23px;
   }
 }
 .page-6__text-block {
@@ -1403,7 +1412,6 @@ a,a:hover{
   line-height: 69.36px;
   letter-spacing: -0.02em;
   text-align: left;
-  margin: 16px 0;
 }
 @media screen and (max-width: 1280px) {
   .page-6__top-text {
@@ -1426,23 +1434,24 @@ a,a:hover{
     line-height: 60px;
     font-size: 48px;
     white-space: nowrap;
+    margin: 16px 0;
   }
 }
 @media screen and (max-width: 540px) {
   .page-6__top-text {
     white-space: normal;
     line-height: 48px;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    /* margin-top: 5px;
+    margin-bottom: 10px; */
   }
 }
 
 .page-6__bottom-text {
   max-width: 408px;
   color: #FFF;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
-  line-height: 28.9px;
+  line-height: 34px;
   letter-spacing: -0.02em;
   text-align: left;
 }
@@ -1498,6 +1507,7 @@ a,a:hover{
 @media screen and (max-width: 640px) {
   .page-7__subtitle {
     text-align: left;
+    line-height: 23px;
   }
 }
 @media screen and (max-width: 540px) {
@@ -1546,7 +1556,7 @@ a,a:hover{
   line-height: 48px;
   letter-spacing: -0.02em;
   text-align: left;
-  margin: 16px 0;
+
 }
 @media screen and (max-width: 1280px) {
   .page-7__top-text {
@@ -1570,14 +1580,15 @@ a,a:hover{
     line-height: 60px;
     font-size: 48px;
     white-space: nowrap;
+    margin: 16px 0;
   }
 }
 @media screen and (max-width: 540px) {
   .page-7__top-text {
     white-space: normal;
     line-height: 56px;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    /* margin-top: 5px;
+    margin-bottom: 10px; */
     text-align: right;
   }
 } 
@@ -1590,9 +1601,9 @@ a,a:hover{
 .page-7__bottom-text {
   max-width: 408px;
   color: #FFF;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
-  line-height: 28.9px;
+  line-height: 34px;
   letter-spacing: -0.02em;
   text-align: left;
 }
