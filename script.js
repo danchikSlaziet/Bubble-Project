@@ -1477,6 +1477,7 @@ new ScrollMagic.Scene({
       document.querySelector('.common-arrow-down2').style = 'opacity: 1';
       document.querySelector('.connect-button').style.display = 'none';
       document.querySelector('.demo-button').style.right = '56px';
+      document.querySelector('.page-23__send-btn').style = 'pointer-events: all';
       sideMapIMages.forEach((elem, index) => {
         elem.src = './images/side-map-circle-black.svg';
       });
@@ -1492,6 +1493,7 @@ new ScrollMagic.Scene({
         document.querySelector('.common-arrow-down2').style = 'opacity: 0';
         document.querySelector('.demo-button').style.right = '230px';
         document.querySelector('.footer').style = 'pointer-events: none; opacity: 0';
+        document.querySelector('.page-23__send-btn').style = 'pointer-events: none';
         sideMapIMages.forEach((elem, index) => {
           if (index === 3) {
             elem.src = './images/side-map-circle.svg';
