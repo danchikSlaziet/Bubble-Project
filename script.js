@@ -653,6 +653,7 @@ new ScrollMagic.Scene({
   const mediaQueryRealOther = window.matchMedia("(max-width: 1200px)");
     if (mediaQueryRealOther.matches) {
       const section9TextExp = gsap.timeline()
+      .from('#section9TextExp', { duration: 0.5, opacity: '0', ease: 'power1.out' })
       .to('#section9TextExp', { duration: 0.5, opacity: '1', ease: 'power1.out' });
     
       new ScrollMagic.Scene({
@@ -860,6 +861,7 @@ new ScrollMagic.Scene({
   const mediaQueryTransOther = window.matchMedia("(max-width: 1200px)");
     if (mediaQueryTransOther.matches) {
       const section9TextTrans = gsap.timeline()
+      .from('#section9TextTrans', { duration: 0.5, opacity: '0', ease: 'power1.out' })
       .to('#section9TextTrans', { duration: 0.5, opacity: '1', right: '50%', top: '50%', transform: 'translate(50%, -50%)' , ease: 'power1.out' });
     
       new ScrollMagic.Scene({
@@ -935,6 +937,7 @@ new ScrollMagic.Scene({
   const mediaQueryVarOther = window.matchMedia("(max-width: 1200px)");
     if (mediaQueryVarOther.matches) {
       const section9TextVar = gsap.timeline()
+      .from('#section9TextVar', { duration: 0.5, opacity: '0', ease: 'power1.out' })
       .to('#section9TextVar', { duration: 0.5, opacity: '1' , ease: 'power1.out' });
     
       new ScrollMagic.Scene({
@@ -998,6 +1001,7 @@ new ScrollMagic.Scene({
     const mediaQuerySupOther = window.matchMedia("(max-width: 1200px)");
     if (mediaQuerySupOther.matches) {
       const section9TextSup = gsap.timeline()
+      .from('#section9TextSup', { duration: 0.5, opacity: '0', ease: 'power1.out' })
       .to('#section9TextSup', { duration: 0.5, opacity: '1', right: '50%', top: '50%', transform: 'translate(50%, -50%)', bottom: 'auto' , ease: 'power1.out' });
     
       new ScrollMagic.Scene({
@@ -1142,6 +1146,7 @@ new ScrollMagic.Scene({
 // .addTo(controller);
 
   const section18Text = gsap.timeline()
+    .from('#section18Text', { duration: 0.5, opacity: '0', ease: 'power1.out' })
     .to('#section18Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
@@ -1241,6 +1246,7 @@ new ScrollMagic.Scene({
     .setTween(section18TextLow)
     .addTo(controller);
   const section19Text = gsap.timeline()
+    .from('#section19Text', { duration: 0.5, opacity: '0', ease: 'power1.out' })
     .to('#section19Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
@@ -1284,6 +1290,7 @@ new ScrollMagic.Scene({
     .addTo(controller);
 
     const section20Text = gsap.timeline()
+    .from('#section20Text', { duration: 0.5, opacity: '0', ease: 'power1.out' })
     .to('#section20Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
@@ -1368,6 +1375,7 @@ new ScrollMagic.Scene({
     .addTo(controller);
 
   const section21Text = gsap.timeline()
+  .from('#section21Text', { duration: 0.5, opacity: '0', ease: 'power1.out' })
     .to('#section21Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
@@ -1402,6 +1410,7 @@ new ScrollMagic.Scene({
     .addTo(controller);
 
     const section22Text = gsap.timeline()
+    .from('#section22Text', { duration: 0.5, opacity: '0', ease: 'power1.out' })
     .to('#section22Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
 
   new ScrollMagic.Scene({
@@ -1456,6 +1465,7 @@ new ScrollMagic.Scene({
     .addTo(controller);
 
     const section23Text = gsap.timeline()
+    .from('#section23Text', { duration: 0.5, opacity: '0', ease: 'power1.out' })
     .to('#section23Text', { duration: 0.5, opacity: '1', ease: 'power1.out' });
 
   new ScrollMagic.Scene({

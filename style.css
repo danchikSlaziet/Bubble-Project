@@ -935,7 +935,7 @@ a,a:hover{
 @media screen and (max-width: 540px) {
   .page-2__bottom-text {
     text-align: center;
-    width: 269px;
+    width: 276px;
   }
 }
 /* ================= PAGE-3 ================= */
@@ -1315,7 +1315,7 @@ a,a:hover{
 
 
 .page-5__bottom-text {
-  max-width: 408px;
+  max-width: 486px;
   color: #FFF;
   font-size: 24px;
   font-weight: 500;
@@ -1478,7 +1478,7 @@ a,a:hover{
 @media screen and (max-width: 540px) {
   .page-6__bottom-text {
       text-align: right;
-      min-width: 290px;
+      min-width: 287px;
   }
 }
 /* ============ PAGE-7 ============== */
@@ -1557,6 +1557,7 @@ a,a:hover{
   line-height: 48px;
   letter-spacing: -0.02em;
   text-align: left;
+  margin: 16px 0;
 
 }
 @media screen and (max-width: 1280px) {
@@ -1751,7 +1752,7 @@ a,a:hover{
   font-weight: 500;
   line-height: 34px;
   text-align: left;
-  max-width: 270px;
+  max-width: 350px;
 }
 
 @media screen and (max-width: 640px) {
@@ -2059,7 +2060,7 @@ a,a:hover{
   font-weight: 500;
   line-height: 24px;
   text-align: left;
-  max-width: 270px;
+  max-width: 282px;
 }
 
 /* @media screen and (max-width: 1200px) {
@@ -2213,7 +2214,7 @@ a,a:hover{
   color: rgba(255, 255, 255, 0.6);
   font-size: 24px;
   font-weight: 500;
-  max-width: 270px;
+  max-width: 292px;
   line-height: 24px;
   text-align: left;
   /* text-wrap: nowrap; */
@@ -2571,7 +2572,7 @@ a,a:hover{
   letter-spacing: -0.02em;
   transform: translate(100%, 100%);
   text-align: left;
-  width: 396px;
+  width: 387px;
 }
 @media screen and (max-width: 800px) {
   .page-19__subtitle {
@@ -2593,6 +2594,7 @@ a,a:hover{
     line-height: 28.9px;
     letter-spacing: -0.02em;
     text-align: left;
+    max-width: 280px;
   }
 }
 /* ======== PAGE-20 ========= */
@@ -2671,7 +2673,7 @@ a,a:hover{
   right: 0;
   bottom: 0;
   transform: translate(100%, 100%);
-  width: 305px;
+  width: 252px;
 }
 @media screen and (max-width: 800px) {
   .page-20__subtitle {
@@ -2693,6 +2695,7 @@ a,a:hover{
     line-height: 28.9px;
     letter-spacing: -0.02em;
     text-align: right;
+    max-width: 280px;
   }
 }
 /* ======== PAGE-21 ========== */
@@ -2777,7 +2780,7 @@ a,a:hover{
   line-height: 28.9px;
   letter-spacing: -0.02em;
   text-align: left;
-  width: 305px;
+  width: 273px;
 }
 @media screen and (max-width: 800px) {
   .page-21__subtitle {
@@ -2798,6 +2801,7 @@ a,a:hover{
     line-height: 28.9px;
     letter-spacing: -0.02em;
     text-align: left;
+    max-width: 280px;
   }
 }
 /* =========== PAGE-22 ============ */
@@ -2883,7 +2887,7 @@ a,a:hover{
   line-height: 28.9px;
   letter-spacing: -0.02em;
   text-align: left;
-  width: 305px;
+  width: 257px;
 }
 @media screen and (max-width: 800px) {
   .page-22__subtitle {
@@ -2900,10 +2904,11 @@ a,a:hover{
     transform: translate(0, 100%);
     left: 0;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 28.9px;
     letter-spacing: -0.02em;
     text-align: center;
+    max-width: 280px;
   }
 }
 /* ========== PAGE-23 =========== */
