@@ -510,6 +510,9 @@ a,a:hover{
   top: 50%;
   transform: translateY(-50%);
 }
+.side-map__images-line {
+  margin-left: -1px;
+}
 @media screen and (max-width: 1024px) {
   .side-map {
     pointer-events: none;
@@ -585,7 +588,7 @@ a,a:hover{
 .side-map__images-circle {
   position: absolute;
   backdrop-filter: blur(100px);
-  width: 12.5px;
+  width: 14px;
   /* -webkit-backdrop-filter: blur(100px); */
 }
 .side-map__images-circle_1 {
@@ -594,12 +597,12 @@ a,a:hover{
   transform: translateX(-50%);
 }
 .side-map__images-circle_2 {
-  top: 86px;
+  top: 84px;
   left: 0;
   transform: translateX(-50%);
 }
 .side-map__images-circle_3 {
-  top: 170px;
+  top: 168px;
   left: 0;
   transform: translateX(-50%);
 }
