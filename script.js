@@ -1540,8 +1540,8 @@ let isScrolling = false;
 
 let lastScrollDirection = 0;
 let lastScrollDistance = 0;
-const minScrollDistance = 50;
-const minScrollDelay = 500;
+const minScrollDistance = 20;
+const minScrollDelay = 300;
 let lastScrollTime = 0;
 
 
@@ -1668,6 +1668,7 @@ function scrollToSection(index, duration = 1400) {
     requestAnimationFrame(scroll);
   }
 }
+
 
 
 
