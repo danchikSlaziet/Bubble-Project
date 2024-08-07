@@ -1538,9 +1538,18 @@ let currentSection = 0;
 // Флаг для блокировки прокрутки
 let isScrolling = false;
 
+let lastScrollDirection = 0;
+let lastScrollDistance = 0;
+const minScrollDistance = 50;
+const minScrollDelay = 500;
+let lastScrollTime = 0;
+
+
 // Отключаем стандартную прокрутку
 if (navigator.userAgent.indexOf('Firefox') !== -1) {
-
+  window.addEventListener('wheel', (event) => {
+    event.preventDefault();
+  }, { passive: false });
 }
 else {
   window.addEventListener('wheel', (event) => {
@@ -1570,18 +1579,23 @@ window.addEventListener('touchend', (event) => {
 let lastWheelScrollTime = 0;
 if (navigator.userAgent.indexOf('Firefox') !== -1) {
   window.addEventListener('wheel', (event) => {
-    // Определяем направление прокрутки
-    if (!isScrolling) {
-      const currentTime = Date.now();
-      if (currentTime - lastWheelScrollTime > 500) {
-        if (event.deltaY > 0) {
-          // Прокрутка вниз
+    const currentTime = performance.now();
+    const scrollDirection = Math.sign(event.deltaY);
+    const scrollDistance = Math.abs(event.deltaY);
+
+    // Если с момента последней прокрутки прошло больше 500 мс
+    if (currentTime - lastScrollTime >= minScrollDelay) {
+      // И если направление прокрутки изменилось или расстояние прокрутки больше 50 пикселей
+      if (scrollDirection !== lastScrollDirection || scrollDistance >= minScrollDistance) {
+        if (scrollDirection > 0) {
           scrollToSection(currentSection + 1);
         } else {
-          // Прокрутка вверх
           scrollToSection(currentSection - 1);
         }
-        lastWheelScrollTime = currentTime;
+
+        lastScrollDirection = scrollDirection;
+        lastScrollDistance = scrollDistance;
+        lastScrollTime = currentTime;
       }
     }
   });
@@ -1589,54 +1603,41 @@ if (navigator.userAgent.indexOf('Firefox') !== -1) {
 else {
   window.addEventListener('wheel', (event) => {
     // Определяем направление прокрутки
-    if (!isScrolling) {
-      const currentTime = Date.now();
-      if (currentTime - lastWheelScrollTime > 500) {
-        if (event.deltaY > 0) {
-          // Прокрутка вниз
+    // if (!isScrolling) {
+    //   const currentTime = Date.now();
+    //   if (currentTime - lastWheelScrollTime > 500) {
+    //     if (event.deltaY > 0) {
+    //       // Прокрутка вниз
+    //       scrollToSection(currentSection + 1);
+    //     } else {
+    //       // Прокрутка вверх
+    //       scrollToSection(currentSection - 1);
+    //     }
+    //     lastWheelScrollTime = currentTime;
+    //   }
+    // }
+    const currentTime = performance.now();
+    const scrollDirection = Math.sign(event.deltaY);
+    const scrollDistance = Math.abs(event.deltaY);
+
+    // Если с момента последней прокрутки прошло больше 500 мс
+    if (currentTime - lastScrollTime >= minScrollDelay) {
+      // И если направление прокрутки изменилось или расстояние прокрутки больше 50 пикселей
+      if (scrollDirection !== lastScrollDirection || scrollDistance >= minScrollDistance) {
+        if (scrollDirection > 0) {
           scrollToSection(currentSection + 1);
         } else {
-          // Прокрутка вверх
           scrollToSection(currentSection - 1);
         }
-        lastWheelScrollTime = currentTime;
+
+        lastScrollDirection = scrollDirection;
+        lastScrollDistance = scrollDistance;
+        lastScrollTime = currentTime;
       }
     }
   });
 }
 
-
-
-// function scrollToSection(index, duration = 1200) {
-//   // Проверяем, что index находится в пределах количества секций
-//   if (index >= 0 && index < sections.length) {
-//     const start = window.scrollY || document.documentElement.scrollTop;
-//     const target = sections[index].offsetTop;
-//     const startTime = performance.now();
-
-//     // Функция для плавной прокрутки
-//     function scroll() {
-//       const elapsed = (performance.now() - startTime) / duration;
-//       const progress = Math.min(elapsed, 1); // Убедиться, что прогресс не превышает 1
-
-//       // Расчёт текущей позиции скролла
-//       window.scrollTo(0, start + (target - start) * progress);
-
-//       // Если анимация не завершена, продолжаем её
-//       if (progress < 1) {
-//         requestAnimationFrame(scroll);
-//       } else {
-//         // Обновляем текущую секцию после завершения анимации
-//         currentSection = index;
-//         isScrolling = false;
-//       }
-//     }
-
-//     // Блокируем прокрутку на время анимации
-//     isScrolling = true;
-//     requestAnimationFrame(scroll);
-//   }
-// }
 function scrollToSection(index, duration = 1400) {
   // Проверяем, что index находится в пределах количества секций
   if (index >= 0 && index < sections.length) {
@@ -1667,6 +1668,7 @@ function scrollToSection(index, duration = 1400) {
     requestAnimationFrame(scroll);
   }
 }
+
 
 
 window.addEventListener('touchstart', (event) => {
