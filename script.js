@@ -1540,7 +1540,7 @@ let isScrolling = false;
 
 let lastScrollDirection = 0;
 let lastScrollDistance = 0;
-const minScrollDistance = 20;
+const minScrollDistance = 50;
 const minScrollDelay = 300;
 let lastScrollTime = 0;
 
@@ -1619,22 +1619,24 @@ else {
     const currentTime = performance.now();
     const scrollDirection = Math.sign(event.deltaY);
     const scrollDistance = Math.abs(event.deltaY);
-
+    if (!isScrolling) {
     // Если с момента последней прокрутки прошло больше 500 мс
-    if (currentTime - lastScrollTime >= minScrollDelay) {
-      // И если направление прокрутки изменилось или расстояние прокрутки больше 50 пикселей
-      if (scrollDirection !== lastScrollDirection || scrollDistance >= minScrollDistance) {
-        if (scrollDirection > 0) {
-          scrollToSection(currentSection + 1);
-        } else {
-          scrollToSection(currentSection - 1);
-        }
+      if (currentTime - lastScrollTime >= minScrollDelay) {
+        // И если направление прокрутки изменилось или расстояние прокрутки больше 50 пикселей
+        if (scrollDirection !== lastScrollDirection || scrollDistance >= minScrollDistance) {
+          if (scrollDirection > 0) {
+            scrollToSection(currentSection + 1);
+          } else {
+            scrollToSection(currentSection - 1);
+          }
 
-        lastScrollDirection = scrollDirection;
-        lastScrollDistance = scrollDistance;
-        lastScrollTime = currentTime;
+          lastScrollDirection = scrollDirection;
+          lastScrollDistance = scrollDistance;
+          lastScrollTime = currentTime;
+        }
       }
     }
+
   });
 }
 
