@@ -99,7 +99,7 @@ a,a:hover{
 .burger-bar {
   position: fixed;
   top: 50px;
-  left: 56px;
+  left: 110px;
   z-index: 1000;
   display: flex;
   gap: 24px;
@@ -121,7 +121,7 @@ a,a:hover{
   transition: transform .24s ease;
 }
 .burger-bar__logo {
-  width: 190px;
+  width: 150px;
 }
 @media screen and (max-width: 1024px) {
   .burger-bar__logo {
@@ -534,7 +534,7 @@ a,a:hover{
   position: absolute;
   width: 40px;
   position: absolute;
-  top: -3px;
+  top: -7px;
   left: -46px;
   transform: rotate(00deg);
   z-index: 100;
@@ -765,11 +765,11 @@ a,a:hover{
   }
 }
 .page-1__top-text {
-  transform: translate(94px, 16px);
+  transform: translate(93px, -2px);
 }
 @media screen and (max-width: 1280px) {
   .page-1__top-text {
-    transform: translate(64px, 26px);
+    transform: translate(64px, 9px);
   }
 }
 @media screen and (max-width: 768px) {
@@ -2289,7 +2289,7 @@ a,a:hover{
 /* ========================== */
 .fifth-clue {
   position: fixed;
-  bottom: 152px;
+  bottom: 200px;
   right: 400px;
   opacity: 0;
   will-change: opacity;
@@ -2312,12 +2312,12 @@ a,a:hover{
 }
 @media screen and (max-height: 965px) {
   .fifth-clue {
-      bottom: 200px;
+      bottom: 250px;
   }
 }
 @media screen and (max-height: 864px) {
   .fifth-clue {
-    bottom: 100px;
+    bottom: 152px;
   }
 }
 .fifth-clue__text-block {
@@ -2929,7 +2929,7 @@ a,a:hover{
 }
 @media screen and (max-width: 565px) {
   .page-23__contact-us {
-    margin-bottom: 0;
+    margin-bottom: 8px;
   }
 }
 .page-23__content {
@@ -2969,7 +2969,7 @@ a,a:hover{
 @media screen and (max-height: 770px) {
   .page-23__title {
     font-size: 40px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
   }
 }
 @media screen and (max-width: 770px) {
@@ -2982,7 +2982,7 @@ a,a:hover{
 @media screen and (max-width: 565px) {
   .page-23__title {
     line-height: 44px;
-    margin-bottom: 0;
+    /* margin-bottom: 0; */
   }
 }
 .page-23__subtitle {
@@ -2999,7 +2999,22 @@ a,a:hover{
 @media screen and (max-height: 822px) {
   .page-23__subtitle {
     font-size: 18px;
-    margin-bottom: 10px;
+    /* margin-bottom: 40px; */
+  }
+}
+@media screen and (max-height: 787px) {
+  .page-23__subtitle {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-height: 736px) {
+  .page-23__subtitle {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-height: 686px) {
+  .page-23__subtitle {
+    margin-bottom: 0px;
   }
 }
 @media screen and (max-width: 770px) {
@@ -3120,6 +3135,11 @@ input:-webkit-autofill:active {
 @media screen and (max-height: 822px) and (max-width: 640px) {
   .page-23__input_contact {
     margin-bottom: 27px;
+  }
+}
+@media screen and (max-height: 670px) and (max-width: 640px) {
+  .page-23__input_contact {
+    /* margin-bottom: 15px; */
   }
 }
 @media screen and (max-height: 610px) and (max-width: 640px) {
