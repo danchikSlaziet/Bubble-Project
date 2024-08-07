@@ -1569,7 +1569,22 @@ window.addEventListener('touchend', (event) => {
 // Обработчик события прокрутки колесика мыши
 let lastWheelScrollTime = 0;
 if (navigator.userAgent.indexOf('Firefox') !== -1) {
-
+  window.addEventListener('wheel', (event) => {
+    // Определяем направление прокрутки
+    if (!isScrolling) {
+      const currentTime = Date.now();
+      if (currentTime - lastWheelScrollTime > 500) {
+        if (event.deltaY > 0) {
+          // Прокрутка вниз
+          scrollToSection(currentSection + 1);
+        } else {
+          // Прокрутка вверх
+          scrollToSection(currentSection - 1);
+        }
+        lastWheelScrollTime = currentTime;
+      }
+    }
+  });
 }
 else {
   window.addEventListener('wheel', (event) => {
