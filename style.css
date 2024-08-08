@@ -448,6 +448,16 @@ a,a:hover{
     display: none;
   }
 }
+@media screen and (max-height: 905px) {
+  .common-arrow-down2 {
+    top: 50px;
+  }
+}
+@media screen and (max-height: 730px) {
+  .common-arrow-down2 {
+    top: 25px;
+  }
+}
 .common-arrow-down-mouse2 {
   width: 24px;
   height: 46px;
