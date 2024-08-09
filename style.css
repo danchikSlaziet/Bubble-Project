@@ -330,7 +330,7 @@ a,a:hover{
 }
 @media screen and (max-width: 540px) {
   .connect-button {
-      display: none;
+      display: none !important;
   }
 }
 .connect-button:hover {

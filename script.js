@@ -1737,6 +1737,9 @@ anchorLinks.forEach((link) => {
     const targetSection = document.querySelector(targetId);
     if (targetSection) {
       scrollToSection2(Array.from(sections).indexOf(targetSection), 'auto');
+      setTimeout(() => {
+        scrollToSection2(Array.from(sections).indexOf(targetSection), 'auto');
+      }, 100)
     }
     menuButton.style.transform = 'rotate(0deg)';
   });
@@ -1757,6 +1760,10 @@ anchorLinks.forEach((link) => {
     const targetSection = document.querySelector(targetId);
     if (targetSection) {
       scrollToSection2(Array.from(sections).indexOf(targetSection), 'auto');
+      setTimeout(() => {
+        scrollToSection2(Array.from(sections).indexOf(targetSection), 'auto');
+      }, 100)
     }
   });
+
 });
