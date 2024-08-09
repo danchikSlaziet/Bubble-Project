@@ -2951,6 +2951,10 @@ a,a:hover{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.page-23__content_active {
+  pointer-events: all;
 }
 @media screen and (max-width: 565px) {
   .page-23__content {

@@ -1488,6 +1488,9 @@ new ScrollMagic.Scene({
       document.querySelector('.connect-button').style.display = 'none';
       document.querySelector('.demo-button').style.right = '56px';
       document.querySelector('.page-23__send-btn').style = 'pointer-events: all';
+      document.querySelector('.page-23__input_name').disabled = false;
+      document.querySelector('.page-23__input_contact').disabled = false;
+      document.querySelector('.page-23__content').classList.add('page-23__content_active');
       sideMapIMages.forEach((elem, index) => {
         elem.src = './images/side-map-circle-black.svg';
       });
@@ -1498,12 +1501,15 @@ new ScrollMagic.Scene({
   
       }
       else {
+        document.querySelector('.page-23__input_name').disabled = true;
+        document.querySelector('.page-23__input_contact').disabled = true;
         document.querySelector('.connect-button').style.display = 'flex';
         document.querySelector('.common-arrow-down').style = 'opacity: 1';
         document.querySelector('.common-arrow-down2').style = 'opacity: 0';
         document.querySelector('.demo-button').style.right = '230px';
         document.querySelector('.footer').style = 'pointer-events: none; opacity: 0';
         document.querySelector('.page-23__send-btn').style = 'pointer-events: none';
+        document.querySelector('.page-23__content').classList.remove('page-23__content_active');
         sideMapIMages.forEach((elem, index) => {
           if (index === 3) {
             elem.src = './images/side-map-circle.svg';
@@ -1639,7 +1645,9 @@ else {
 
   });
 }
-
+function power1Out(x) {
+  return 1 - Math.pow(1 - x, 3);
+}
 function scrollToSection(index, duration = 1400) {
   // Проверяем, что index находится в пределах количества секций
   if (index >= 0 && index < sections.length) {
@@ -1654,6 +1662,7 @@ function scrollToSection(index, duration = 1400) {
 
       // Линейная интерполяция для плавного скролла
       window.scrollTo(0, start + (target - start) * progress);
+      // window.scrollTo(0, start + (target - start) * power1Out(progress));
 
       // Если анимация не завершена, продолжаем её
       if (progress < 1) {
@@ -1732,22 +1741,22 @@ anchorLinks.forEach((link) => {
     menuButton.style.transform = 'rotate(0deg)';
   });
 });
-const connectButton = document.querySelector('.connect-button__link');
-const connectButton2 = document.querySelector(".connect-button2__link");
-connectButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  const targetId = event.target.getAttribute('href');
-  const targetSection = document.querySelector(targetId);
-  if (targetSection) {
-    scrollToSection2(Array.from(sections).indexOf(targetSection), 'auto');
-  }
-});
-connectButton2.addEventListener('click', (event) => {
-  event.preventDefault();
-  const targetId = event.target.getAttribute('href');
-  const targetSection = document.querySelector(targetId);
-  if (targetSection) {
-    scrollToSection2(Array.from(sections).indexOf(targetSection), 'auto');
-  }
-});
+  const connectButton = document.querySelector('.connect-button__link');
+  const connectButton2 = document.querySelector(".connect-button2__link");
+  connectButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const targetId = event.target.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+      scrollToSection2(Array.from(sections).indexOf(targetSection), 'auto');
+    }
+  });
+  connectButton2.addEventListener('click', (event) => {
+    event.preventDefault();
+    const targetId = event.target.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+      scrollToSection2(Array.from(sections).indexOf(targetSection), 'auto');
+    }
+  });
 });
