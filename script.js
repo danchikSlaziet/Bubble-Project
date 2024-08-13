@@ -624,16 +624,16 @@ new ScrollMagic.Scene({
       .setTween(section9TextTop)
       .addTo(controller);
 
-      const section9CheckReal = gsap.timeline()
-    .to('#section9CheckReal', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
+    //   const section9CheckReal = gsap.timeline()
+    // .to('#section9CheckReal', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
   
-    new ScrollMagic.Scene({
-      triggerElement: '#section10',
-      triggerHook: 1,
-      duration: 500
-    })
-    .setTween(section9CheckReal)
-    .addTo(controller);
+    // new ScrollMagic.Scene({
+    //   triggerElement: '#section10',
+    //   triggerHook: 1,
+    //   duration: 500
+    // })
+    // .setTween(section9CheckReal)
+    // .addTo(controller);
   }
     
 
@@ -698,16 +698,16 @@ new ScrollMagic.Scene({
       .setTween(section9TextTop)
       .addTo(controller);
 
-      const section9CheckExp = gsap.timeline()
-    .to('#section9CheckExp', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
+    //   const section9CheckExp = gsap.timeline()
+    // .to('#section9CheckExp', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
   
-    new ScrollMagic.Scene({
-      triggerElement: '#section11',
-      triggerHook: 1,
-      duration: 500
-    })
-    .setTween(section9CheckExp)
-    .addTo(controller);
+    // new ScrollMagic.Scene({
+    //   triggerElement: '#section11',
+    //   triggerHook: 1,
+    //   duration: 500
+    // })
+    // .setTween(section9CheckExp)
+    // .addTo(controller);
       // Код, который будет выполняться, если ширина экрана больше 850px
     }
 
@@ -907,16 +907,16 @@ new ScrollMagic.Scene({
       .addTo(controller);
 
       
-    const section9CheckTrans = gsap.timeline()
-    .to('#section9CheckTrans', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
+    // const section9CheckTrans = gsap.timeline()
+    // .to('#section9CheckTrans', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
 
-    new ScrollMagic.Scene({
-      triggerElement: '#section12',
-      triggerHook: 1,
-      duration: 500
-    })
-    .setTween(section9CheckTrans)
-    .addTo(controller);
+    // new ScrollMagic.Scene({
+    //   triggerElement: '#section12',
+    //   triggerHook: 1,
+    //   duration: 500
+    // })
+    // .setTween(section9CheckTrans)
+    // .addTo(controller);
       // Код, который будет выполняться, если ширина экрана больше 850px
     }
 
@@ -971,16 +971,16 @@ new ScrollMagic.Scene({
       .setTween(section9TextVar)
       .addTo(controller);
 
-      const section9CheckVar = gsap.timeline()
-      .to('#section9CheckVar', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
+      // const section9CheckVar = gsap.timeline()
+      // .to('#section9CheckVar', { duration: 0.5, top: '-55px', left: '0px', ease: 'power1.out' });
     
-      new ScrollMagic.Scene({
-        triggerElement: '#section13',
-        triggerHook: 1,
-        duration: 500
-      })
-      .setTween(section9CheckVar)
-      .addTo(controller);
+      // new ScrollMagic.Scene({
+      //   triggerElement: '#section13',
+      //   triggerHook: 1,
+      //   duration: 500
+      // })
+      // .setTween(section9CheckVar)
+      // .addTo(controller);
       // Код, который будет выполняться, если ширина экрана больше 850px
     }
 
@@ -1739,7 +1739,7 @@ anchorLinks.forEach((link) => {
       scrollToSection2(Array.from(sections).indexOf(targetSection), 'auto');
       setTimeout(() => {
         scrollToSection2(Array.from(sections).indexOf(targetSection), 'auto');
-      }, 100)
+      }, 200)
     }
     menuButton.style.transform = 'rotate(0deg)';
   });
@@ -1762,7 +1762,7 @@ anchorLinks.forEach((link) => {
       scrollToSection2(Array.from(sections).indexOf(targetSection), 'auto');
       setTimeout(() => {
         scrollToSection2(Array.from(sections).indexOf(targetSection), 'auto');
-      }, 100)
+      }, 200)
     }
   });
 
