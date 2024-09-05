@@ -180,7 +180,7 @@ new ScrollMagic.Scene({
 
 
   const section3TextLowOpacity = gsap.timeline()
-  .from('#section3Text', { duration: 0.5, opacity: '1', ease: 'linear' })
+  // .from('#section3Text', { duration: 0.5, opacity: '1', ease: 'linear' })
   .to('#section3Text', { duration: 0.5, opacity: '0', ease: 'linear' });
 
   new ScrollMagic.Scene({
@@ -369,16 +369,17 @@ const blurCircleTweenHelp3 = gsap.timeline()
     triggerHook: 1,
     duration: 500
   })
-  .on('leave', (event) => {
-    if (event.scrollDirection === 'FORWARD') {
-      document.querySelector('.common-arrow-down').src = './images/arrow-main-down-white.svg';
-      sideMapIMages.forEach((elem, index) => {
-        if (index === 1) {
-          elem.src = './images/side-map-circle-white.svg';
-        }
-      })
-    }
-  })
+  // .on('leave', (event) => {
+  //   if (event.scrollDirection === 'FORWARD') {
+  //     console.log('circles changed')
+  //     document.querySelector('.common-arrow-down').src = './images/arrow-main-down-white.svg';
+  //     sideMapIMages.forEach((elem, index) => {
+  //       if (index === 1) {
+  //         elem.src = './images/side-map-circle-white.svg';
+  //       }
+  //     })
+  //   }
+  // })
   .setTween(section7Text)
   .addTo(controller);
 
@@ -469,13 +470,43 @@ const blurCircleTweenHelp3 = gsap.timeline()
   // Итоговое RGBA-значение
   const rgbaGradient = `rgba(${r.toFixed(0)}, ${g.toFixed(0)}, ${b.toFixed(0)}, 1)`;
 
-const backgroundChange = gsap.timeline()
-  .to('body', { duration: 750, background: 'linear-gradient(268.14deg, #B400E1 0%, #6400E3 82.81%)', ease: 'linear' });
+
+  
+  const backgroundChange = gsap.timeline()
+  .to('body', { duration: 20, background: 'linear-gradient(to left, rgba(106, 34, 172, 1), rgba(106, 34, 172, 1))', ease: 'power1.out' })
+  .to('body', { duration: 20, background: 'linear-gradient(to left, rgba(106, 34, 172, 0.99), rgba(106, 34, 172, 0.995))', ease: 'power1.out' })
+  .to('body', { duration: 20, background: 'linear-gradient(to left, rgba(106, 34, 172, 0.98), rgba(106, 34, 172, 0.99))', ease: 'power1.out' })
+  .to('body', { duration: 20, background: 'linear-gradient(to left, rgba(106, 34, 172, 0.97), rgba(106, 34, 172, 0.985))', ease: 'power1.out' })
+  .to('body', { duration: 20, background: 'linear-gradient(to left, rgba(106, 34, 172, 0.96), rgba(106, 34, 172, 0.98))', ease: 'power1.out' })
+  .to('body', { duration: 20, background: 'linear-gradient(to left, rgba(106, 34, 172, 0.95), rgba(106, 34, 172, 0.975))', ease: 'power1.out' })
+  .to('body', { duration: 20, background: 'linear-gradient(to left, rgba(106, 34, 172, 0.94), rgba(106, 34, 172, 0.97))', ease: 'power1.out' })
+  .to('body', { duration: 20, background: 'linear-gradient(to left, rgba(106, 34, 172, 0.93), rgba(106, 34, 172, 0.965))', ease: 'power1.out' })
+  .to('body', { duration: 20, background: 'linear-gradient(to left, rgba(106, 34, 172, 0.92), rgba(106, 34, 172, 0.96))', ease: 'power1.out' })
+  .to('body', { duration: 40, background: 'linear-gradient(to left, rgba(106, 34, 172, 0.91), rgba(106, 34, 172, 0.955))', ease: 'power1.out' })
+  .to('body', { duration: 40, background: 'linear-gradient(to left, rgba(106, 34, 172, 0.9), rgba(106, 34, 172, 0.95))', ease: 'power1.out' })
+  .to('body', { duration: 40, background: 'linear-gradient(to left, rgba(106, 34, 172, 0.89), rgba(106, 34, 172, 0.945))', ease: 'power1.out' })
+  .to('body', { duration: 40, background: 'linear-gradient(to left, rgba(106, 34, 172, 0.88), rgba(106, 34, 172, 0.94))', ease: 'power1.out' })
+  .to('body', { duration: 40, background: 'linear-gradient(to left, rgba(106, 34, 172, 0.87), rgba(106, 34, 172, 0.935))', ease: 'power1.out' })
+  .to('body', { duration: 500, background: 'linear-gradient(to left, rgba(106, 34, 172, 0.86), rgba(106, 34, 172, 0.93))', ease: 'power1.out' })
+  .to('body', { duration: 500, background: 'linear-gradient(to left, rgba(106, 34, 172, 0.85), rgba(106, 34, 172, 0.925))', ease: 'power1.out' })
+  .to('body', { duration: 500, background: 'linear-gradient(to left, rgba(106, 34, 172, 0.84), rgba(106, 34, 172, 0.92))', ease: 'power1.out' })
+  .to('body', { duration: 500, background: 'linear-gradient(to left, rgba(106, 34, 172, 0.83), rgba(106, 34, 172, 0.915))', ease: 'power1.out' })
+  .to('body', { duration: 500, background: 'linear-gradient(to left, rgba(106, 34, 172, 0.82), rgba(106, 34, 172, 0.91))', ease: 'power1.out' })
+  .to('body', { duration: 500, background: 'linear-gradient(to left, rgba(180, 0, 225, 1), rgba(100, 0, 227, 1))', ease: 'power1.out' });
 
 new ScrollMagic.Scene({
   triggerElement: '#section8',
   triggerHook: 1,
-  duration: '100%'
+  duration: 100
+})
+.setTween(backgroundChange)
+.addTo(controller);
+
+
+new ScrollMagic.Scene({
+  triggerElement: '#section8',
+  triggerHook: 1,
+  duration: 500
 })
 .setTween(backgroundChange)
 .addTo(controller);
@@ -2234,6 +2265,7 @@ function scrollToSection(index, duration = 1250) {
     requestAnimationFrame(scroll);
   }
 }
+
 
 
 
