@@ -2236,6 +2236,30 @@ else {
   });
 }
 
+document.querySelector('.page-23__send-btn').addEventListener('click', () => {
+  document.querySelector('.page-23__send-btn-text').textContent = 'SENDING...';
+  $.ajax({
+    type: "POST",
+    url: './mail.php',
+    data: `name=${document.querySelector('.page-23__input_name').value}&connection=${document.querySelector('.page-23__input_contact').value}`,
+    success: function (data) {
+      console.log(data);
+      document.querySelector('.popup').classList.add("popup_active");
+      setTimeout(() => {
+        document.querySelector('.page-23__send-btn-text').textContent = 'CONNECT';
+        document.querySelector('.page-23__input_name').value = null;
+        document.querySelector('.page-23__input_contact').value = null;
+      }, 100)
+    },
+    error: function (jqXHR, text, error) {
+      console.log(jqXHR, text, error)
+    }
+  });
+})
+
+document.querySelector('.popup__close').addEventListener('click', () => {
+  document.querySelector('.popup').classList.remove("popup_active");
+})
 
 function scrollToSection(index, duration = 1250) {
   // Проверяем, что index находится в пределах количества секций
